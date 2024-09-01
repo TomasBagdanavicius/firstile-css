@@ -1,0 +1,144 @@
+# Component Elements
+
+- button
+    - `<button>`
+- details
+    - `<details>`
+    - `<summary>`
+- document-context
+    - `<html>`
+    - `<body>`
+- embed
+    - `<iframe>`
+    - `<fencedframe>`
+    - `<object>`
+    - `<embed>`
+    - `<map>`
+    - `<area>`
+    - `<template>`
+    - `<slot>`
+- form
+    - `<form>`
+    - `<label>`
+    - `<input type="text">`
+    - `<input type="email">`
+    - `<input type="url">`
+    - `<input type="number">`
+    - `<input type="search">`
+    - `<input type="password">`
+    - `<input type="checkbox">`
+    - `<input type="submit">`
+    - `<input type="reset">`
+    - `<input type="button">`
+    - `<textarea>`
+    - `<select>`
+    - `<optgroup>`
+    - `<option>`
+    - `<fieldset>`
+    - `<legend>`
+    - `<output>`
+    - `<datalist>`
+- form-extended
+    - `<input type="radio">`
+    - `<input type="file">`
+    - `<input type="color">`
+    - `<input type="date">`
+    - `<input type="datetime-local">`
+    - `<input type="month">`
+    - `<input type="week">`
+    - `<input type="time">`
+    - `<input type="range">`
+    - `<input type="image">`
+- heading
+    - `<h1>`
+    - `<h2>`
+    - `<h3>`
+    - `<h4>`
+    - `<h5>`
+    - `<h6>`
+    - `<hgroup>`
+- hyperlink
+    - `<a>`
+- image
+    - `<img>`
+    - `<picture>`
+    - `<figure>`
+    - `<figcaption>`
+    - `<canvas>`
+- inline-semantics
+    - `<var>`
+    - `<kbd>`
+    - `<sup>`
+    - `<sub>`
+    - `<s>`
+    - `<abbr>`
+    - `<address>`
+    - `<b>`
+    - `<bdo>`
+    - `<bdi>`
+    - `<code>`
+    - `<data>`
+    - `<del>`
+    - `<dfn>`
+    - `<ins>`
+    - `<q>`
+    - `<rp>`
+    - `<rt>`
+    - `<ruby>`
+    - `<samp>`
+    - `<i>`
+    - `<u>`
+- list
+    - `<ul>`
+    - `<ol>`
+    - `<li>`
+    - `<menu>`
+    - `<dl>`
+    - `<dt>`
+    - `<dd>`
+- media
+    - `<video>`
+    - `<audio>`
+    - `<track>`
+    - `<source>`
+- popover
+    - `<dialog>`
+- progress
+    - `<progress>`
+    - `<meter>`
+- sectioning-content
+    - `<article>`
+    - `<aside>`
+    - `<nav>`
+    - `<section>`
+- structural-content
+    - `<div>`
+    - `<header>`
+    - `<footer>`
+    - `<main>`
+    - `<p>`
+    - `<search>`
+- table
+    - `<table>`
+    - `<caption>`
+    - `<th>`
+    - `<tr>`
+    - `<td>`
+    - `<thead>`
+    - `<tbody>`
+    - `<tfoot>`
+    - `<colgroup>`
+    - `<col>`
+- text-level-semantics
+    - `<blockquote>`
+    - `<cite>`
+    - `<strong>`
+    - `<em>`
+    - `<br>`
+    - `<hr>`
+    - `<mark>`
+    - `<pre>`
+    - `<small>`
+    - `<span>`
+    - `<time>`
+    - `<wbr>`

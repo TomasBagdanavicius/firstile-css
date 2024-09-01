@@ -1,0 +1,39 @@
+// Notes:
+// - Reasons why `light-dark` functional notation cannot fully replace theme attribute toggling:
+//  - It accepts `<color>` typed values only. What if one wants to have a non-color themed variable, eg. `theme-binary`, etc.
+//  - Many color functional notations (eg. `rgb`, etc.) do not support `light-dark` notation as relative color.
+@use "../../partials/root-props";
+@use "../../partials/functions";
+@include root-props.addProps(functions.apply-user-properties((
+    // Layout
+    --container-width: 850,
+    // Appearance
+    --font-family: unquote('system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'),
+    --font-size: 14px,
+    --line-height: calc(19 / 14),
+    --accent-color: #4169e1,
+    --accent-color-active: darken(#4169e1, 10%),
+    --danger-color: #f93a37,
+    --danger-color-active: darken(#f93a37, 10%),
+    --success-color: #129745,
+    --success-color-active: darken(#129745, 10%),
+), document-context), (
+    --bg-color: #212121,
+    --mg-color: #171717,
+    --mg-color-active: #1c1c1c,
+    --fg-color: #2f2f2f,
+    --fg-color-active: #3a3a3a,
+    // Color that can fit in any combination of bg, mg, and fg colors.
+    --ridge-color: #444,
+    --color: #fff,
+    --details-color: #888,
+), (
+    --bg-color: #fff,
+    --mg-color: #f9f9f9,
+    --mg-color-active: #ededed,
+    --fg-color: #fff,
+    --fg-color-active: #eee,
+    --ridge-color: #e5e5e5,
+    --color: #121212,
+    --details-color: #7d7d7d,
+));

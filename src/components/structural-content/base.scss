@@ -1,0 +1,9 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Structural Content */
+@layer base {
+    p {
+        margin-bottom: 1em;
+    }
+}

@@ -1,0 +1,8 @@
+@use "../../base/normalize";
+/* Hyperlink */
+@layer normalize {
+    a:any-link {
+        color: inherit;
+        text-decoration: none;
+    }
+}

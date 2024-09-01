@@ -1,0 +1,50 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Hyperlink */
+@layer normalize {
+  a:any-link {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Hyperlink */
+@layer base {
+  a:any-link {
+    color: var(--hyperlink-color);
+  }
+  @media (hover: hover) {
+    a:any-link:hover {
+      color: var(--hyperlink-color-active);
+    }
+  }
+  a:visited {
+    color: var(--hyperlink-color-active);
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

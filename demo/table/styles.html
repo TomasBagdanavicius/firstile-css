@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Styles - Table</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+<div class="demo-description">This page demonstrates two styles for tables. It provides examples of how tables can be styled and structured.</div>
+<section class="demo-section">
+    <h2 class="demo-section-title">Default</h2>
+    <table class="table-default">
+        <caption>Caption</caption>
+        <thead>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Row Header 1</th>
+                <td data-title="Label 1">Table data 1.1</td>
+                <td data-title="Label 2">Table data 1.2</td>
+            </tr>
+            <tr>
+                <th scope="row">Row Header 2</th>
+                <td data-title="Label 1">Table data 2.1</td>
+                <td data-title="Label 2">Table data 2.2</td>
+            </tr>
+            <tr>
+                <th scope="row">Row Header 3</th>
+                <td data-title="Label 1">Table data 3.1</td>
+                <td data-title="Label 2">Table data 3.2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Table Footer's Row Header</th>
+                <td>Table footer's table data</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Pragmatic</h2>
+    <table class="table-pragmatic">
+        <caption>Caption</caption>
+        <thead>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Row Header 1</th>
+                <td data-title="Label 1">Table data 1.1</td>
+                <td data-title="Label 2">Table data 1.2</td>
+            </tr>
+            <tr>
+                <th scope="row">Row Header 2</th>
+                <td data-title="Label 1">Table data 2.1</td>
+                <td data-title="Label 2">Table data 2.2</td>
+            </tr>
+            <tr>
+                <th scope="row">Row Header 3</th>
+                <td data-title="Label 1">Table data 3.1</td>
+                <td data-title="Label 2">Table data 3.2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Table Footer's Row Header</th>
+                <td>Table footer's table data</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

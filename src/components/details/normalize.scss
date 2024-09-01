@@ -1,0 +1,16 @@
+@use "../../base/normalize";
+/* Details */
+@layer normalize {
+    details {
+        > summary {
+            // Removes triangle accessory in standards-compliant implementations.
+            &:first-of-type {
+                list-style: none;
+            }
+            // Removes triangle accessory in Safari.
+            &::-webkit-details-marker {
+                display: none;
+            }
+        }
+    }
+}

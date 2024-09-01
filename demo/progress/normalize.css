@@ -1,0 +1,44 @@
+/* Base */
+@layer normalize {
+  progress {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Progress */
+@layer normalize {
+  progress,
+  meter {
+    display: block;
+    block-size: 1em;
+    inline-size: 10em;
+    border: 0;
+    background: none;
+  }
+  progress::-webkit-progress-bar, progress::-webkit-progress-value {
+    background: none;
+  }
+  progress::-moz-progress-bar {
+    background: none;
+  }
+  meter::-webkit-meter-bar, meter::-webkit-meter-suboptimum-value {
+    background: none;
+  }
+  meter::-webkit-meter-bar {
+    block-size: 1em;
+    border: 0;
+    border-radius: 0;
+  }
+  meter::-moz-meter-bar {
+    background: none;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

@@ -1,0 +1,19 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Hyperlink */
+@layer base {
+    a {
+        &:any-link {
+            color: var(--hyperlink-color);
+            @media (hover: hover) {
+                &:hover {
+                    color: var(--hyperlink-color-active);
+                }
+            }
+        }
+        &:visited {
+            color: var(--hyperlink-color-active);
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@use "base";
+@use "../structural-content/modules/grid/styles";
+/* List */
+@layer style {
+    %list-item-indent {
+        position: relative;
+        padding-left: var(--list-item-indent);
+        &::before {
+            display: inline-flex;
+            width: calc(var(--list-item-indent) - var(--list-item-indent-gap));
+            margin: 0 var(--list-item-indent-gap) 0 calc(0px - var(--list-item-indent));
+            justify-content: flex-end;
+            align-items: center;
+            text-align: end;
+            white-space: nowrap;
+            content: "";
+        }
+    }
+    %list-item-bullet {
+        position: absolute;
+        top: calc((1lh - var(--bullet-size)) / 2);
+        left: calc(var(--list-item-indent) - var(--bullet-size) - var(--list-item-indent-gap));
+        width: var(--bullet-size);
+        aspect-ratio: 1;
+        margin: 0;
+        border-radius: 50%;
+        background-color: currentColor;
+    }
+    %list-item-counter {
+        counter-increment: ol-counter;
+        &::before {
+            content: counters(ol-counter, ".") ".";
+        }
+    }
+    // Regular Indented List
+    %regular-indented-list {
+        > li {
+            @extend %list-item-indent;
+        }
+    }
+    // Regular Unordered Bullet List
+    %regular-unordered-bullet-list {
+        --list-item-indent-gap: 10px;
+        @extend %regular-indented-list;
+        --bullet-size: .5em;
+        > li {
+            &::before {
+                @extend %list-item-bullet;
+            }
+        }
+    }
+    %regular-unordered-bullet-list-deep {
+        --bullet-size: .5em;
+        --list-item-indent-gap: 10px;
+        > li,
+        ul > li {
+            @extend %list-item-indent;
+            &::before {
+                @extend %list-item-bullet;
+            }
+        }
+    }
+    // Regular Ordered Number List
+    %regular-ordered-number-list {
+        --list-item-indent-gap: 5px;
+        @extend %regular-indented-list;
+        counter-reset: ol-counter;
+        > li {
+            @extend %list-item-counter;
+        }
+    }
+    %regular-ordered-number-list-deep {
+        --list-item-indent-gap: 5px;
+        &,
+        ol {
+            counter-reset: ol-counter;
+        }
+        > li,
+        ol > li {
+            @extend %list-item-indent, %list-item-counter;
+        }
+    }
+    // Label-Value Pairs
+    %description-list-label-value-pairs {
+        @extend %grid-grid;
+        --grid-gap: 5px;
+        grid-template-columns: repeat(2, max-content);
+        width: max-content;
+        > dt {
+            grid-column: 1;
+            font-weight: 700;
+            &::after {
+                content: ":";
+            }
+        }
+        > dd {
+            grid-column: 2;
+            margin: 0;
+            text-align: end;
+        }
+    }
+}

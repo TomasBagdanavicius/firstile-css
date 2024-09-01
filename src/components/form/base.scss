@@ -1,0 +1,105 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+@use "../button/base" as button;
+/* Form */
+@layer base {
+    [disabled]:not(fieldset) {
+        cursor: not-allowed;
+    }
+    input[type=email],
+    input[type=password] {
+        // Host UA controls and accessories, eg. password auto fill button, caps lock indicator, etc.
+        position: relative;
+        &::-webkit-credentials-auto-fill-button {
+            cursor: pointer;
+        }
+    }
+    input[type=password] {
+        // Increase gaps between symbols that obscure hidden password.
+        letter-spacing: 1px;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=tel],
+    input[type=number],
+    input[type=search] {
+        text-overflow: ellipsis;
+    }
+    label.active,
+    select {
+        cursor: pointer;
+    }
+    input,
+    textarea {
+        // Base normalization - requires variables/options to normalize.
+        &:autofill {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: var(--input-color);
+            box-shadow: inset 0 0 0 var(--input-box-height) var(--input-box-bg-color);
+            caret-color: var(--input-color);
+        }
+    }
+    input[type=button],
+    input[type=submit],
+    input[type=reset],
+    input[type=checkbox],
+    select {
+        @extend %button;
+    }
+    :is(input[type=button], input[type=submit], input[type=reset], select)[disabled] {
+        @extend %button-disabled;
+    }
+    :is(input[type=button], input[type=submit], input[type=reset], select):not([disabled]):hover {
+        @extend .button-hover;
+    }
+    input[type=checkbox] {
+        width: var(--button-height);
+        aspect-ratio: 1;
+        // 25% of button height, or 5px as minimum.
+        border-radius: max(var(--button-height) / 4, 5px);
+        &:not([disabled]) {
+            &:hover {
+                @extend .button-hover;
+            }
+            &:checked {
+                background-color: var(--accent-color);
+            }
+        }
+        &[disabled] {
+            @extend %button-disabled;
+        }
+    }
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=search],
+    input[type=password],
+    textarea {
+        display: block;
+        width: 100%;
+        // `min-height` does not seem to work.
+        height: var(--input-box-height);
+        padding-left: calc(var(--input-box-inline-start-offset) + var(--input-box-inline-padding));
+        border: solid var(--input-box-border-width) var(--input-box-border-color);
+        border-radius: var(--input-box-border-radius);
+        background-color: var(--input-box-bg-color);
+        font-size: var(--input-box-font-size);
+    }
+    textarea {
+        height: var(--input-textarea-box-height);
+        padding-top: calc((min(var(--input-textarea-box-height), var(--input-box-height)) - (var(--input-box-border-width) * 2) - 1lh) / 2);
+    }
+    ::placeholder {
+        color: var(--input-placeholder-color);
+        opacity: var(--input-placeholder-opacity);
+    }
+    label:has(input:is([type=checkbox], [type=radio])) {
+        display: inline-flex;
+        vertical-align: top;
+        align-items: center;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,102 @@
+/* Base */
+@layer normalize {
+  progress {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Progress */
+@layer normalize {
+  progress,
+  meter {
+    display: block;
+    block-size: 1em;
+    inline-size: 10em;
+    border: 0;
+    background: none;
+  }
+  progress::-webkit-progress-bar, progress::-webkit-progress-value {
+    background: none;
+  }
+  progress::-moz-progress-bar {
+    background: none;
+  }
+  meter::-webkit-meter-bar, meter::-webkit-meter-suboptimum-value {
+    background: none;
+  }
+  meter::-webkit-meter-bar {
+    block-size: 1em;
+    border: 0;
+    border-radius: 0;
+  }
+  meter::-moz-meter-bar {
+    background: none;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Progress */
+@layer base {
+  progress {
+    border-radius: var(--progress-border-radius);
+    block-size: var(--progress-block-size);
+    inline-size: var(--progress-inline-size);
+    background: var(--progress-bg-color);
+  }
+  progress::-webkit-progress-bar {
+    overflow: hidden;
+    border-radius: var(--progress-border-radius);
+    background: var(--progress-bg-color);
+  }
+  progress::-webkit-progress-value {
+    border-radius: var(--progress-bar-border-radius);
+    background: var(--progress-bar-bg-color);
+  }
+  progress::-moz-progress-bar {
+    border-radius: var(--progress-bar-border-radius);
+    background: var(--progress-bar-bg-color);
+  }
+  meter {
+    border-radius: var(--meter-border-radius);
+    block-size: var(--meter-block-size);
+    inline-size: var(--meter-inline-size);
+    background: var(--meter-bg-color);
+  }
+  meter::-webkit-meter-bar {
+    overflow: hidden;
+    block-size: var(--meter-block-size);
+    border-radius: var(--meter-border-radius);
+    background: var(--meter-bg-color);
+  }
+  meter::-webkit-meter-suboptimum-value {
+    border-radius: var(--meter-bar-border-radius);
+    background: var(--meter-bar-bg-color);
+  }
+  meter::-moz-meter-bar {
+    border-radius: var(--meter-bar-border-radius);
+    background: var(--meter-bar-bg-color);
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

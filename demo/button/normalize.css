@@ -1,0 +1,28 @@
+/* Base */
+@layer normalize {
+  button {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Button */
+@layer normalize {
+  button {
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    vertical-align: top;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

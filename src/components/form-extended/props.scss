@@ -1,0 +1,7 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    // `currentColor` cannot be used, eg. using alongside `-webkit-text-fill-color` to enforce proper font color in Safari's default value of datetime inputs.
+    --input-range-thumb-size: 20px,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, form-extended));

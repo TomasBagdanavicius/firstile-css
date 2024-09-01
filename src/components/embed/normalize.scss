@@ -1,0 +1,8 @@
+@use "../../base/normalize";
+/* Embed */
+@layer normalize {
+    iframe,
+    fencedframe {
+        @extend %normalize-border;
+    }
+}

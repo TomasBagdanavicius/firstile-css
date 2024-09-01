@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Normalize - Image</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="../demo-basic.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<p class="container"><img src="material/1000x1000_Earth.jpg" alt="The Earth"></p>
+<p><img src="material/150x150_Earth.jpg" width="150" height="150" alt="The Earth"></p>
+<p><a href="http://localhost"><img src="material/150x150_Earth.jpg" width="150" height="150" alt="The Earth"></a></p>
+<picture>
+    <source srcset="material/150x150_Earth.jpg" media="(min-width: 568px)">
+    <img src="material/250x250_Earth.jpg" alt="The Earth">
+</picture>
+<figure>
+    <img src="material/150x150_Earth.jpg" width="150" height="150" alt="The Earth">
+    <figcaption>Figcaption</figcaption>
+</figure>
+<canvas width="120" height="120">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eligendi velit eum cum a harum fuga. Nulla voluptas illum voluptatibus sed. Excepturi quod recusandae maxime blanditiis alias cupiditate natus atque.</canvas>
+</body>
+</html>

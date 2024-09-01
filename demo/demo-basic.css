@@ -1,0 +1,21 @@
+:root {
+    color-scheme: light dark;
+}
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 2%;
+}
+.demo-description {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: solid 2px currentColor;
+}

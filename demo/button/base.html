@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Base - Button</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.button-unset {
+    all: unset;
+}
+</style>
+</head>
+<body>
+<div class="demo-description">This file showcases the base styling options for the button component. It demonstrates various states, including default, disabled, and custom configurations such as height and border width adjustments. Additionally, it features common button styles and an example of an "unset" style, providing a comprehensive overview of the component's flexibility and default behavior.</div>
+<section class="demo-section">
+    <h2 class="demo-section-title">Main Buttons</h2>
+    <div class="button">DIV</div>
+    <button type="button">Button</button>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Disabled</h2>
+    <div class="button button-disabled">DIV</div>
+    <button type="button" disabled>Button</button>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Compound Edit (Height)</h2>
+    <div style="--button-height:50px">
+        <div class="button">DIV</div>
+        <button type="button">Button</button>
+    </div>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Compound Edit (Border Width)</h2>
+    <div style="--button-border-width:3px">
+        <div class="button">DIV</div>
+        <button type="button">Button</button>
+    </div>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Common Styles</h2>
+    <button type="button" class="button-accent">Accent</button>
+    <button type="button" class="button-accent" disabled>Accent</button>
+    <button type="button" class="button-danger">Danger</button>
+    <button type="button" class="button-danger" disabled>Danger</button>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Unset</h2>
+    <div class="button button-unset">DIV</div>
+    <button type="button" class="button-unset">Button</button>
+</section>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Text-Level Semantics */
+@layer base {
+    mark {
+        background-color: var(--accent-color);
+    }
+}

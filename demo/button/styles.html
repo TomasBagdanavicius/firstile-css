@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Styles - Button</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.toggle-switch-outer-knob {
+    --button-height: 20px;
+    --knob-offset: 3px;
+    --is-outer-bounding-box: 1;
+}
+.toggle-switch-small {
+    --button-height: 20px;
+    --box-width: 40px;
+    --knob-offset: -2px;
+}
+.check-box-bigger {
+    --button-height: 50px;
+    --icon-weight: 4px;
+    --is-rounded-edges: 1;
+}
+.check-box-2 {
+    --wing-angle: 50deg;
+    --left-wing-size: 25px;
+    --right-wing-size: 45px;
+    --icon-weight: 5px;
+    --is-rounded-edges: 1;
+}
+</style>
+</head>
+<body>
+<div class="demo-description">Demonstrates various button styles and configurations, including adjustable toggle switches with different knob positions and sizes, demonstrating the extensive customization options available.</div>
+<section class="demo-section">
+    <h2 class="demo-section-title">Toggle Switch</h2>
+    <button class="toggle-switch-with-knob-on">ON</button>
+    <button class="toggle-switch-with-knob-off">OFF</button>
+    <button class="toggle-switch-with-knob-on toggle-switch-outer-knob">ON</button>
+    <button class="toggle-switch-with-knob-off toggle-switch-outer-knob">OFF</button>
+    <button class="toggle-switch-with-knob-on toggle-switch-small">ON</button>
+    <button class="toggle-switch-with-knob-off toggle-switch-small">OFF</button>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Check Box</h2>
+    <button class="check-box-on">ON</button>
+    <button class="check-box-off">OFF</button>
+    <button class="check-box-on check-box-bigger">ON</button>
+    <button class="check-box-off check-box-bigger">OFF</button>
+    <button class="check-box-on check-box-2">ON</button>
+    <button class="check-box-off check-box-2">OFF</button>
+</section>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+@use "../../../../src/components/structural-content/modules/listing/styles";
+.listing-table-default {
+    @extend %listing-table-default;
+}
+.listing-table-pragmatic {
+    @extend %listing-table-pragmatic;
+}

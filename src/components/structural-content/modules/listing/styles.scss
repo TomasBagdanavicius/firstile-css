@@ -1,0 +1,86 @@
+@use "base";
+@use "../../../heading/base" as heading;
+@use "../../../table/style-placeholders";
+/* Structural Content: Listing */
+@layer style {
+    %listing-base {
+        > .listing-body {
+            > .listing-group {
+                gap: 10px;
+                > * {
+                    display: block;
+                }
+            }
+        }
+    }
+    %listing-table-base {
+        // Cell
+        > .listing-body > .listing-head > *,
+        > .listing-body > .listing-group > * > * {
+            @extend %table-cell;
+        }
+        > .listing-body {
+            @extend %table;
+            > .listing-head {
+                @extend %table-head, %table-row;
+                > * {
+                    @extend %table-cell-header;
+                }
+            }
+            > .listing-group {
+                @extend %table-body;
+                > * {
+                    @extend %table-row, %table-body-row;
+                    > * {
+                        @extend %table-body-data-cell;
+                    }
+                }
+            }
+        }
+    }
+    @mixin build-listing-table($name) {
+        %listing-table#{$name} {
+            @extend %listing-table-base;
+            > .listing-body {
+                > .listing-head {
+                    @extend %table#{$name}-head-row;
+                }
+                > .listing-group {
+                    > * {
+                        @extend %table#{$name}-body-row;
+                    }
+                }
+            }
+        }
+    }
+    // Table Default
+    @include build-listing-table("-default");
+    // Table Pragmatic
+    @include build-listing-table("-pragmatic");
+    %listing-table-pragmatic {
+        > .listing-body {
+            @extend %table-pragmatic-container;
+        }
+    }
+    // Odd-Even
+    %listing-odd-even {
+        > .listing-header {
+            padding-bottom: 10px;
+        }
+        > .listing-body {
+            > .listing-group {
+                > * {
+                    margin: 0;
+                    padding: 10px;
+                    &:nth-child(even) {
+                        border-radius: 10px;
+                        background-color: rgb(from var(--opposite-contrast) r g b / 0.03);
+                    }
+                }
+            }
+        }
+        > .listing-footer {
+            padding-inline: 10px;
+        }
+    }
+}

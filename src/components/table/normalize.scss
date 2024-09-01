@@ -1,0 +1,17 @@
+@use "../../base/normalize";
+/* Table */
+@layer normalize {
+    table {
+        border-spacing: 0;
+    }
+    caption {
+        @extend %normalize-text-alignment;
+    }
+    th,
+    td {
+        padding: 0;
+    }
+    th {
+        @extend %normalize-text-alignment, %normalize-font-weight;
+    }
+}

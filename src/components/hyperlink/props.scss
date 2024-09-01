@@ -1,0 +1,7 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --hyperlink-color: var(--accent-color),
+    --hyperlink-color-active: var(--accent-color-active),
+);
+@include root-props.addProps(functions.apply-user-properties($properties, hyperlink));

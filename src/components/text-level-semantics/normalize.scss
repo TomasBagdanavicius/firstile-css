@@ -1,0 +1,32 @@
+@use "../../base/normalize";
+/* Text-Level Semantics */
+@layer normalize {
+    blockquote {
+        margin: 0;
+    }
+    cite {
+        @extend %normalize-font-style;
+    }
+    strong {
+        @extend %normalize-font-weight;
+    }
+    em {
+        font-style: normal;
+    }
+    hr {
+        @extend %normalize-border;
+        margin: 0;
+    }
+    mark {
+        @extend %normalize-background;
+        color: inherit;
+    }
+    pre {
+        @extend %normalize-font;
+        margin: 0;
+        white-space: normal;
+    }
+    small {
+        @extend %normalize-font-size;
+    }
+}

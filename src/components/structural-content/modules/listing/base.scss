@@ -1,0 +1,17 @@
+@use "../../base";
+/* Structural Content: Listing */
+@layer base {
+    .listing-header {
+        position: relative;
+        padding-bottom: 20px;
+    }
+    .listing-group {
+        gap: 10px;
+        > * {
+            display: block;
+        }
+    }
+    .listing-footer {
+        padding-top: 20px;
+    }
+}

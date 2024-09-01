@@ -1,0 +1,9 @@
+@use "../../src/components/table/styles";
+@layer style {
+    .table-default {
+        @extend %table-default;
+    }
+    .table-pragmatic {
+        @extend %table-pragmatic;
+    }
+}

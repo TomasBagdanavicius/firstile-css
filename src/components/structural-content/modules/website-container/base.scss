@@ -1,0 +1,10 @@
+@use "../../base";
+@use "props";
+/* Structural Content: Website Container */
+@layer base {
+    .website-container {
+        max-width: var(--website-container-outer-width);
+        margin-inline: auto;
+        padding-inline: var(--website-container-gutter);
+    }
+}

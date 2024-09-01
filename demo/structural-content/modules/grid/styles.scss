@@ -1,0 +1,10 @@
+@use "../../../../src/components/structural-content/modules/grid/styles";
+.grid-grid {
+    @extend %grid-grid;
+}
+.grid-flex {
+    @extend %grid-flex;
+}
+.grid-flex-pct-gaps {
+    @extend %grid-flex-pct-gaps;
+}

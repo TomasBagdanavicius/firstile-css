@@ -1,0 +1,49 @@
+// Notes:
+// - Does not support pseudo classes in Firefox, Safari. Supported in Chrome though.
+// - Cannot achieve styling for the "busy" mode (when the progress bar is bouncing off both sides).
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Progress */
+@layer base {
+    progress {
+        border-radius: var(--progress-border-radius);
+        block-size: var(--progress-block-size);
+        inline-size: var(--progress-inline-size);
+        background: var(--progress-bg-color);
+        &::-webkit-progress-bar {
+            overflow: hidden;
+            border-radius: var(--progress-border-radius);
+            background: var(--progress-bg-color);
+        }
+        &::-webkit-progress-value {
+            border-radius: var(--progress-bar-border-radius);
+            background: var(--progress-bar-bg-color);
+        }
+        &::-moz-progress-bar {
+            border-radius: var(--progress-bar-border-radius);
+            background: var(--progress-bar-bg-color);
+        }
+    }
+    meter {
+        border-radius: var(--meter-border-radius);
+        block-size: var(--meter-block-size);
+        inline-size: var(--meter-inline-size);
+        background: var(--meter-bg-color);
+        &::-webkit-meter-bar {
+            overflow: hidden;
+            // Appears smaller when this is absent. `height:100%` does not work.
+            block-size: var(--meter-block-size);
+            border-radius: var(--meter-border-radius);
+            background: var(--meter-bg-color);
+        }
+        &::-webkit-meter-suboptimum-value {
+            border-radius: var(--meter-bar-border-radius);
+            background: var(--meter-bar-bg-color);
+        }
+        &::-moz-meter-bar {
+            border-radius: var(--meter-bar-border-radius);
+            background: var(--meter-bar-bg-color);
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Base - Document Context</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.main-palette > ::before {
+    display: block;
+    width: 50px;
+    height: 50px;
+    outline: solid 1px currentColor;
+    content: "";
+}
+.main-palette {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.main-palette > * {
+    display: flex;
+    align-items: center;
+    gap: inherit;
+}
+.middleground-color::before {
+    background-color: var(--mg-color);
+}
+.middleground-color-active::before {
+    background-color: var(--mg-color-active);
+}
+.foreground-color::before {
+    background-color: var(--fg-color);
+}
+.foreground-color-active::before {
+    background-color: var(--fg-color-active);
+}
+.ridge-color::before {
+    background-color: var(--ridge-color);
+}
+.details-color::before {
+    background-color: var(--details-color);
+}
+.accent-color::before {
+    background-color: var(--accent-color);
+}
+.accent-color-active::before {
+    background-color: var(--accent-color-active);
+}
+</style>
+</head>
+<body>
+<div class="demo-description">Displays foundational styles and layout settings for the document's visual structure and hierarchy.</div>
+<section class="demo-section">
+    <h2 class="demo-section-title">Main Palette</h2>
+    <div class="main-palette">
+        <div class="background-color">Background color<br>(Primary backdrop shade)</div>
+        <div class="middleground-color">Middleground color<br>(Intermediate layer tone)</div>
+        <div class="middleground-color-active">Middleground color (active)<br>(Highlighted mid-layer hue)</div>
+        <div class="foreground-color">Foreground color<br>(Foremost element color)</div>
+        <div class="foreground-color-active">Foreground color (active)<br>(Emphasized foreground shade)</div>
+        <div class="ridge-color">Ridge color<br>(Edge color separating distinct visual areas)</div>
+        <div class="details-color">Details color<br>(Fine details accentuation)</div>
+        <div class="accent-color">Accent color<br>(Standout or highlight color)</div>
+        <div class="accent-color-active">Accent color (active)<br>(Intensified highlight shade)</div>
+    </div>
+</section>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

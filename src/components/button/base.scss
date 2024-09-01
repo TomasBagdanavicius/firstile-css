@@ -1,0 +1,82 @@
+@use "../../partials/mixins";
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Button */
+@layer base {
+    @mixin button-active {
+        background-color: var(--button-bg-color-rollover);
+        // Resets hyperlink rollovers.
+        color: var(--button-color);
+    }
+    %button,
+    .button {
+        // Inheritance
+        --height: var(--button-height);
+        --enclosed-height: calc(var(--button-height) - var(--button-border-width) * 2);
+        // Calculated
+        --button-height-half: calc(var(--button-height) / 2);
+        display: inline-flex;
+        // To create gap between button text and accessories, eg. spinner.
+        gap: 10px;
+        vertical-align: top;
+        align-items: center;
+        justify-content: center;
+        min-height: var(--button-height);
+        padding: var(--button-y-padding) var(--button-x-padding);
+        // Border color with opacity is nice, because it blends into buttons background instead of external background and looks more natural in buttons in various colors.
+        border: solid var(--button-border-width) var(--button-border-color, rgb(from var(--opposite-contrast) r g b / .1));
+        border-radius: var(--button-border-radius);
+        background-color: var(--button-bg-color);
+        color: var(--button-color);
+        font: inherit;
+        line-height: 1.2;
+    }
+    %button-active,
+    .button-active {
+        @include button-active;
+    }
+    %button-disabled,
+    .button-disabled {
+        background-color: color-mix(in srgb, var(--contrast) 50%, var(--button-bg-color));
+        color: color-mix(in srgb, var(--button-color) 50%, var(--contrast));
+        cursor: not-allowed;
+    }
+    @media (hover: hover) {
+        .button-hover {
+            @include button-active;
+            cursor: pointer;
+        }
+        .button:not(.button-disabled):hover,
+        button:not([disabled]):hover {
+            @extend .button-hover;
+        }
+    }
+    button {
+        @extend %button;
+        &[disabled] {
+            @extend %button-disabled;
+        }
+    }
+    %button-enclosed-square {
+        @include mixins.enclosed;
+        aspect-ratio: 1;
+    }
+}
+/* Button */
+@layer type {
+    .button-danger {
+        --button-bg-color: var(--danger-color);
+        --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+        --button-color: #fff;
+        &:focus,
+        &:focus-visible {
+            outline-color: var(--danger-color);
+        }
+    }
+    .button-accent {
+        --button-bg-color: var(--accent-color);
+        --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+        --button-color: #fff;
+    }
+}

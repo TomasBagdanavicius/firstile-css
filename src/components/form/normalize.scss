@@ -1,0 +1,97 @@
+// Notes:
+// - The HTML specification requires the type attribute to be matched case-insensitively because it is primarily used in the <input> element (see: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#html_ordered_lists). For this reason the "i" symbol modifier is not necessary.
+@use "../../base/normalize";
+/* Form */
+@layer normalize {
+    ::placeholder {
+        color: inherit;
+    }
+    fieldset {
+        @extend %normalize-margin-padding, %normalize-border;
+        // Major UAs use `min-content` value.
+        min-inline-size: 0;
+    }
+    legend {
+        padding: 0;
+    }
+    input {
+        &[list] {
+            // Targets datalist picker button in Chrome.
+            &::-webkit-calendar-picker-indicator {
+                // Does not work without the `!important` flag.
+                display: none !important;
+            }
+        }
+    }
+    input,
+    select,
+    textarea {
+        @extend %normalize-appearance !optional;
+        vertical-align: top;
+    }
+    %fielded-input,
+    input[type=submit],
+    input[type=reset],
+    input[type=button],
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=search],
+    input[type=password],
+    select,
+    textarea {
+        padding: 0;
+        border: none;
+        background: none;
+        color: inherit;
+        font: inherit;
+    }
+    textarea {
+        // Firefox applies margin.
+        @extend %normalize-margin-padding;
+        resize: none;
+        height: 1lh;
+    }
+    :is(input, textarea, select):focus {
+        // Safari adds negative offset.
+        outline-offset: 0;
+    }
+    input[type=number] {
+        // Required in Firefox to remove the spinner buttons. This used to be `-moz-appearance`, but since it's deprecated, it might be removed from UA anytime.
+        appearance: textfield;
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+    input[type=search] {
+        // Removes the cancel button (normally on the right edge of the input) which clears the value.
+        &::-webkit-search-cancel-button,
+        // Removes the previous search results picker button (normally on the left edge of the input). Used in Safari.
+        &::-webkit-search-results-button {
+            display: none;
+        }
+    }
+    input[type=email],
+    input[type=password] {
+        // Credentials auto fill button (available in Safari).
+        &::-webkit-credentials-auto-fill-button {
+            visibility: hidden;
+        }
+    }
+    input[type=password] {
+        // Caps lock indicator (available in Safari).
+        &::-webkit-caps-lock-indicator {
+            visibility: hidden;
+        }
+        &::-webkit-strong-password-auto-fill-button {
+            // Using absolute position and width, because this pseudo element can affect the right input padding length.
+            position: absolute;
+            width: 0;
+            visibility: hidden;
+        }
+    }
+    input[type=checkbox] {
+        margin: 0;
+    }
+}

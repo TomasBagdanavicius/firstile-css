@@ -1,0 +1,13 @@
+@use "../../src/components/button/styles";
+.toggle-switch-with-knob-on {
+    @extend %toggle-switch-with-knob, %toggle-switch-with-knob-on;
+}
+.toggle-switch-with-knob-off {
+    @extend %toggle-switch-with-knob, %toggle-switch-with-knob-off;
+}
+.check-box-on {
+    @extend %check-box, %check-box-on;
+}
+.check-box-off {
+    @extend %check-box, %check-box-off;
+}

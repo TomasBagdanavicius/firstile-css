@@ -1,0 +1,19 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Structural Content */
+@layer normalize {
+  p {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

@@ -1,0 +1,24 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Popover */
+@layer base {
+    [popover],
+    dialog {
+        padding: var(--popover-padding);
+        border: solid var(--popover-border-width) var(--ridge-color);
+        border-radius: 15px;
+        background-color: var(--fg-color);
+        color: inherit;
+    }
+    [popover] {
+        &:popover-open {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    dialog,
+    [popover]:popover-open {
+        margin: auto;
+    }
+}

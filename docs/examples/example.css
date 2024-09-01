@@ -1,0 +1,139 @@
+@layer root, normalize, base;
+/* Base */
+@layer normalize {
+  ul,
+  ol,
+  menu, body {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  ol,
+  menu {
+    list-style: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Document context */
+@layer normalize {}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Document Context */
+@layer base {
+  html {
+    height: 100%;
+    text-rendering: optimizeSpeed;
+  }
+  body {
+    min-height: 100%;
+    min-width: 320px;
+    background-color: var(--bg-color, #fff);
+    color: var(--color, #000);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
+  }
+  body:fullscreen {
+    overflow: auto;
+  }
+}
+/* Hyperlink */
+@layer normalize {
+  a:any-link {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+/* Hyperlink */
+@layer base {
+  a:any-link {
+    color: var(--hyperlink-color);
+  }
+  @media (hover: hover) {
+    a:any-link:hover {
+      color: var(--hyperlink-color-active);
+    }
+  }
+  a:visited {
+    color: var(--hyperlink-color-active);
+  }
+}
+/* List */
+@layer normalize {
+  dl,
+  dd {
+    margin: 0;
+  }
+}
+/* List */
+@layer base {}
+/* Root Properties */
+@layer root {
+  :root {
+    color-scheme: light dark;
+    --container-width: 850;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-size: 14px;
+    --line-height: 1.3571428571;
+    --accent-color: #4169e1;
+    --accent-color-active: #214cce;
+    --danger-color: #f93a37;
+    --danger-color-active: #f60b07;
+    --success-color: #129745;
+    --success-color-active: #0d6930;
+    --hyperlink-color: var(--accent-color);
+    --hyperlink-color-active: var(--accent-color-active);
+    --list-item-indent: 30px;
+  }
+  :root[data-theme=dark] {
+    color-scheme: dark;
+    --theme-binary: 0;
+    --contrast: #000;
+    --opposite-contrast: #fff;
+    --bg-color: #212121;
+    --mg-color: #171717;
+    --mg-color-active: #1c1c1c;
+    --fg-color: #2f2f2f;
+    --fg-color-active: #3a3a3a;
+    --ridge-color: #444;
+    --color: #fff;
+    --details-color: #888;
+  }
+  :root[data-theme=light] {
+    color-scheme: light;
+    --theme-binary: 1;
+    --contrast: #fff;
+    --opposite-contrast: #000;
+    --bg-color: #fff;
+    --mg-color: #f9f9f9;
+    --mg-color-active: #ededed;
+    --fg-color: #fff;
+    --fg-color-active: #eee;
+    --ridge-color: #e5e5e5;
+    --color: #121212;
+    --details-color: #7d7d7d;
+  }
+}

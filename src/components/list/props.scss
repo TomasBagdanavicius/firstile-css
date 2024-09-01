@@ -1,0 +1,6 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --list-item-indent: 30px,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, list));

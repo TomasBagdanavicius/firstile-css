@@ -1,0 +1,14 @@
+@use "base";
+/* Details */
+@layer style {
+    %open-small-text {
+        color: var(--details-color);
+        font-size: 12px;
+        line-height: 15px;
+        &[open] {
+            > summary {
+                display: none;
+            }
+        }
+    }
+}

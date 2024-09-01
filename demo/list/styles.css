@@ -1,0 +1,144 @@
+/* Base */
+@layer normalize {
+  ul,
+  ol,
+  menu {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  ol,
+  menu {
+    list-style: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* List */
+@layer normalize {
+  dl,
+  dd {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* List */
+@layer base {}
+/* Grid */
+@layer style {
+  .description-list-label-value-pairs {
+    --column-count: 2;
+    --grid-gap: 10px;
+    --gaps-count: calc(var(--column-count) - 1);
+    --gaps-occupying: calc(var(--grid-gap) * var(--gaps-count));
+    --grid-gap-half: calc(var(--grid-gap) / 2);
+    --columns-occupying: calc(100% - var(--gaps-occupying));
+    --grid-item-width: calc(var(--columns-occupying) / var(--column-count));
+    --grid-item-margin-as-pct: var(--grid-gap-half);
+    --grid-outer-margin-as-pct: calc(0% - var(--grid-item-margin-as-pct));
+  }
+  .description-list-label-value-pairs {
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    gap: var(--grid-gap);
+  }
+}
+/* List */
+@layer style {
+  .regular-ordered-number-list-deep > li,
+  .regular-ordered-number-list-deep ol > li, .regular-unordered-bullet-list-deep > li,
+  .regular-unordered-bullet-list-deep ul > li, .regular-ordered-number-list > li, .regular-unordered-bullet-list > li {
+    position: relative;
+    padding-left: var(--list-item-indent);
+  }
+  .regular-ordered-number-list-deep > li::before,
+  .regular-ordered-number-list-deep ol > li::before, .regular-unordered-bullet-list-deep > li::before,
+  .regular-unordered-bullet-list-deep ul > li::before, .regular-ordered-number-list > li::before, .regular-unordered-bullet-list > li::before {
+    display: inline-flex;
+    width: calc(var(--list-item-indent) - var(--list-item-indent-gap));
+    margin: 0 var(--list-item-indent-gap) 0 calc(0px - var(--list-item-indent));
+    justify-content: flex-end;
+    align-items: center;
+    text-align: end;
+    white-space: nowrap;
+    content: "";
+  }
+  .regular-unordered-bullet-list-deep > li::before,
+  .regular-unordered-bullet-list-deep ul > li::before, .regular-unordered-bullet-list > li::before {
+    position: absolute;
+    top: calc((1lh - var(--bullet-size)) / 2);
+    left: calc(var(--list-item-indent) - var(--bullet-size) - var(--list-item-indent-gap));
+    width: var(--bullet-size);
+    aspect-ratio: 1;
+    margin: 0;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+  .regular-ordered-number-list-deep > li,
+  .regular-ordered-number-list-deep ol > li, .regular-ordered-number-list > li {
+    counter-increment: ol-counter;
+  }
+  .regular-ordered-number-list-deep > li::before,
+  .regular-ordered-number-list-deep ol > li::before, .regular-ordered-number-list > li::before {
+    content: counters(ol-counter, ".") ".";
+  }
+  .regular-unordered-bullet-list {
+    --list-item-indent-gap: 10px;
+    --bullet-size: .5em;
+  }
+  .regular-unordered-bullet-list-deep {
+    --bullet-size: .5em;
+    --list-item-indent-gap: 10px;
+  }
+  .regular-ordered-number-list {
+    --list-item-indent-gap: 5px;
+    counter-reset: ol-counter;
+  }
+  .regular-ordered-number-list-deep {
+    --list-item-indent-gap: 5px;
+  }
+  .regular-ordered-number-list-deep,
+  .regular-ordered-number-list-deep ol {
+    counter-reset: ol-counter;
+  }
+  .description-list-label-value-pairs {
+    --grid-gap: 5px;
+    grid-template-columns: repeat(2, max-content);
+    width: max-content;
+  }
+  .description-list-label-value-pairs > dt {
+    grid-column: 1;
+    font-weight: 700;
+  }
+  .description-list-label-value-pairs > dt::after {
+    content: ":";
+  }
+  .description-list-label-value-pairs > dd {
+    grid-column: 2;
+    margin: 0;
+    text-align: end;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,56 @@
+@use "../../base/normalize";
+/* Inline Semantic */
+@layer normalize {
+    var {
+        @extend %normalize-font-style;
+    }
+    kbd {
+        @extend %normalize-font;
+    }
+    sup,
+    sub {
+        @extend %normalize-font-size;
+        vertical-align: initial;
+    }
+    s {
+        @extend %normalize-text-decoration;
+    }
+    address {
+        @extend %normalize-font-style;
+    }
+    b {
+        @extend %normalize-font-weight;
+    }
+    code {
+        @extend %normalize-font;
+    }
+    del {
+        @extend %normalize-text-decoration;
+    }
+    dfn {
+        @extend %normalize-font-style;
+    }
+    ins {
+        @extend %normalize-text-decoration;
+    }
+    q {
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+    samp {
+        @extend %normalize-font;
+    }
+    i {
+        @extend %normalize-font-style;
+    }
+    u {
+        @extend %normalize-text-decoration;
+    }
+    rt {
+        @extend %normalize-font-size;
+        display: inline;
+        line-height: normal;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Styles - Progress</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../demo.css">
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+</style>
+</head>
+<body>
+<div class="demo-description">Demonstrates various styles for progress bars, including horizontal and vertical orientations, with and without floating value indicators.</div>
+<div class="progress-bar" data-value="50" style="--progress-value: 50%;"><span class="value">50%</span></div>
+<div class="progress-bar with-floating-value" data-value="50" style="--progress-value: 50%;"><span class="value">50%</span></div>
+<div class="progress-bar with-floating-value" data-value="1" style="--progress-value: 1%;"><span class="value">1%</span></div>
+<div class="progress-bar progress-bar-vertical" data-value="50" style="--progress-value: 50%;"><span class="value">50%</span></div>
+<div class="progress-bar progress-bar-vertical with-floating-value" data-value="50" style="--progress-value: 50%;"><span class="value">50%</span></div>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

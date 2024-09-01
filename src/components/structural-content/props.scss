@@ -1,0 +1,6 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --menu-bg-color: var(--fg-color),
+);
+@include root-props.addProps(functions.apply-user-properties($properties, structural-content));

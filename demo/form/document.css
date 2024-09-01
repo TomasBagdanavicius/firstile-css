@@ -1,0 +1,344 @@
+@layer root, normalize, base, type;
+/* Base */
+@layer normalize {
+  body, fieldset, textarea {
+    margin: 0;
+    padding: 0;
+  }
+  fieldset {
+    border: 0;
+  }
+  button, input,
+  select,
+  textarea {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Form */
+@layer normalize {
+  ::placeholder {
+    color: inherit;
+  }
+  fieldset {
+    min-inline-size: 0;
+  }
+  legend {
+    padding: 0;
+  }
+  input[list]::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
+  input,
+  select,
+  textarea {
+    vertical-align: top;
+  }
+  input[type=submit],
+  input[type=reset],
+  input[type=button],
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=number],
+  input[type=search],
+  input[type=password],
+  select,
+  textarea {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+  }
+  textarea {
+    resize: none;
+    height: 1lh;
+  }
+  :is(input, textarea, select):focus {
+    outline-offset: 0;
+  }
+  input[type=number] {
+    appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button {
+    display: none;
+  }
+  input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button {
+    display: none;
+  }
+  input[type=email]::-webkit-credentials-auto-fill-button,
+  input[type=password]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+  }
+  input[type=password]::-webkit-caps-lock-indicator {
+    visibility: hidden;
+  }
+  input[type=password]::-webkit-strong-password-auto-fill-button {
+    position: absolute;
+    width: 0;
+    visibility: hidden;
+  }
+  input[type=checkbox] {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Button */
+@layer normalize {
+  button {
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    vertical-align: top;
+  }
+}
+/* Button */
+@layer base {
+  input[type=button],
+  input[type=submit],
+  input[type=reset],
+  input[type=checkbox],
+  select, button,
+  .button {
+    --height: var(--button-height);
+    --enclosed-height: calc(var(--button-height) - var(--button-border-width) * 2);
+    --button-height-half: calc(var(--button-height) / 2);
+    display: inline-flex;
+    gap: 10px;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--button-height);
+    padding: var(--button-y-padding) var(--button-x-padding);
+    border: solid var(--button-border-width) var(--button-border-color, rgb(from var(--opposite-contrast) r g b/0.1));
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    font: inherit;
+    line-height: 1.2;
+  }
+  .button-active {
+    background-color: var(--button-bg-color-rollover);
+    color: var(--button-color);
+  }
+  :is(input[type=button], input[type=submit], input[type=reset], select)[disabled], input[type=checkbox][disabled], button[disabled],
+  .button-disabled {
+    background-color: color-mix(in srgb, var(--contrast) 50%, var(--button-bg-color));
+    color: color-mix(in srgb, var(--button-color) 50%, var(--contrast));
+    cursor: not-allowed;
+  }
+  @media (hover: hover) {
+    .button-hover, :is(input[type=button], input[type=submit], input[type=reset], select):not([disabled]):hover, input[type=checkbox]:not([disabled]):hover, .button:not(.button-disabled):hover,
+    button:not([disabled]):hover {
+      background-color: var(--button-bg-color-rollover);
+      color: var(--button-color);
+      cursor: pointer;
+    }
+  }
+}
+/* Button */
+@layer type {
+  .button-danger {
+    --button-bg-color: var(--danger-color);
+    --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+    --button-color: #fff;
+  }
+  .button-danger:focus, .button-danger:focus-visible {
+    outline-color: var(--danger-color);
+  }
+  .button-accent {
+    --button-bg-color: var(--accent-color);
+    --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+    --button-color: #fff;
+  }
+}
+/* Form */
+@layer base {
+  [disabled]:not(fieldset) {
+    cursor: not-allowed;
+  }
+  input[type=email],
+  input[type=password] {
+    position: relative;
+  }
+  input[type=email]::-webkit-credentials-auto-fill-button,
+  input[type=password]::-webkit-credentials-auto-fill-button {
+    cursor: pointer;
+  }
+  input[type=password] {
+    letter-spacing: 1px;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=tel],
+  input[type=number],
+  input[type=search] {
+    text-overflow: ellipsis;
+  }
+  label.active,
+  select {
+    cursor: pointer;
+  }
+  input:autofill,
+  textarea:autofill {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--input-color);
+    box-shadow: inset 0 0 0 var(--input-box-height) var(--input-box-bg-color);
+    caret-color: var(--input-color);
+  }
+  input[type=checkbox] {
+    width: var(--button-height);
+    aspect-ratio: 1;
+    border-radius: max(var(--button-height) / 4, 5px);
+  }
+  input[type=checkbox]:not([disabled]):checked {
+    background-color: var(--accent-color);
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=number],
+  input[type=search],
+  input[type=password],
+  textarea {
+    display: block;
+    width: 100%;
+    height: var(--input-box-height);
+    padding-left: calc(var(--input-box-inline-start-offset) + var(--input-box-inline-padding));
+    border: solid var(--input-box-border-width) var(--input-box-border-color);
+    border-radius: var(--input-box-border-radius);
+    background-color: var(--input-box-bg-color);
+    font-size: var(--input-box-font-size);
+  }
+  textarea {
+    height: var(--input-textarea-box-height);
+    padding-top: calc((min(var(--input-textarea-box-height), var(--input-box-height)) - var(--input-box-border-width) * 2 - 1lh) / 2);
+  }
+  ::placeholder {
+    color: var(--input-placeholder-color);
+    opacity: var(--input-placeholder-opacity);
+  }
+  label:has(input:is([type=checkbox], [type=radio])) {
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    gap: 10px;
+  }
+}
+/* Document context */
+@layer normalize {}
+/* Document Context */
+@layer base {
+  html {
+    height: 100%;
+    text-rendering: optimizeSpeed;
+  }
+  body {
+    min-height: 100%;
+    min-width: 320px;
+    background-color: var(--bg-color, #fff);
+    color: var(--color, #000);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
+  }
+  body:fullscreen {
+    overflow: auto;
+  }
+}
+/* Root Properties */
+@layer root {
+  :root {
+    color-scheme: light dark;
+    --input-box-height: 60px;
+    --input-box-border-radius: 5px;
+    --input-box-inline-padding: 15px;
+    --input-box-inline-start-offset: 0px;
+    --input-textarea-box-height: var(--input-box-height);
+    --input-box-border-width: 1px;
+    --input-box-border-color: var(--ridge-color);
+    --input-box-bg-color: var(--fg-color);
+    --input-box-font-size: 16px;
+    --input-color: var(--color);
+    --input-placeholder-color: inherit;
+    --input-placeholder-opacity: 0.5;
+    --button-height: 40px;
+    --button-bg-color: var(--fg-color);
+    --button-bg-color-rollover: var(--fg-color-active);
+    --button-color: var(--color);
+    --button-border-width: 1px;
+    --button-border-radius: calc(var(--button-height) / 2);
+    --button-x-padding: 20px;
+    --button-y-padding: 5px;
+    --button-transition-speed: 0.15s;
+    --container-width: 850;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-size: 14px;
+    --line-height: 1.3571428571;
+    --accent-color: #4169e1;
+    --accent-color-active: #214cce;
+    --danger-color: #f93a37;
+    --danger-color-active: #f60b07;
+    --success-color: #129745;
+    --success-color-active: #0d6930;
+  }
+  :root[data-theme=dark] {
+    color-scheme: dark;
+    --theme-binary: 0;
+    --contrast: #000;
+    --opposite-contrast: #fff;
+    --bg-color: #212121;
+    --mg-color: #171717;
+    --mg-color-active: #1c1c1c;
+    --fg-color: #2f2f2f;
+    --fg-color-active: #3a3a3a;
+    --ridge-color: #444;
+    --color: #fff;
+    --details-color: #888;
+  }
+  :root[data-theme=light] {
+    color-scheme: light;
+    --theme-binary: 1;
+    --contrast: #fff;
+    --opposite-contrast: #000;
+    --bg-color: #fff;
+    --mg-color: #f9f9f9;
+    --mg-color-active: #ededed;
+    --fg-color: #fff;
+    --fg-color-active: #eee;
+    --ridge-color: #e5e5e5;
+    --color: #121212;
+    --details-color: #7d7d7d;
+  }
+}
+
+/*# sourceMappingURL=document.css.map */

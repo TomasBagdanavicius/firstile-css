@@ -1,0 +1,6 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --heading-font-family: inherit,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, heading));

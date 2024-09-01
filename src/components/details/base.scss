@@ -1,0 +1,11 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Details */
+@layer base {
+    details {
+        > summary {
+            cursor: pointer;
+        }
+    }
+}

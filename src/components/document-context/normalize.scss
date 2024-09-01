@@ -1,0 +1,7 @@
+@use "../../base/normalize";
+/* Document context */
+@layer normalize {
+    body {
+        @extend %normalize-margin-padding;
+    }
+}

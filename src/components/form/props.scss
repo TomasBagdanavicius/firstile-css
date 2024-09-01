@@ -1,0 +1,19 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --input-box-height: 60px,
+    --input-box-border-radius: 5px,
+    --input-box-inline-padding: 15px,
+    --input-box-inline-start-offset: 0px,
+    --input-textarea-box-height: var(--input-box-height),
+    // Requires unit definition for CSS calculations.
+    --input-box-border-width: 1px,
+    --input-box-border-color: var(--ridge-color),
+    --input-box-bg-color: var(--fg-color),
+    --input-box-font-size: 16px,
+    // `currentColor` cannot be used, eg. using alongside `-webkit-text-fill-color` to enforce proper font color in Safari's default value of datetime inputs.
+    --input-color: var(--color),
+    --input-placeholder-color: inherit,
+    --input-placeholder-opacity: .5,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, form));

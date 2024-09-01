@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Light-Dark Var and Color Functions</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<style>
+:root {
+    --color: light-dark(green, red);
+}
+.light {
+    color-scheme: light;
+}
+.dark {
+    color-scheme: dark;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    border: dashed 1px #000;
+}
+.box-1 {
+    background-color: rgb(from var(--color) r g b);
+}
+.box-2 {
+    background-color: color-mix(in srgb, var(--color) 50%, #000);
+}
+.box-3 {
+    background-color: lab(from var(--color) l a b);
+}
+.box-4 {
+    background-color: hwb(from var(--color) h w b);
+}
+</style>
+</head>
+<body>
+<section class="light">
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="box box-3"></div>
+    <div class="box box-4"></div>
+</section>
+<section class="dark">
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="box box-3"></div>
+    <div class="box box-4"></div>
+</section>
+</body>
+</html>

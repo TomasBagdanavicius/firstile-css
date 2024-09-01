@@ -1,0 +1,41 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Structural Content */
+@layer normalize {
+  p {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Structural Content */
+@layer base {
+  p {
+    margin-bottom: 1em;
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

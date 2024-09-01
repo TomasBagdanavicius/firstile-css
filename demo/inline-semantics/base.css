@@ -1,0 +1,61 @@
+/* Base */
+@layer normalize {
+  kbd, code, samp {
+    font: inherit;
+  }
+  b {
+    font-weight: normal;
+  }
+  sup,
+  sub, rt {
+    font-size: 100%;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  var, address, dfn, i {
+    font-style: normal;
+  }
+  s, del, ins, u {
+    text-decoration: initial;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Inline Semantic */
+@layer normalize {
+  sup,
+  sub {
+    vertical-align: initial;
+  }
+  q::before, q::after {
+    content: none;
+  }
+  rt {
+    display: inline;
+    line-height: normal;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Inline Semantic */
+@layer base {}
+
+/*# sourceMappingURL=base.css.map */

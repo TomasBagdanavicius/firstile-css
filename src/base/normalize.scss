@@ -1,0 +1,51 @@
+/* Base */
+@layer normalize {
+    %normalize-box-sizing {
+        box-sizing: border-box;
+    }
+    %normalize-margin-padding {
+        margin: 0;
+        padding: 0;
+    }
+    %normalize-border {
+        border: 0;
+    }
+    %normalize-list-style {
+        list-style: none;
+    }
+    %normalize-font {
+        font: inherit;
+    }
+    %normalize-font-weight {
+        font-weight: normal;
+    }
+    %normalize-font-size {
+        font-size: 100%;
+    }
+    %normalize-appearance {
+        appearance: none;
+    }
+    %normalize-outline {
+        outline: none;
+    }
+    %normalize-font-style {
+        font-style: normal;
+    }
+    %normalize-background {
+        background: none;
+    }
+    %normalize-text-alignment {
+        text-align: initial;
+    }
+    %normalize-text-decoration {
+        text-decoration: initial;
+    }
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+    :focus-visible {
+        @extend %normalize-outline;
+    }
+}

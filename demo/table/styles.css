@@ -1,0 +1,228 @@
+/* Base */
+@layer normalize {
+  th {
+    font-weight: normal;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  caption, th {
+    text-align: initial;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Table */
+@layer normalize {
+  table {
+    border-spacing: 0;
+  }
+  th,
+  td {
+    padding: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Table */
+@layer base {}
+.table-default, .table-pragmatic {
+  --table-border-width: 1px;
+  --table-border-outer-width: 3px;
+  --table-border-inner-width: 1px;
+  --table-border-outer-color: var(--ridge-color);
+  --table-border-inner-color: var(--ridge-color);
+  --table-cell-x-padding: 10px;
+  --table-cell-y-padding: 5px;
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: solid var(--table-border-outer-width) var(--table-border-outer-color);
+}
+
+.table-default > :where(thead, tbody, tfoot) > tr > :where(th, td), .table-pragmatic > :where(thead, tbody, tfoot) > tr > :where(th, td) {
+  position: relative;
+  display: table-cell;
+  padding: var(--table-cell-y-padding) var(--table-cell-x-padding);
+  vertical-align: middle;
+}
+
+.table-default > :where(thead, tbody, tfoot) > tr > :where(th), .table-pragmatic > :where(thead, tbody, tfoot) > tr > :where(th) {
+  font-weight: 700;
+}
+
+.table-default > :where(thead, tbody, tfoot) > tr, .table-pragmatic > :where(thead, tbody, tfoot) > tr {
+  display: table-row;
+}
+
+.table-default > thead, .table-pragmatic > thead {
+  display: table-header-group;
+}
+
+.table-default > tbody, .table-pragmatic > tbody {
+  display: table-row-group;
+}
+
+.table-default > tbody > tr:nth-child(odd), .table-pragmatic > tbody > tr:nth-child(odd) {
+  background-color: var(--mg-color);
+}
+
+.table-default > tfoot, .table-pragmatic > tfoot {
+  display: table-footer-group;
+}
+
+.table-default > caption, .table-pragmatic > caption {
+  display: table-caption;
+}
+
+@media (max-width: 600px) {
+  .table-default, .table-pragmatic, .table-default > :where(thead, tbody, tfoot) > tr, .table-pragmatic > :where(thead, tbody, tfoot) > tr, .table-default > :where(thead, tbody, tfoot) > tr > :where(th, td), .table-pragmatic > :where(thead, tbody, tfoot) > tr > :where(th, td), .table-default > tbody, .table-pragmatic > tbody, .table-default > tfoot, .table-pragmatic > tfoot, .table-default > caption, .table-pragmatic > caption {
+    display: block;
+  }
+  .table-default > thead, .table-pragmatic > thead {
+    display: none;
+  }
+  .table-default > tbody > tr > td::before, .table-pragmatic > tbody > tr > td::before {
+    font-weight: 700;
+    content: attr(data-title) ": ";
+  }
+}
+.table-default > thead > tr > * {
+  border-bottom: solid var(--table-border-inner-width) var(--table-border-inner-color);
+}
+
+.table-default > tbody > tr:not(:first-child) > * {
+  border-top: solid var(--table-border-inner-width) var(--table-border-inner-color);
+}
+
+.table-default > tfoot > tr > * {
+  border-top: solid var(--table-border-inner-width) var(--table-border-inner-color);
+}
+
+.table-default > caption {
+  padding: var(--table-cell-y-padding) var(--table-cell-x-padding);
+  text-align: center;
+  font-weight: 700;
+  caption-side: bottom;
+}
+
+@media (min-width: 601px) {
+  .table-default > thead > tr > *:not(:first-child),
+  .table-default > tbody > tr > *:not(:first-child),
+  .table-default > tfoot > tr > *:not(:first-child) {
+    border-left: solid var(--table-border-inner-width) var(--table-border-inner-color);
+  }
+}
+@media (max-width: 600px) {
+  .table-default > tbody > tr:first-child > * {
+    border-top: solid var(--table-border-inner-width) var(--table-border-inner-color);
+  }
+}
+.table-pragmatic {
+  --table-gap: 5px;
+  --table-double-gap: calc(var(--table-gap) * 2 + var(--table-border-inner-width));
+  --table-triple-gap: calc(var(--table-gap) * 3 + var(--table-border-inner-width));
+  padding: var(--table-gap);
+}
+
+.table-pragmatic > tbody > tr > * {
+  padding: var(--table-cell-y-padding) var(--table-cell-x-padding);
+}
+
+.table-pragmatic > caption {
+  padding: var(--table-cell-y-padding) var(--table-cell-x-padding);
+  text-align: center;
+  font-weight: 700;
+  caption-side: bottom;
+}
+
+@media (min-width: 601px) {
+  .table-pragmatic > thead > tr > *:not(:first-child)::before,
+  .table-pragmatic > tbody > tr > *:not(:first-child)::before,
+  .table-pragmatic > tfoot > tr > *:not(:first-child)::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: var(--table-double-gap);
+    width: var(--table-border-inner-width);
+    background: var(--table-border-inner-color);
+    content: "";
+  }
+  .table-pragmatic > thead > tr > *::after,
+  .table-pragmatic > tfoot > tr > *::after {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    height: var(--table-border-inner-width);
+    background: var(--table-border-inner-color);
+    content: "";
+  }
+  .table-pragmatic > thead > tr > * {
+    padding-bottom: var(--table-triple-gap);
+  }
+  .table-pragmatic > tbody > tr > *:not(:first-child)::before {
+    bottom: 0;
+  }
+  .table-pragmatic > tfoot > tr > * {
+    padding-top: var(--table-triple-gap);
+  }
+  .table-pragmatic > tfoot > tr > *:not(:first-child)::before {
+    top: var(--table-double-gap);
+    bottom: 0;
+  }
+  .table-pragmatic > tfoot > tr > *::after {
+    top: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .table-pragmatic > tbody > tr:not(:first-child),
+  .table-pragmatic > tfoot,
+  .table-pragmatic > caption {
+    position: relative;
+    margin-top: var(--table-double-gap);
+  }
+  .table-pragmatic > tbody > tr:not(:first-child)::before,
+  .table-pragmatic > tfoot::before,
+  .table-pragmatic > caption::before {
+    position: absolute;
+    top: calc(0px - (var(--table-gap) + 1px));
+    left: 0;
+    right: 0;
+    height: var(--table-border-inner-width);
+    background: var(--table-border-inner-color);
+    content: "";
+  }
+  .table-pragmatic > caption {
+    margin-top: 0;
+    margin-bottom: var(--table-double-gap);
+  }
+  .table-pragmatic > caption::before {
+    top: auto;
+    bottom: calc(0px - (var(--table-gap) + 1px));
+  }
+}
+/* Table */
+@layer style {}
+@layer style {}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,314 @@
+/* Base */
+@layer normalize {
+  button {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Button */
+@layer normalize {
+  button {
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    vertical-align: top;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Button */
+@layer base {
+  button,
+  .button {
+    --height: var(--button-height);
+    --enclosed-height: calc(var(--button-height) - var(--button-border-width) * 2);
+    --button-height-half: calc(var(--button-height) / 2);
+    display: inline-flex;
+    gap: 10px;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--button-height);
+    padding: var(--button-y-padding) var(--button-x-padding);
+    border: solid var(--button-border-width) var(--button-border-color, rgb(from var(--opposite-contrast) r g b/0.1));
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    font: inherit;
+    line-height: 1.2;
+  }
+  .button-active {
+    background-color: var(--button-bg-color-rollover);
+    color: var(--button-color);
+  }
+  button[disabled],
+  .button-disabled {
+    background-color: color-mix(in srgb, var(--contrast) 50%, var(--button-bg-color));
+    color: color-mix(in srgb, var(--button-color) 50%, var(--contrast));
+    cursor: not-allowed;
+  }
+  @media (hover: hover) {
+    .button-hover, .button:not(.button-disabled):hover,
+    button:not([disabled]):hover {
+      background-color: var(--button-bg-color-rollover);
+      color: var(--button-color);
+      cursor: pointer;
+    }
+  }
+}
+/* Button */
+@layer type {
+  .button-danger {
+    --button-bg-color: var(--danger-color);
+    --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+    --button-color: #fff;
+  }
+  .button-danger:focus, .button-danger:focus-visible {
+    outline-color: var(--danger-color);
+  }
+  .button-accent {
+    --button-bg-color: var(--accent-color);
+    --button-bg-color-rollover: hsl(from var(--button-bg-color) h s calc(l - 10));
+    --button-color: #fff;
+  }
+}
+/* Icon Host */
+@layer accessories {
+  .check-box-on, .check-box-off {
+    --icon-width: 32px;
+    --icon-height: 32px;
+    --icon-color: currentColor;
+    --icon-color-alt: var(--accent-color, royalblue);
+    --icon-width-half: calc(var(--icon-width) / 2);
+    --icon-width-negative: calc(0px - var(--icon-width));
+    --icon-height-half: calc(var(--icon-height) / 2);
+    --icon-height-negative: calc(0px - var(--icon-height));
+    --icon-weight-half: calc(var(--icon-weight) / 2);
+    /* Sides */
+    --icon-weight-side-len: calc(var(--icon-weight) * cos(45deg));
+    position: relative;
+  }
+  .check-box-on, .check-box-off {
+    --icon-host-gap-before: 0px;
+    --icon-host-gap-after: 5px;
+    --icon-host-x-padding: calc(var(--icon-width) + var(--icon-host-gap-before) + var(--icon-host-gap-after));
+    --icon-host-y-padding: calc(var(--icon-height) + var(--icon-host-gap-before) + var(--icon-host-gap-after));
+  }
+  .check-box-on::before, .check-box-off::before {
+    position: absolute;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* CSS Icons */
+@layer accessories {
+  .check-box-on, .check-box-off {
+    --box-width: 50px;
+    --box-height: 50px;
+    --box-border-width: 0px;
+    --icon-weight: 3px;
+    --is-rounded-edges: 0;
+    --box-inner-width: calc(var(--box-width) - var(--box-border-width) * 2);
+    --box-inner-height: calc(var(--box-height) - var(--box-border-width) * 2);
+    --remaining-x-space: calc(var(--box-inner-width) - var(--icon-width));
+    --remaining-x-space-half: calc(var(--remaining-x-space) / 2);
+    --remaining-y-space: calc(var(--box-inner-height) - var(--icon-height));
+    --remaining-y-space-half: calc(var(--remaining-y-space) / 2);
+    --is-rounded-edges-norm: clamp(0, var(--is-rounded-edges), 1);
+    --rounded-edges-by-icon-weight: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * var(--icon-weight-half));
+  }
+  .check-box-on::before, .check-box-off::before, .check-box-on::after, .check-box-off::after {
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - var(--icon-height-half));
+    left: calc(50% - var(--icon-width-half));
+    z-index: 1;
+    background: var(--icon-color);
+    pointer-events: none;
+    content: "";
+  }
+  .check-box-on, .check-box-off {
+    --wing-angle: 45deg;
+    --left-wing-size: 20px;
+    --right-wing-size: 35px;
+    --transition-speed: .15s;
+    --left-wing-angle: var(--wing-angle);
+    --right-wing-angle: calc(90deg - var(--left-wing-angle));
+    --right-wing-x-length: calc(var(--right-wing-size) * sin(var(--right-wing-angle)));
+    --left-wing-x-length: calc(var(--left-wing-size) * sin(var(--left-wing-angle)));
+    --right-wing-y-length: calc(var(--right-wing-size) * cos(var(--right-wing-angle)));
+    --left-wing-y-length: calc(var(--left-wing-size) * cos(var(--left-wing-angle)));
+    --right-wing-head-height: calc(var(--icon-weight) * sin(var(--right-wing-angle)));
+    --right-wing-y-space: calc(var(--right-wing-y-length) + var(--right-wing-head-height));
+    --left-wing-head-height: calc(var(--icon-weight) * sin(var(--left-wing-angle)));
+    --left-wing-y-space: calc(var(--left-wing-y-length) + var(--left-wing-head-height));
+    --icon-width: calc(var(--right-wing-x-length) + var(--left-wing-x-length));
+    --icon-height: calc(max(var(--right-wing-y-space), var(--left-wing-y-space)));
+  }
+  .check-box-on::before, .check-box-off::before, .check-box-on::after, .check-box-off::after {
+    top: auto;
+    bottom: calc(50% - var(--icon-height-half));
+    width: var(--icon-weight);
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .check-box-on:before, .check-box-off:before {
+    left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length)));
+    height: var(--left-wing-size);
+    rotate: calc(0deg - var(--wing-angle));
+    transform-origin: 0 100%;
+  }
+  .check-box-on::after, .check-box-off::after {
+    left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length) + var(--icon-weight)));
+    height: var(--right-wing-size);
+    transform-origin: 100% 100%;
+    rotate: var(--right-wing-angle);
+  }
+  .check-box-on::before, .check-box-off::before, .check-box-on::after, .check-box-off::after {
+    transition: clip-path var(--transition-speed);
+  }
+  .check-box-off::before {
+    clip-path: inset(0 0 var(--left-wing-size) 0);
+    transition-delay: var(--transition-speed);
+  }
+  .check-box-off::after {
+    clip-path: inset(var(--right-wing-size) 0 0 0);
+  }
+  .check-box-on::before, .check-box-on::after {
+    clip-path: inset(0 0 0 0);
+  }
+  .check-box-on::before {
+    transition-delay: 0s;
+  }
+  .check-box-on::after {
+    transition-delay: var(--transition-speed);
+  }
+}
+/* Button */
+@layer style {
+  .toggle-switch-with-knob-on, .toggle-switch-with-knob-off {
+    --button-height: 30px;
+    --box-width: 50px;
+    --box-height: var(--button-height);
+    --box-border-width: 1px;
+    --knob-offset: -2px;
+    --box-bg-color-off: var(--button-bg-color);
+    --box-bg-color-on: var(--accent-color);
+    --box-border-color: var(--ridge-color);
+    --knob-color-off: var(--ridge-color);
+    --knob-color-on: #fff;
+    --is-outer-bounding-box: 0;
+    --box-height-half: calc(var(--box-height) / 2);
+    --box-border-max-width: calc(var(--box-height-half) / 2);
+    --box-border-width-calc: min(var(--box-border-width), var(--box-border-max-width));
+    --box-min-width: calc(var(--box-height) + var(--box-height-half));
+    --box-width-calc: max(var(--box-width), var(--box-min-width));
+    --box-inner-height: calc(var(--box-height) - var(--box-border-width-calc) * 2);
+    --box-inner-width: calc(var(--box-width-calc) - var(--box-border-width-calc) * 2);
+    --is-outer-bounding-box-norm: clamp(0, var(--is-outer-bounding-box), 1);
+    --occupy-box-max: calc((2 / 3) * var(--box-width-calc));
+    --knob-offset-max: calc(var(--occupy-box-max) - var(--box-height) + var(--box-border-width-calc));
+    --knob-offset-calc: min(var(--knob-offset), var(--knob-offset-max));
+    --overflow: max(0px, var(--knob-offset-calc) - var(--box-border-width-calc));
+    --box-outer-width: calc(var(--box-width-calc) + var(--overflow) * 2);
+    --box-outer-height: calc(var(--box-height) + var(--overflow) * 2);
+    --container-width: calc(var(--box-width-calc) + (var(--is-outer-bounding-box-norm) * (var(--box-outer-width) - var(--box-width-calc))));
+    --container-height: calc(var(--box-height) + (var(--is-outer-bounding-box-norm) * (var(--box-outer-height) - var(--box-height))));
+    --knob-min-size: max(5px, var(--box-inner-height) / 2);
+    --knob-size: max(var(--box-inner-height) + var(--knob-offset-calc) * 2, var(--knob-min-size));
+    --margin: calc((var(--container-height) - var(--knob-size)) / 2);
+    position: relative;
+    width: var(--container-width);
+    height: var(--container-height);
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+  }
+  .toggle-switch-with-knob-on::before, .toggle-switch-with-knob-off::before, .toggle-switch-with-knob-on::after, .toggle-switch-with-knob-off::after {
+    content: "";
+  }
+  .toggle-switch-with-knob-on, .toggle-switch-with-knob-off, .toggle-switch-with-knob-on::before, .toggle-switch-with-knob-off::before {
+    border-radius: calc(var(--container-height) / 2);
+  }
+  .toggle-switch-with-knob-on::before, .toggle-switch-with-knob-off::before {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: var(--box-width-calc);
+    height: var(--box-height);
+    translate: -50% -50%;
+    border: solid var(--box-border-width-calc) var(--box-border-color);
+    background-color: var(--box-bg-color-off);
+    transition: background-color var(--button-transition-speed);
+  }
+  .toggle-switch-with-knob-on::after, .toggle-switch-with-knob-off::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: var(--knob-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: translate var(--button-transition-speed);
+  }
+  .toggle-switch-with-knob-off::after {
+    background-color: var(--knob-color-off);
+    translate: var(--margin) -50%;
+  }
+  .toggle-switch-with-knob-on::before {
+    background-color: var(--box-bg-color-on);
+  }
+  .toggle-switch-with-knob-on::after {
+    background-color: var(--knob-color-on);
+    translate: calc(var(--container-width) - var(--knob-size) - var(--margin)) -50%;
+    outline: solid 1px var(--accent-color);
+  }
+  .check-box-on, .check-box-off {
+    --wing-color-undetermined: #ccc;
+    --wing-weight: 3px;
+    --left-wing-size: 15px;
+    --right-wing-size: 30px;
+    --button-x-padding: 0;
+    --button-y-padding: 0;
+    --button-border-radius: 5px;
+    width: var(--button-height);
+    border-radius: 5px;
+    transition: background-color var(--button-transition-speed);
+    font-size: 0;
+    line-height: 0;
+  }
+  .check-box-on {
+    background-color: var(--accent-color);
+    --icon-color: #fff;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

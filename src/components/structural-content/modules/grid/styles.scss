@@ -1,0 +1,45 @@
+// Notes
+// - Percentage row gaps calculate based on grid height.
+// - In `display:grid` layout, grid item's containing block is not the grid itself, but grid area, therefore percentage margins are calculated not based on grid width.
+/* Grid */
+@layer style {
+    %grid {
+        --column-count: 2;
+        --grid-gap: 10px;
+        // Calculated
+        --gaps-count: calc(var(--column-count) - 1);
+        --gaps-occupying: calc(var(--grid-gap) * var(--gaps-count));
+        --grid-gap-half: calc(var(--grid-gap) / 2);
+        --columns-occupying: calc(100% - var(--gaps-occupying));
+        --grid-item-width: calc(var(--columns-occupying) / var(--column-count));
+        --grid-item-margin-as-pct: var(--grid-gap-half);
+        --grid-outer-margin-as-pct: calc(0% - var(--grid-item-margin-as-pct));
+    }
+    %grid-grid {
+        @extend %grid;
+        display: grid;
+        grid-template-columns: repeat(var(--column-count), 1fr);
+        gap: var(--grid-gap);
+    }
+    %grid-flex {
+        @extend %grid;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--grid-gap);
+        > * {
+            width: var(--grid-item-width);
+        }
+    }
+    %grid-flex-pct-gaps {
+        @extend %grid-flex;
+        --grid-gap: 2%;
+        row-gap: 0;
+        margin-top: var(--grid-outer-margin-as-pct);
+        margin-bottom: var(--grid-outer-margin-as-pct);
+        > * {
+            width: var(--grid-item-width);
+            margin-top: var(--grid-item-margin-as-pct);
+            margin-bottom: var(--grid-item-margin-as-pct);
+        }
+    }
+}

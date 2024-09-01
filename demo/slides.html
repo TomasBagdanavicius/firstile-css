@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Demo Slides</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="demo-slides.css">
+</head>
+<body>
+<script>
+    const locations = [
+        { title: "Button Base", url: "button/base.html" },
+        { title: "Button Styles", url: "button/styles.html" },
+        { title: "Document Context", url: "document-context/base.html" },
+        { title: "Form Normalize", url: "form/normalize.html" },
+        { title: "Form Base", url: "form/base.html" },
+        { title: "Form Extended Normalize", url: "form-extended/normalize.html" },
+        { title: "Form Extended Base", url: "form-extended/base.html" },
+        { title: "Heading Base", url: "heading/base.html" },
+        { title: "List Styles", url: "list/styles.html" },
+        { title: "Popover Base", url: "popover/base.html" },
+        { title: "Progress Styles", url: "progress/styles.html" },
+        { title: "Structural Content Grid Styles", url: "structural-content/modules/grid/grid.html" },
+        { title: "Structural Content Listing Styles", url: "structural-content/modules/listing/listing.html" },
+        { title: "Structural Content Website Container Styles", url: "structural-content/modules/website-container/website-container.html" },
+        { title: "Table Styles", url: "table/styles.html" },
+    ];
+    let currentIndex = 0;
+    const iframe = document.createElement("iframe");
+    const pane = document.createElement("div");
+    pane.classList.add("settings-pane");
+    const navigationMenu = document.createElement("menu");
+    navigationMenu.classList.add("navigation");
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.classList.add("next-button");
+    const previousButton = document.createElement("button");
+    previousButton.textContent = "Previous";
+    previousButton.classList.add("previous-button");
+    navigationMenu.append(previousButton, nextButton);
+    const title = document.createElement("h1");
+    title.classList.add("title");
+    const pageCounter = document.createElement("div");
+    pageCounter.classList.add("page-counter");
+    pane.append(title, pageCounter, navigationMenu);
+    document.body.append(pane, iframe);
+    function loadLocation(index) {
+        title.textContent = locations[index]["title"];
+        const randomQueryString = `?${Math.random().toString(36).substr(2, 9)}`;
+        iframe.src = locations[index]["url"] + randomQueryString;
+        history.pushState(null, "", `?slide=${index}`);
+        pageCounter.innerText = `${index + 1}/${locations.length}`;
+        if (index === 0) {
+            previousButton.style.display = "none";
+        } else {
+            previousButton.style.display = "block";
+        }
+        if (index === locations.length - 1) {
+            nextButton.style.display = "none";
+        } else {
+            nextButton.style.display = "block";
+        }
+    }
+    nextButton.addEventListener("click", () => {
+        if (currentIndex < locations.length - 1) {
+            currentIndex++;
+            loadLocation(currentIndex);
+        }
+    });
+    previousButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            loadLocation(currentIndex);
+        }
+    });
+    function getSlideIndexFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const slideIndex = parseInt(params.get("slide"));
+        return isNaN(slideIndex) ? 0 : slideIndex;
+    }
+    // On page load, determine which slide to show based on the URL
+    window.addEventListener("load", () => {
+        currentIndex = getSlideIndexFromUrl();
+        loadLocation(currentIndex);
+    });
+    // Handle the back/forward navigation
+    window.addEventListener("popstate", () => {
+        currentIndex = getSlideIndexFromUrl();
+        loadLocation(currentIndex);
+    });
+</script>
+<script src="color-mode-switching.min.js"></script>
+<script>
+const storeController = colorMode.defaultLocalStorageStoreController;
+storeController.key = "demoColorMode";
+colorMode.setCustomStoreController(storeController, { apply: true });
+</script>
+</body>
+</html>

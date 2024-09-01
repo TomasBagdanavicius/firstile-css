@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Lighten and Darken</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<style>
+.box {
+    width: 100px;
+    height: 100px;
+}
+.box-1 {
+    /* Lighten #000 by 15% */
+    background-color: hsl(from #000 h s calc(l + 15%)); /* Safari compatible */
+    background-color: hsl(from #000 h s calc(l + 15)); /* #262626 */
+}
+.box-2 {
+    /* Darken #4169E1 (royalblue) by 15% */
+    background-color: hsl(from #4169E1 h s calc(l - 15%)); /* Safari compatible */
+    background-color: hsl(from #4169E1 h s calc(l - 15)); /* #1D44B9 */
+}
+</style>
+</head>
+<body>
+<div class="box box-1"></div>
+<div class="box box-2"></div>
+</body>
+</html>

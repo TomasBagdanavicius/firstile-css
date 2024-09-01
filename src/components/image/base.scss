@@ -1,0 +1,11 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Image */
+@layer base {
+    img {
+        height: auto;
+        max-width: fit-content;
+        width: 100%;
+    }
+}

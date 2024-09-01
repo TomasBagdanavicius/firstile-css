@@ -1,0 +1,19 @@
+/* Base */
+@layer normalize {
+  iframe,
+  fencedframe {
+    border: 0;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Embed */
+@layer normalize {}
+
+/*# sourceMappingURL=normalize.css.map */

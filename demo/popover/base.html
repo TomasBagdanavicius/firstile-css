@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Base - Popover</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+<div class="demo-description">Displays basic popover functionality with content, including a dialog box and a manually triggered popover for showcasing content within a popover element.</div>
+<dialog open>Dialog content. Lorem ipsum dolor sit amet consectetur adipisicing elit.</dialog>
+<div id="mypopover" popover="manual">Popover content. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+<script>
+document.getElementById("mypopover").showPopover();
+</script>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

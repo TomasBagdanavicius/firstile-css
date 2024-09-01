@@ -1,0 +1,73 @@
+@layer root, normalize, base;
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Structural Content */
+@layer normalize {
+  p {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Structural Content */
+@layer base {
+  p {
+    margin-bottom: 1em;
+  }
+}
+/* Structural Content: Website Container */
+@layer base {
+  .website-container {
+    max-width: var(--website-container-outer-width);
+    margin-inline: auto;
+    padding-inline: var(--website-container-gutter);
+  }
+}
+/* Root Properties */
+@layer root {
+  :root {
+    color-scheme: light dark;
+    --menu-bg-color: var(--fg-color);
+    --container-width: 1000;
+    --website-container-inner-width: calc(var(--container-width) * 1px);
+    --website-container-gutter: 15px;
+    --website-container-outer-width: calc(var(--website-container-inner-width) + var(--website-container-gutter) * 2);
+  }
+  :root[data-theme=dark] {
+    color-scheme: dark;
+    --theme-binary: 0;
+    --contrast: #000;
+    --opposite-contrast: #fff;
+  }
+  :root[data-theme=light] {
+    color-scheme: light;
+    --theme-binary: 1;
+    --contrast: #fff;
+    --opposite-contrast: #000;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

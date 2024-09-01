@@ -1,0 +1,105 @@
+@use "../button/base" as button;
+@use "../form/base" as form;
+@use "props";
+@use "normalize";
+@use "../../base/base";
+/* Form Extended */
+@layer base {
+    :is(input[type=radio], input[type=file], input[type=color], ::file-selector-button):not([disabled]) {
+        cursor: pointer;
+    }
+    ::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+    /* While UA adds the preferred cursor style to the text portion, it's not being added to the button itself. */
+    [disabled]::file-selector-button {
+        cursor: not-allowed;
+    }
+    // Base normalization - requires variables/options to normalize.
+    input[type=date],
+    input[type=datetime-local],
+    input[type=month],
+    input[type=week],
+    input[type=time] {
+        // Safari uses default values for datetime inputs when no value is given. It's not possible to reset the color of default value in a conventional way.
+        -webkit-text-fill-color: var(--input-color);
+    }
+    input[type=file] {
+        // On focus, with a button that has rounded corners, this looks better.
+        border-radius: var(--button-border-radius);
+        // Align text with the button vertically.
+        line-height: var(--button-height);
+        &::file-selector-button {
+            @extend %button;
+            margin-right: 10px;
+            line-height: initial;
+        }
+        &[disabled] {
+            &::file-selector-button {
+                @extend %button-disabled;
+            }
+        }
+        @media (hover: hover) {
+            &:not([disabled])::file-selector-button:hover {
+                @extend .button-hover;
+            }
+        }
+    }
+    input[type=color] {
+        padding: 5px;
+        &::-webkit-color-swatch {
+            border-radius: var(--button-border-radius);
+        }
+        &::-moz-color-swatch {
+            border-radius: var(--button-border-radius);
+        }
+    }
+    .button-danger::file-selector-button {
+        @extend .button-danger;
+    }
+    .button-accent::file-selector-button {
+        @extend .button-accent;
+    }
+    input[type=range] {
+        height: 5px;
+        background-color: currentColor;
+        &::-webkit-slider-thumb {
+            width: var(--input-range-thumb-size);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            cursor: grab;
+        }
+        &::-moz-range-thumb {
+            width: var(--input-range-thumb-size);
+            // `aspect-ratio` does not function in Firefox.
+            height: var(--input-range-thumb-size);
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+    }
+    input[type=radio] {
+        width: var(--button-height);
+        aspect-ratio: 1;
+        padding: 10px;
+        &:not([disabled]) {
+            &:checked {
+                background-color: var(--accent-color);
+            }
+        }
+    }
+    input[type=radio],
+    input[type=color] {
+        @extend %button;
+        @media (hover: hover) {
+            &:not([disabled]) {
+                &:hover {
+                    @extend .button-hover;
+                }
+            }
+        }
+        &[disabled] {
+            @extend %button-disabled;
+        }
+    }
+}

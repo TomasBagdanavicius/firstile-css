@@ -1,0 +1,43 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Image */
+@layer normalize {
+  figure {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Image */
+@layer base {
+  img {
+    height: auto;
+    max-width: fit-content;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

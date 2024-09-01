@@ -1,0 +1,13 @@
+@use "../../base/normalize";
+/* List */
+@layer normalize {
+    ul,
+    ol,
+    menu {
+        @extend %normalize-margin-padding, %normalize-list-style;
+    }
+    dl,
+    dd {
+        margin: 0;
+    }
+}

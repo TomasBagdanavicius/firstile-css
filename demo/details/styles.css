@@ -1,0 +1,55 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Details */
+@layer normalize {
+  details > summary:first-of-type {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Details */
+@layer base {
+  details > summary {
+    cursor: pointer;
+  }
+}
+/* Details */
+@layer style {
+  .open-small-text {
+    color: var(--details-color);
+    font-size: 12px;
+    line-height: 15px;
+  }
+  [open].open-small-text > summary {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

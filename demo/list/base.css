@@ -1,0 +1,49 @@
+/* Base */
+@layer normalize {
+  ul,
+  ol,
+  menu {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  ol,
+  menu {
+    list-style: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* List */
+@layer normalize {
+  dl,
+  dd {
+    margin: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* List */
+@layer base {}
+
+/*# sourceMappingURL=base.css.map */

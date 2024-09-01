@@ -1,0 +1,188 @@
+@layer root, normalize, base, type;
+/* Base */
+@layer normalize {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  progress {
+    appearance: none;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Progress */
+@layer normalize {
+  progress,
+  meter {
+    display: block;
+    block-size: 1em;
+    inline-size: 10em;
+    border: 0;
+    background: none;
+  }
+  progress::-webkit-progress-bar, progress::-webkit-progress-value {
+    background: none;
+  }
+  progress::-moz-progress-bar {
+    background: none;
+  }
+  meter::-webkit-meter-bar, meter::-webkit-meter-suboptimum-value {
+    background: none;
+  }
+  meter::-webkit-meter-bar {
+    block-size: 1em;
+    border: 0;
+    border-radius: 0;
+  }
+  meter::-moz-meter-bar {
+    background: none;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Progress */
+@layer base {
+  progress {
+    border-radius: var(--progress-border-radius);
+    block-size: var(--progress-block-size);
+    inline-size: var(--progress-inline-size);
+    background: var(--progress-bg-color);
+  }
+  progress::-webkit-progress-bar {
+    overflow: hidden;
+    border-radius: var(--progress-border-radius);
+    background: var(--progress-bg-color);
+  }
+  progress::-webkit-progress-value {
+    border-radius: var(--progress-bar-border-radius);
+    background: var(--progress-bar-bg-color);
+  }
+  progress::-moz-progress-bar {
+    border-radius: var(--progress-bar-border-radius);
+    background: var(--progress-bar-bg-color);
+  }
+  meter {
+    border-radius: var(--meter-border-radius);
+    block-size: var(--meter-block-size);
+    inline-size: var(--meter-inline-size);
+    background: var(--meter-bg-color);
+  }
+  meter::-webkit-meter-bar {
+    overflow: hidden;
+    block-size: var(--meter-block-size);
+    border-radius: var(--meter-border-radius);
+    background: var(--meter-bg-color);
+  }
+  meter::-webkit-meter-suboptimum-value {
+    border-radius: var(--meter-bar-border-radius);
+    background: var(--meter-bar-bg-color);
+  }
+  meter::-moz-meter-bar {
+    border-radius: var(--meter-bar-border-radius);
+    background: var(--meter-bar-bg-color);
+  }
+}
+/* Document context */
+@layer normalize {}
+/* Document Context */
+@layer base {
+  html {
+    height: 100%;
+    text-rendering: optimizeSpeed;
+  }
+  body {
+    min-height: 100%;
+    min-width: 320px;
+    background-color: var(--bg-color, #fff);
+    color: var(--color, #000);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
+  }
+  body:fullscreen {
+    overflow: auto;
+  }
+}
+/* Root Properties */
+@layer root {
+  :root {
+    color-scheme: light dark;
+    --progress-block-size: 10px;
+    --progress-inline-size: 100%;
+    --progress-bg-color: var(--ridge-color);
+    --progress-bar-bg-color: var(--accent-color);
+    --progress-border-radius: var(--progress-block-size-half);
+    --progress-bar-border-radius: var(--progress-border-radius);
+    --progress-block-size-half: calc(var(--progress-block-size) / 2);
+    --meter-block-size: var(--progress-block-size);
+    --meter-inline-size: var(--progress-inline-size);
+    --meter-bg-color: var(--progress-bg-color);
+    --meter-bar-bg-color: var(--progress-bar-bg-color);
+    --meter-border-radius: var(--meter-block-size-half);
+    --meter-bar-border-radius: var(--meter-border-radius);
+    --meter-block-size-half: calc(var(--meter-block-size) / 2);
+    --container-width: 850;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-size: 14px;
+    --line-height: 1.3571428571;
+    --accent-color: #4169e1;
+    --accent-color-active: #214cce;
+    --danger-color: #f93a37;
+    --danger-color-active: #f60b07;
+    --success-color: #129745;
+    --success-color-active: #0d6930;
+  }
+  :root[data-theme=dark] {
+    color-scheme: dark;
+    --theme-binary: 0;
+    --contrast: #000;
+    --opposite-contrast: #fff;
+    --bg-color: #212121;
+    --mg-color: #171717;
+    --mg-color-active: #1c1c1c;
+    --fg-color: #2f2f2f;
+    --fg-color-active: #3a3a3a;
+    --ridge-color: #444;
+    --color: #fff;
+    --details-color: #888;
+  }
+  :root[data-theme=light] {
+    color-scheme: light;
+    --theme-binary: 1;
+    --contrast: #fff;
+    --opposite-contrast: #000;
+    --bg-color: #fff;
+    --mg-color: #f9f9f9;
+    --mg-color-active: #ededed;
+    --fg-color: #fff;
+    --fg-color-active: #eee;
+    --ridge-color: #e5e5e5;
+    --color: #121212;
+    --details-color: #7d7d7d;
+  }
+}
+
+/*# sourceMappingURL=document.css.map */

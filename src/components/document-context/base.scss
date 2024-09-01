@@ -1,0 +1,25 @@
+@use "normalize";
+@use "props";
+@use "../../base/base";
+/* Document Context */
+@layer base {
+    html {
+        height: 100%;
+        text-rendering: optimizeSpeed;
+    }
+    body {
+        min-height: 100%;
+        min-width: 320px;
+        background-color: var(--bg-color, #fff);
+        color: var(--color, #000);
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+        line-height: var(--line-height);
+        text-size-adjust: none;
+        // Prevents webkit browsers from inflating text (eg. when they consider the text to be too small (especially in mobile), etc.).
+        -webkit-text-size-adjust: 100%;
+        &:fullscreen {
+            overflow: auto;
+        }
+    }
+}

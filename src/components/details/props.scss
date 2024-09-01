@@ -1,0 +1,4 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: ();
+@include root-props.addProps(functions.apply-user-properties($properties, details));

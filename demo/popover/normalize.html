@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Normalize - Popover</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="../demo-basic.css">
+<style>
+body > * {
+    left: 20px;
+}
+dialog {
+    top: 20px;
+}
+#mypopover {
+    top: 50px;
+}
+</style>
+</head>
+<body>
+<dialog open>Dialog content. Lorem ipsum dolor sit amet consectetur adipisicing elit.</dialog>
+<div id="mypopover" popover="manual">Popover content. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+<script>
+document.getElementById("mypopover").showPopover();
+</script>
+</body>
+</html>

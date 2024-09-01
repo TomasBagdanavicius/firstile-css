@@ -1,0 +1,7 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --popover-padding: 15px,
+    --popover-border-width: 1px,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, popover));

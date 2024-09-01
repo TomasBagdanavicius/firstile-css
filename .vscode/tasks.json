@@ -1,0 +1,76 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile stylesheets",
+            "type": "shell",
+            "command": "node ./scripts/compile-stylesheets.js",
+            "group": "test",
+            "presentation": {
+                "reveal": "never"
+            }
+        }, {
+            "label": "Empty distribution stylesheets",
+            "type": "shell",
+            "command": "./scripts/empty-dist-stylesheets.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "never"
+            }
+        }, {
+            "label": "Compile demo stylesheets",
+            "type": "shell",
+            "command": "./scripts/compile-demo-stylesheets.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "never"
+            }
+        }, {
+            "label": "Cleanup demo files",
+            "type": "shell",
+            "command": "./scripts/cleanup-demo-files.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "never"
+            }
+        }, {
+            "label": "Build and run with Docker",
+            "type": "shell",
+            "command": "./scripts/docker-build-and-run.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }, {
+            "label": "Stop Docker container",
+            "type": "shell",
+            "command": "./scripts/docker-stop-container.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }, {
+            "label": "Delete npm files",
+            "type": "shell",
+            "command": "./scripts/delete-npm-files.sh",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }, {
+            "label": "npm install",
+            "type": "shell",
+            "command": "npm install",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}

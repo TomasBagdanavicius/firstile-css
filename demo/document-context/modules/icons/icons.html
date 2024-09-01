@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Icons - Modules - Document Context</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="../../document.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../demo.css">
+<style>
+.group,
+.group > *,
+.group > * > * {
+    box-sizing: border-box;
+}
+.group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10px;
+}
+.group .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 75px;
+    flex: 0 0 100px;
+    aspect-ratio: 1;
+    background-color: var(--mg-color);
+}
+.group .container > * {
+    background-color: var(--fg-color);
+}
+.group .container > .self {
+    width: var(--icon-width);
+    height: var(--icon-height);
+}
+.group .container > .box {
+    width: 50px;
+    height: 50px;
+}
+</style>
+</head>
+<body>
+<template>
+    <section class="${name}">
+        <h2>${title}</h2>
+        <div class="group">
+            <div class="container">
+                <div class="self icon-${name}-self"></div>
+            </div>
+            <div class="container">
+                <div class="box icon-${name}-host"></div>
+            </div>
+            <div class="container">
+                <div class="box icon-${name}-host-top"></div>
+            </div>
+            <div class="container">
+                <div class="box icon-${name}-host-right"></div>
+            </div>
+            <div class="container">
+                <div class="box icon-${name}-host-bottom"></div>
+            </div>
+            <div class="container">
+                <div class="box icon-${name}-host-left"></div>
+            </div>
+            <div class="container">
+                <div class="icon-${name}-host-top">CSS Icon Host</div>
+            </div>
+            <div class="container">
+                <div class="icon-${name}-host-right">CSS Icon Host</div>
+            </div>
+            <div class="container">
+                <div class="icon-${name}-host-bottom">CSS Icon Host</div>
+            </div>
+            <div class="container">
+                <div class="icon-${name}-host-left">CSS Icon Host</div>
+            </div>
+        </div>
+    </section>
+</template>
+<script>
+const icons = {
+    "checkmark": "Checkmark",
+    "crossmark": "Crossmark",
+    "burger-menu": "Burger Menu",
+    "triple-dot-menu": "Triple Dot Menu",
+    "triple-dot-menu-horizontal": "Triple Dot Menu Horizontal",
+    "magnifying-glass": "Magnifying Glass",
+    "angle-rightwards": "Angle Rightwards",
+    "angle-rightwards-double": "Angle Rightwards Double",
+    "angle-leftwards": "Angle Leftwards",
+    "angle-leftwards-double": "Angle Leftwards Double",
+    "angle-upwards": "Angle Upwards",
+    "angle-upwards-double": "Angle Upwards Double",
+    "angle-downwards": "Angle Downwards",
+    "angle-downwards-double": "Angle Downwards Double",
+    "maximize": "Maximize",
+    "minimize": "Minimize",
+    "options": "Options",
+    "sun": "Sun",
+    "moon": "Moon",
+    "color-scheme": "Color Scheme",
+    "empty": "Empty",
+    "copy": "Copy",
+    "spinner": "Spinned",
+    "spinner-train-track": "Spinner Train Track",
+    "spinner2": "Spinner 2",
+    "bell": "Bell",
+    "person-profile": "User Profile",
+    "clock": "Clock",
+    "reload": "Reload",
+    "shutdown": "Shutdown",
+    "sand-clock": "Sand Clock",
+}
+const template = document.querySelector("template");
+let HTMLContent = template.content.firstElementChild.outerHTML;
+for (const [name, title] of Object.entries(icons)) {
+    let content = HTMLContent;
+    content = content.replaceAll("${name}", name);
+    content = content.replaceAll("${title}", title);
+    document.body.insertAdjacentHTML("beforeend", content);
+}
+</script>
+<script src="../../../color-mode-switching.min.js"></script>
+<script src="../../../demo.js"></script>
+</body>
+</html>

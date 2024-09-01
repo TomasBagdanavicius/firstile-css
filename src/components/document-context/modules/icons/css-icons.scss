@@ -1,0 +1,1539 @@
+@use "../../../../partials/keyframes/spin";
+@use "../../../../partials/mixins";
+/* CSS Icons */
+@layer accessories {
+    %icon-css {
+        --box-width: 50px;
+        --box-height: 50px;
+        --box-border-width: 0px;
+        @include mixins.apply-module-options((
+            --icon-weight: 3px,
+            --is-rounded-edges: 0,
+        ), document-context, icons);
+        // Calculated
+        --box-inner-width: calc(var(--box-width) - var(--box-border-width) * 2);
+        --box-inner-height: calc(var(--box-height) - var(--box-border-width) * 2);
+        --remaining-x-space: calc(var(--box-inner-width) - var(--icon-width));
+        --remaining-x-space-half: calc(var(--remaining-x-space) / 2);
+        --remaining-y-space: calc(var(--box-inner-height) - var(--icon-height));
+        --remaining-y-space-half: calc(var(--remaining-y-space) / 2);
+        --is-rounded-edges-norm: clamp(0, var(--is-rounded-edges), 1);
+        --rounded-edges-by-icon-weight: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * var(--icon-weight-half));
+        &::before,
+        &::after {
+            box-sizing: border-box;
+            position: absolute;
+            top: calc(50% - var(--icon-height-half));
+            left: calc(50% - var(--icon-width-half));
+            z-index: 1;
+            background: var(--icon-color);
+            pointer-events: none;
+            content: "";
+        }
+    }
+    %icon-self-css {
+        --box-width: calc(var(--icon-width) + var(--box-border-width) * 2);
+        --box-height: calc(var(--icon-height) + var(--box-border-width) * 2);
+        width: var(--box-width);
+        height: var(--box-height);
+    }
+    %icon-host-top-css,
+    %icon-host-to-top-css {
+        &::before,
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-host-right-css,
+    %icon-host-to-right-css {
+        &::before,
+        &::after {
+            left: calc(100% - var(--icon-width));
+        }
+    }
+    %icon-host-bottom-css,
+    %icon-host-to-bottom-css {
+        &::before,
+        &::after {
+            top: calc(100% - var(--icon-height));
+        }
+    }
+    %icon-host-left-css,
+    %icon-host-to-left-css {
+        &::before,
+        &::after {
+            left: 0;
+        }
+    }
+    %icon-css-box-size {
+        width: var(--box-width);
+        height: var(--box-height);
+    }
+    // Checkmark
+    %icon-css-checkmark {
+        --wing-angle: 45deg;
+        --left-wing-size: 20px;
+        --right-wing-size: 35px;
+        --transition-speed: .15s;
+        // Calculated
+        --left-wing-angle: var(--wing-angle);
+        --right-wing-angle: calc(90deg - var(--left-wing-angle));
+        --right-wing-x-length: calc(var(--right-wing-size) * sin(var(--right-wing-angle)));
+        --left-wing-x-length: calc(var(--left-wing-size) * sin(var(--left-wing-angle)));
+        --right-wing-y-length: calc(var(--right-wing-size) * cos(var(--right-wing-angle)));
+        --left-wing-y-length: calc(var(--left-wing-size) * cos(var(--left-wing-angle)));
+        --right-wing-head-height: calc(var(--icon-weight) * sin(var(--right-wing-angle)));
+        --right-wing-y-space: calc(var(--right-wing-y-length) + var(--right-wing-head-height));
+        --left-wing-head-height: calc(var(--icon-weight) * sin(var(--left-wing-angle)));
+        --left-wing-y-space: calc(var(--left-wing-y-length) + var(--left-wing-head-height));
+        --icon-width: calc(var(--right-wing-x-length) + var(--left-wing-x-length));
+        --icon-height: calc(max(var(--right-wing-y-space), var(--left-wing-y-space)));
+        &::before,
+        &::after {
+            top: auto;
+            bottom: calc(50% - var(--icon-height-half));
+            width: var(--icon-weight);
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &:before {
+            left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length)));
+            height: var(--left-wing-size);
+            rotate: calc(0deg - var(--wing-angle));
+            transform-origin: 0 100%;
+        }
+        &::after {
+            left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length) + var(--icon-weight)));
+            height: var(--right-wing-size);
+            transform-origin: 100% 100%;
+            rotate: var(--right-wing-angle);
+        }
+    }
+    %icon-css-checkmark-animated {
+        &::before,
+        &::after {
+            transition: clip-path var(--transition-speed);
+        }
+    }
+    %icon-css-checkmark-animated-start {
+        &::before {
+            clip-path: inset(0 0 var(--left-wing-size) 0);
+            transition-delay: var(--transition-speed);
+        }
+        &::after {
+            clip-path: inset(var(--right-wing-size) 0 0 0);
+        }
+    }
+    %icon-css-checkmark-animated-finish {
+        &::before,
+        &::after {
+            clip-path: inset(0 0 0 0);
+        }
+        &::before {
+            transition-delay: 0s;
+        }
+        &::after {
+            transition-delay: var(--transition-speed);
+        }
+    }
+    %icon-css-checkmark-top {
+        &::before {
+            top: calc(var(--right-wing-y-space) - var(--left-wing-size));
+        }
+        &::after {
+            top: calc(0px - var(--right-wing-size) + var(--right-wing-y-space));
+        }
+    }
+    %icon-css-checkmark-right {
+        &::before {
+            left: calc(100% - var(--right-wing-x-length));
+        }
+        &::after {
+            left: calc(100% - (var(--right-wing-x-length) + var(--icon-weight)));
+        }
+    }
+    %icon-css-checkmark-bottom {
+        &::before {
+            top: calc(100% - var(--left-wing-size));
+        }
+        &::after {
+            top: calc(100% - var(--right-wing-size));
+        }
+    }
+    %icon-css-checkmark-left {
+        &::before {
+            left: var(--left-wing-x-length);
+        }
+        &::after {
+            left: calc(var(--left-wing-x-length) - var(--icon-weight));
+        }
+    }
+    // Crossmark
+    %icon-css-crossmark {
+        --propeller-size: 40px;
+        // Calculated
+        --blade-length: calc((var(--propeller-size) - var(--icon-weight)) / 2);
+        --inner-space-length: calc(var(--blade-length) * cos(45deg) * 2);
+        --propeller-side-length: calc(var(--propeller-size) * cos(45deg));
+        --head-x-offset: calc(var(--icon-weight) - var(--icon-weight-side-len));
+        --size: calc(var(--inner-space-length) + var(--icon-weight-side-len) * 2);
+        --size-half: calc(var(--size) / 2);
+        --icon-width: var(--size);
+        --icon-height: var(--size);
+        &::before,
+        &::after {
+            width: var(--icon-weight);
+            height: var(--propeller-size);
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &::before {
+            top: calc(50% - var(--size-half));
+            left: calc(50% - var(--size-half) - calc(var(--icon-weight) - var(--icon-weight-side-len)));
+            transform-origin: 100% 0;
+            rotate: -45deg;
+        }
+        &::after {
+            top: calc(50% - var(--size-half));
+            left: calc(50% + var(--size-half) - var(--icon-weight-side-len));
+            transform-origin: 0 0;
+            rotate: 45deg;
+        }
+    }
+    %icon-css-crossmark-animated-start {
+        &::before,
+        &::after {
+            height: 0;
+            transition: height .2s;
+        }
+        &::before {
+            transition-delay: .2s;
+        }
+    }
+    %icon-css-crossmark-animated-finish {
+        &::before,
+        &::after {
+            height: var(--propeller-size);
+            transition-delay: 0s;
+        }
+        &::after {
+            transition-delay: .2s;
+        }
+    }
+    %icon-css-crossmark-top {
+        &::before,
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-crossmark-right {
+        &::before {
+            left: calc(100% - (var(--icon-weight-side-len) + var(--propeller-side-length) + var(--head-x-offset)));
+        }
+        &::after {
+            left: calc(100% - var(--icon-weight-side-len));
+        }
+    }
+    %icon-css-crossmark-bottom {
+        &::before,
+        &::after {
+            top: calc(100% - (var(--propeller-side-length) + var(--icon-weight-side-len)));
+        }
+    }
+    %icon-css-crossmark-left {
+        &::before {
+            left: calc(0px - var(--head-x-offset));
+        }
+        &::after {
+            left: calc(var(--icon-weight) - var(--head-x-offset) + var(--inner-space-length));
+        }
+    }
+    // Triple Marker
+    %triple-marker-icon {
+        --icon-width: var(--marker-width);
+        --icon-height: calc((var(--marker-height) * 3) + (var(--icon-gap) * 2));
+        --marker-width-half: calc(var(--marker-width) / 2);
+        --marker-height-half: calc(var(--marker-height) / 2);
+        --marker-plus-gap: calc(var(--marker-height) + var(--icon-gap));
+        --marker1-color: var(--icon-color);
+        --marker2-color: var(--icon-color);
+        --marker3-color: var(--icon-color);
+        &::before,
+        &::after {
+            width: var(--icon-width);
+            height: var(--marker-height);
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &::before {
+            background-color: var(--marker1-color);
+            box-shadow: 0 var(--marker-plus-gap) 0 var(--marker2-color);
+        }
+        &::after {
+            top: calc(50% + var(--marker-height-half) + var(--icon-gap));
+            background-color: var(--marker3-color);
+        }
+    }
+    %triple-marker-icon-top {
+        &::before {
+            top: 0;
+        }
+        &::after {
+            top: calc(var(--icon-height) - var(--marker-height));
+        }
+    }
+    %triple-marker-icon-right {
+        &::before {
+            right: 0;
+            left: auto;
+        }
+        &::after {
+            right: 0;
+            left: auto;
+        }
+    }
+    %triple-marker-icon-bottom {
+        &::before {
+            top: calc(100% - var(--icon-height));
+        }
+        &::after {
+            top: calc(100% - var(--marker-height));
+        }
+    }
+    %triple-marker-icon-left {
+        &::before,
+        &::after {
+            left: 0;
+        }
+    }
+    // Burger Menu
+    %icon-css-burger-menu {
+        @extend %triple-marker-icon;
+        --stripe-size: 40px;
+        --icon-gap: 5px;
+        --stripe1-color: var(--icon-color);
+        --stripe2-color: var(--icon-color);
+        --stripe3-color: var(--icon-color);
+        // Calculated
+        --stripe-plus-gap: calc(var(--icon-weight) + var(--icon-gap));
+        --marker-width: var(--stripe-size);
+        --marker-height: var(--icon-weight);
+        --marker1-color: var(--stripe1-color);
+        --marker2-color: var(--stripe2-color);
+        --marker3-color: var(--stripe3-color);
+        &::before,
+        &::after {
+            transition-property: top, left, right, rotate, transform-origin, box-shadow;
+            transition-duration: 0.5s;
+        }
+    }
+    %icon-css-burger-menu-animated-finish {
+        &::before,
+        &::after {
+            top: calc(50% - var(--icon-weight-half));
+            transform-origin: 50% 50%;
+        }
+        &::before {
+            box-shadow: none;
+            rotate: 45deg;
+        }
+        &::after {
+            rotate: -45deg;
+        }
+    }
+    %icon-css-burger-menu-top {
+        @extend %triple-marker-icon-top;
+    }
+    %icon-css-burger-menu-top-animated-finish {
+        &::before,
+        &::after {
+            top: calc(var(--icon-weight) + var(--icon-gap));
+        }
+    }
+    %icon-css-burger-menu-right {
+        @extend %triple-marker-icon-right;
+    }
+    %icon-css-burger-menu-bottom {
+        @extend %triple-marker-icon-bottom;
+    }
+    %icon-css-burger-menu-bottom-animated-finish {
+        &::before,
+        &::after {
+            top: calc(100% - (var(--stripe-plus-gap) + var(--icon-weight)));
+        }
+    }
+    %icon-css-burger-menu-left {
+        @extend %triple-marker-icon-left;
+    }
+    // Triple Dot Menu (Any)
+    %triple-dot-menu-icon {
+        --icon-weight: var(--dot-size);
+        --dot-size: 5px;
+        --icon-gap: 3px;
+        --dot1-color: var(--icon-color);
+        --dot2-color: var(--icon-color);
+        --dot3-color: var(--icon-color);
+        // Calculated
+        --dot-size-half: calc(var(--dot-size) / 2);
+        --dot-plus-gap: calc(var(--dot-size) + var(--icon-gap));
+        --marker-width: var(--dot-size);
+        --marker-height: var(--dot-size);
+        --marker1-color: var(--dot1-color);
+        --marker2-color: var(--dot2-color);
+        --marker3-color: var(--dot3-color);
+    }
+    // Triple Dot Menu
+    %icon-css-triple-dot-menu {
+        @extend %triple-marker-icon, %triple-dot-menu-icon;
+    }
+    %icon-css-triple-dot-menu-top {
+        @extend %triple-marker-icon-top;
+    }
+    %icon-css-triple-dot-menu-right {
+        @extend %triple-marker-icon-right;
+    }
+    %icon-css-triple-dot-menu-bottom {
+        @extend %triple-marker-icon-bottom;
+    }
+    %icon-css-triple-dot-menu-left {
+        @extend %triple-marker-icon-left;
+    }
+    // Triple Dot Menu Horizontal
+    %icon-css-triple-dot-menu-horizontal {
+        @extend %triple-dot-menu-icon;
+        // Calculated
+        --icon-width: calc((var(--dot-size) * 3) + (var(--icon-gap) * 2));
+        --icon-height: var(--dot-size);
+        &::before,
+        &::after {
+            width: var(--dot-size);
+            height: var(--dot-size);
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &::before {
+            box-shadow: var(--dot-plus-gap) 0 0;
+        }
+        &::after {
+            left: calc(50% + var(--dot-size-half) + var(--icon-gap));
+        }
+    }
+    %icon-css-triple-dot-menu-horizontal-top {
+        &::before,
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-triple-dot-menu-horizontal-right {
+        &::before {
+            left: calc(100% - var(--icon-width));
+        }
+        &::after {
+            left: calc(100% - var(--dot-size));
+        }
+    }
+    %icon-css-triple-dot-menu-horizontal-bottom {
+        &::before,
+        &::after {
+            top: calc(100% - var(--icon-height));
+        }
+    }
+    %icon-css-triple-dot-menu-horizontal-left {
+        &::before {
+            left: 0;
+        }
+        &::after {
+            left: calc(var(--icon-width) - var(--dot-size));
+        }
+    }
+    // Magnifying Glass
+    %icon-css-magnifying-glass {
+        --glass-frame-size: 30px;
+        --handle-length: 20px;
+        /* Binary options */
+        --is-handle-lhs: 0;
+        // Calculated
+        --glass-frame-size-half: calc(var(--glass-frame-size) / 2);
+        /* Imaginary handle line starting at the middle of the glass frame. */
+        --handle-line-len: calc((var(--handle-length) + var(--glass-frame-size-half) - 1px) * cos(45deg));
+        --half-icon-weight-side-len: calc(var(--icon-weight-half) * cos(45deg));
+        /* Not less than glass frame size, in case the handle is very short. */
+        --icon-size: max(var(--glass-frame-size), calc(var(--glass-frame-size-half) + var(--half-icon-weight-side-len) + var(--handle-line-len)));
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        --icon-gap: calc(var(--icon-size) - var(--glass-frame-size));
+        --is-handle-lhs-calc: clamp(0, var(--is-handle-lhs), 1);
+        --handle-angle: calc((-45 + (var(--is-handle-lhs-calc) * (45 - -45))) * 1deg);
+        --glass-frame-offset: calc(0px + (var(--is-handle-lhs-calc) * (var(--icon-gap) - 0px)));
+        &::before {
+            left: calc(50% - var(--icon-width-half) + var(--glass-frame-offset));
+            width: var(--glass-frame-size);
+            aspect-ratio: 1;
+            border: solid var(--icon-weight) currentColor;
+            border-radius: 50%;
+            background: transparent;
+        }
+        &::after {
+            top: calc(50% + var(--glass-frame-size-half) - var(--icon-height-half));
+            left: calc(50% - ((var(--icon-gap) + var(--icon-weight)) / 2) + var(--glass-frame-offset));
+            width: var(--icon-weight);
+            height: var(--handle-length);
+            transform-origin: 50% 0;
+            /* `-1px` is used to fully intersect with the glass frame, otherwise there are gap pixels. */
+            transform: rotate(var(--handle-angle)) translateY(calc(var(--glass-frame-size-half) - 1px));
+            border-radius: 0 0 var(--rounded-edges-by-icon-weight) var(--rounded-edges-by-icon-weight);
+        }
+    }
+    %icon-css-magnifying-glass-top {
+        &::before {
+            top: 0;
+        }
+        &::after {
+            top: var(--glass-frame-size-half);
+        }
+    }
+    %icon-css-magnifying-glass-right {
+        &::before {
+            left: calc(100% - var(--icon-width) + var(--glass-frame-offset));
+        }
+        &::after {
+            left: calc(100% - var(--icon-gap) - var(--glass-frame-size-half) - var(--icon-weight-half) + var(--glass-frame-offset));
+        }
+    }
+    %icon-css-magnifying-glass-bottom {
+        &::before {
+            top: calc(100% - var(--icon-height));
+        }
+        &::after {
+            top: calc(100% - var(--icon-gap) - var(--glass-frame-size-half));
+        }
+    }
+    %icon-css-magnifying-glass-left {
+        &::before {
+            left: var(--glass-frame-offset);
+        }
+        &::after {
+            left: calc(var(--glass-frame-size-half) - var(--icon-weight-half) + var(--glass-frame-offset));
+        }
+    }
+    // Angle Icon
+    %angle-icon {
+        --wing-length: 20px;
+        // Calculated
+        --wing-length-side-len: calc(var(--wing-length) * cos(45deg));
+        --wing-inner-length: calc(var(--wing-length) - var(--icon-weight));
+        --wing-inner-length-side-len: calc(var(--wing-inner-length) * cos(45deg));
+        &::before,
+        &::after {
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+    }
+    %angle-x-icon {
+        --icon-width: calc(var(--wing-inner-length-side-len) + var(--icon-weight-side-len) * 2);
+        --icon-height: calc(var(--icon-weight-side-len) * 2 + var(--wing-inner-length-side-len) * 2);
+        &::before,
+        &::after {
+            width: var(--wing-length);
+            height: var(--icon-weight);
+        }
+        &::before {
+            top: 50%;
+        }
+        &::after {
+            top: calc(50% - var(--icon-weight));
+        }
+    }
+    %angle-x-top-icon {
+        &::before {
+            top: var(--wing-length-side-len);
+        }
+        &::after {
+            top: calc(var(--wing-length-side-len) - var(--icon-weight));
+        }
+    }
+    %angle-x-bottom-icon {
+        &::before {
+            top: calc(100% - var(--wing-length-side-len));
+        }
+        &::after {
+            top: calc(100% - (var(--wing-length-side-len) + var(--icon-weight)));
+        }
+    }
+    %angle-y-icon {
+        --icon-width: calc(var(--icon-weight-side-len) * 2 + var(--wing-inner-length-side-len) * 2);
+        --icon-height: calc(var(--wing-inner-length-side-len) + var(--icon-weight-side-len) * 2);
+        &::before,
+        &::after {
+            width: var(--icon-weight);
+            height: var(--wing-length);
+        }
+        &::before {
+            left: 50%;
+        }
+        &::after {
+            left: calc(50% - var(--icon-weight));
+        }
+    }
+    %angle-y-right-icon {
+        &::before {
+            left: calc(100% - var(--wing-length-side-len));
+        }
+        &::after {
+            left: calc(100% - (var(--wing-length-side-len) + var(--icon-weight)));
+        }
+    }
+    %angle-y-left-icon {
+        &::before {
+            left: var(--wing-length-side-len);
+        }
+        &::after {
+            left: calc(var(--wing-length-side-len) - var(--icon-weight));
+        }
+    }
+    %angle-up-icon {
+        &::before {
+            rotate: 45deg;
+            transform-origin: 0 0;
+        }
+        &::after {
+            rotate: -45deg;
+            transform-origin: 100% 0;
+        }
+    }
+    %angle-right-icon {
+        &::before,
+        &::after {
+            left: calc(50% - (var(--wing-length) - var(--icon-width-half)));
+        }
+        &::before {
+            rotate: 45deg;
+            transform-origin: 100% 0;
+        }
+        &::after {
+            rotate: -45deg;
+            transform-origin: 100% 100%;
+        }
+    }
+    %angle-right-right-icon {
+        &::before,
+        &::after {
+            left: calc(100% - ((var(--wing-length) - var(--icon-width)) + var(--icon-width)));
+        }
+    }
+    %angle-right-left-icon {
+        &::before,
+        &::after {
+            left: calc(0px - (var(--wing-length) - var(--icon-width)));
+        }
+    }
+    %angle-down-icon {
+        &::before,
+        &::after {
+            top: calc(50% - (var(--wing-length) - var(--icon-height-half)));
+        }
+        &::before {
+            rotate: -45deg;
+            transform-origin: 0 100%;
+        }
+        &::after {
+            rotate: 45deg;
+            transform-origin: 100% 100%;
+        }
+    }
+    %angle-down-top-icon {
+        &::before,
+        &::after {
+            top: calc(0px - (var(--wing-length) - var(--icon-height)));
+        }
+    }
+    %angle-down-bottom-icon {
+        &::before,
+            &::after {
+                top: calc(100% - var(--wing-length));
+            }
+    }
+    %angle-left-icon {
+        &::before {
+            rotate: -45deg;
+            transform-origin: 0 0;
+        }
+        &::after {
+            rotate: 45deg;
+            transform-origin: 0 100%;
+        }
+    }
+    // Double
+    %angle-double-icon {
+        --icon-gap: 10px;
+        // Calculated
+        --icon-weight-hyp-len: calc(var(--icon-weight) / cos(45deg));
+        --icon-gap-side-len: calc(var(--icon-gap) * cos(45deg));
+        --offset: calc(var(--icon-weight) + var(--icon-gap-side-len));
+        --offset-negative: calc(0px - var(--offset));
+        --icon-inline-size: calc(var(--icon-weight-hyp-len) * 2 + var(--icon-gap) + var(--wing-inner-length-side-len));
+    }
+    %angle-x-double-icon {
+        --icon-width: var(--icon-inline-size);
+    }
+    %angle-y-double-icon {
+        --icon-height: var(--icon-inline-size);
+    }
+    %angle-up-double-icon {
+        &::before {
+            box-shadow: var(--offset) var(--offset) 0;
+        }
+        &::after {
+            box-shadow: var(--offset-negative) var(--offset) 0;
+        }
+    }
+    %angle-right-double-icon {
+        &::before {
+            box-shadow: var(--offset-negative) var(--offset) 0;
+        }
+        &::after {
+            box-shadow: var(--offset-negative) var(--offset-negative) 0;
+        }
+    }
+    %angle-down-double-icon {
+        &::before {
+            box-shadow: var(--offset) var(--offset-negative) 0;
+        }
+        &::after {
+            box-shadow: var(--offset-negative) var(--offset-negative) 0;
+        }
+    }
+    %angle-left-double-icon {
+        &::before {
+            box-shadow: var(--offset) var(--offset) 0;
+        }
+        &::after {
+            box-shadow: var(--offset) var(--offset-negative) 0;
+        }
+    }
+    // Upwards
+    %icon-css-angle-upwards {
+        @extend %angle-icon, %angle-y-icon, %angle-up-icon;
+    }
+    %icon-css-angle-upwards-right,
+    %icon-css-angle-upwards-double-right {
+        @extend %angle-y-right-icon;
+    }
+    %icon-css-angle-upwards-left,
+    %icon-css-angle-upwards-double-left {
+        @extend %angle-y-left-icon;
+    }
+    // Upwards Double
+    %icon-css-angle-upwards-double {
+        @extend %angle-icon, %angle-y-icon, %angle-up-icon, %angle-double-icon, %angle-y-double-icon, %angle-up-double-icon;
+    }
+    // Rightwards
+    %icon-css-angle-rightwards {
+        @extend %angle-icon, %angle-x-icon, %angle-right-icon;
+    }
+    %icon-css-angle-rightwards-top,
+    %icon-css-angle-rightwards-double-top {
+        @extend %angle-x-top-icon;
+    }
+    %icon-css-angle-rightwards-right,
+    %icon-css-angle-rightwards-double-right {
+        @extend %angle-right-right-icon;
+    }
+    %icon-css-angle-rightwards-bottom,
+    %icon-css-angle-rightwards-double-bottom {
+        @extend %angle-x-bottom-icon;
+    }
+    %icon-css-angle-rightwards-left,
+    %icon-css-angle-rightwards-double-left {
+        @extend %angle-right-left-icon;
+    }
+    // Rightwards Double
+    %icon-css-angle-rightwards-double {
+        @extend %angle-icon, %angle-x-icon, %angle-right-icon, %angle-double-icon, %angle-x-double-icon, %angle-right-double-icon;
+    }
+    // Downwards
+    %icon-css-angle-downwards {
+        @extend %angle-icon, %angle-y-icon, %angle-down-icon;
+    }
+    %icon-css-angle-downwards-top,
+    %icon-css-angle-downwards-double-top {
+        @extend %angle-down-top-icon;
+    }
+    %icon-css-angle-downwards-right,
+    %icon-css-angle-downwards-double-right {
+        @extend %angle-y-right-icon;
+    }
+    %icon-css-angle-downwards-bottom,
+    %icon-css-angle-downwards-double-bottom {
+        @extend %angle-down-bottom-icon;
+    }
+    %icon-css-angle-downwards-left,
+    %icon-css-angle-downwards-double-left {
+        @extend %angle-y-left-icon;
+    }
+    // Downwards Double
+    %icon-css-angle-downwards-double {
+        @extend %angle-icon, %angle-y-icon, %angle-down-icon, %angle-double-icon, %angle-y-double-icon, %angle-down-double-icon;
+    }
+    // Leftwards
+    %icon-css-angle-leftwards {
+        @extend %angle-icon, %angle-x-icon, %angle-left-icon;
+    }
+    %icon-css-angle-leftwards-top,
+    %icon-css-angle-leftwards-double-top {
+        @extend %angle-x-top-icon;
+    }
+    %icon-css-angle-leftwards-bottom,
+    %icon-css-angle-leftwards-double-bottom {
+        @extend %angle-x-bottom-icon;
+    }
+    // Leftwards Double
+    %icon-css-angle-leftwards-double {
+        @extend %angle-icon, %angle-x-icon, %angle-left-icon, %angle-double-icon, %angle-x-double-icon, %angle-left-double-icon;
+    }
+    // Size Management Icon
+    %size-management-icon {
+        --part-length: 10px;
+        --icon-gap: 5px;
+        // Calculated
+        --icon-size: calc(var(--part-length) * 2 + var(--icon-gap));
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        --part-inner-length: calc(var(--part-length) - var(--icon-weight));
+        --icon-gap-half: calc(var(--icon-gap) / 2);
+        --offset1: calc(var(--icon-size) - var(--part-length));
+        --offset2: calc(var(--icon-size) - var(--icon-weight));
+        &::before,
+        &::after {
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &::before {
+            width: var(--part-length);
+            height: var(--icon-weight);
+            box-shadow: var(--offset1) 0 0, 0 var(--offset2) 0, var(--offset1) var(--offset2) 0;
+        }
+        &::after {
+            width: var(--icon-weight);
+            height: var(--part-length);
+            box-shadow: var(--offset2) 0 0, 0 var(--offset1) 0, var(--offset2) var(--offset1) 0;
+        }
+    }
+    // Maximize
+    %icon-css-maximize {
+        @extend %size-management-icon;
+    }
+    %icon-css-maximize-top {
+        &::before,
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-maximize-right {
+        &::before,
+        &::after {
+            left: calc(100% - var(--icon-width));
+        }
+    }
+    %icon-css-maximize-bottom {
+        &::before,
+            &::after {
+                top: calc(100% - var(--icon-height));
+            }
+    }
+    %icon-css-maximize-left {
+        &::before,
+            &::after {
+                left: 0;
+            }
+    }
+    // Minimize
+    %icon-css-minimize {
+        @extend %size-management-icon;
+        // Calculated
+        --offset1: calc(var(--icon-size) - var(--part-length));
+        --offset2: calc(var(--offset1) - var(--part-inner-length));
+        --block-pipe-centralize: calc(50% - ((var(--icon-gap) + var(--icon-weight) * 2) / 2));
+        --inline-pipe-centralize: calc(50% - (var(--part-length) + var(--icon-gap-half)));
+        &::before {
+            top: var(--block-pipe-centralize);
+            left: var(--inline-pipe-centralize);
+            box-shadow: var(--offset1) 0 0, 0 var(--offset2) 0, var(--offset1) var(--offset2) 0;
+        }
+        &::after {
+            top: var(--inline-pipe-centralize);
+            left: var(--block-pipe-centralize);
+            box-shadow: var(--offset2) 0 0, 0 var(--offset1) 0, var(--offset2) var(--offset1) 0;
+        }
+    }
+    %icon-css-minimize-top {
+        &::before {
+            top: var(--part-inner-length);
+        }
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-minimize-right {
+        &::before {
+            left: calc(100% - var(--icon-width));
+        }
+        &::after {
+            left: calc(100% - (var(--part-length) + var(--icon-gap) + var(--icon-weight)));
+        }
+    }
+    %icon-css-minimize-bottom {
+        &::before {
+            top: calc(100% - (var(--part-length) + var(--icon-gap) + var(--icon-weight)));
+        }
+        &::after {
+            top: calc(100% - var(--icon-height));
+        }
+    }
+    %icon-css-minimize-left {
+        &::before {
+            left: 0;
+        }
+        &::after {
+            left: var(--part-inner-length);
+        }
+    }
+    // Options
+    %icon-css-options {
+        --circle-size: 9px;
+        --track-width: 30px;
+        --icon-gap: 0px;
+        // Calculated
+        --circle-size-half: calc(var(--circle-size) / 2);
+        --icon-width: var(--track-width);
+        --icon-height: calc(var(--circle-size) * 3 + var(--icon-gap) * 2);
+        --circle-overflow: calc((var(--circle-size) - var(--icon-weight)) / 2);
+        &::before {
+            --shadow-y-offset: calc(var(--icon-weight) + calc(var(--circle-overflow) * 2) + var(--icon-gap));
+            top: calc(50% - var(--icon-height-half) + var(--circle-overflow));
+            width: var(--track-width);
+            height: var(--icon-weight);
+            box-shadow: 0px var(--shadow-y-offset) 0, 0px calc(var(--shadow-y-offset) * 2) 0;
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+        &::after {
+            --shadow-y-offset: calc(var(--circle-size) + var(--icon-gap));
+            /* 40% */
+            --pos-1: calc(var(--icon-width) * 40 / 100);
+            /* 75% */
+            --pos-2: calc(var(--icon-width) * 75 / 100);
+            /* 25% */
+            --pos-3: calc(var(--icon-width) * 25 / 100);
+            --left: calc(var(--pos-1) - var(--circle-size-half));
+            left: calc(50% - var(--icon-width-half) + var(--left));
+            width: var(--circle-size);
+            aspect-ratio: 1;
+            border-radius: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * var(--circle-size-half));
+            box-shadow: calc(var(--pos-2) - var(--pos-1)) var(--shadow-y-offset) 0,
+                calc(var(--pos-3) - var(--pos-1)) calc(var(--shadow-y-offset) * 2) 0;
+        }
+    }
+    %icon-css-options-top {
+        &::before {
+            top: var(--circle-overflow);
+        }
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-options-right {
+        &::before {
+            left: calc(100% - var(--icon-width));
+        }
+        &::after {
+            left: calc(100% - var(--icon-width) + var(--left));
+        }
+    }
+    %icon-css-options-bottom {
+        &::before {
+            top: calc(100% - var(--icon-height) + var(--circle-overflow));
+        }
+        &::after {
+            top: calc(100% - var(--icon-height));
+        }
+    }
+    %icon-css-options-left {
+        &::before {
+            left: 0;
+        }
+        &::after {
+            left: var(--left);
+        }
+    }
+    // Moon
+    %icon-css-moon {
+        --icon-size: 30px;
+        --offset: 12px;
+        // Calculated
+        --icon-size-half: calc(var(--icon-size) / 2);
+        --icon-width: calc((var(--icon-size) - var(--offset)) / 2 + var(--offset));
+        --icon-height: var(--icon-size);
+        /* Imaginary intersecting double circles. */
+        --double-circle-width: calc(var(--icon-size) + var(--offset));
+        &::before {
+            left: calc(50% - (((var(--icon-size) - var(--offset)) / 2) - var(--offset)) / 2);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: calc(0px - var(--offset)) 0 0 0 var(--icon-color);
+            clip-path: circle(var(--icon-size-half) at calc(var(--icon-size-half) - var(--offset)) var(--icon-size-half));
+        }
+    }
+    %icon-css-moon-right {
+        &::before {
+            left: calc(100% - (var(--icon-width) - var(--offset)));
+        }
+    }
+    %icon-css-moon-left {
+        &::before {
+            left: var(--offset);
+        }
+    }
+    // Empty
+    %icon-css-empty {
+        --icon-size: 30px;
+        // Calculated
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        &::before {
+            width: var(--icon-width);
+            height: var(--icon-height);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-radius: 50%;
+            background: transparent;
+        }
+        &::after {
+            top: calc(50% - var(--icon-weight-half));
+            width: var(--icon-width);
+            height: var(--icon-weight);
+            rotate: -45deg;
+        }
+    }
+    %icon-css-empty-top {
+        &::after {
+            top: calc(var(--icon-height-half) - var(--icon-weight-half));
+        }
+    }
+    %icon-css-empty-bottom {
+        &::after {
+            top: calc(100% - (calc(var(--icon-height-half) + var(--icon-weight-half))));
+        }
+    }
+    // Color Scheme
+    %icon-css-color-scheme {
+        --icon-size: 30px;
+        // Calculated
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        &::before {
+            width: var(--icon-width);
+            height: var(--icon-height);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-radius: 50%;
+            background: transparent;
+        }
+        &::after {
+            width: var(--icon-width-half);
+            height: var(--icon-height);
+            border-radius: var(--icon-height-half) 0 0 var(--icon-height-half);
+        }
+    }
+    // Copy
+    %icon-css-copy {
+        --doc-width: 20px;
+        --doc-height: 25px;
+        --icon-gap: var(--icon-weight);
+        // Calculated
+        --icon-width: calc(var(--doc-width) + var(--icon-gap) + var(--icon-weight));
+        --icon-height: calc(var(--doc-height) + var(--icon-gap) + var(--icon-weight));
+        --translate: calc(var(--icon-weight) + var(--icon-gap));
+        --rounded-edges: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * calc(var(--icon-weight) + var(--icon-gap)));
+        &::before,
+        &::after {
+            width: var(--doc-width);
+            height: var(--doc-height);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-width: var(--icon-weight) 0 0 var(--icon-weight);
+            border-radius: var(--rounded-edges);
+            background: transparent;
+        }
+        &::after {
+            margin: var(--translate) 0 0 var(--translate);
+            border-width: var(--icon-weight);
+        }
+    }
+    // Sun
+    %icon-css-sun {
+        --core-size: 30px;
+        --beam-size: 5px;
+        --icon-gap: 3px;
+        // Calculated
+        --icon-size: calc(var(--core-size) + var(--beam-size) * 2 + var(--icon-gap) * 2);
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        --core-size-half: calc(var(--core-size) / 2);
+        --beam-size-half: calc(var(--beam-size) / 2);
+        /* Imaginary circle that pierces through the middle of beams. */
+        --beam-circle-radius: calc(var(--core-size-half) + var(--icon-gap) + var(--beam-size-half));
+        --outer-circle-radius: calc(var(--core-size-half) + var(--icon-gap) + var(--beam-size));
+        --full-core-to-outer: calc(var(--core-size) + var(--icon-gap) + var(--beam-size));
+        &::before,
+        &::after {
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+        &::before {
+            top: calc(50% - var(--core-size-half));
+            left: calc(50% - var(--core-size-half));
+            width: var(--core-size);
+        }
+        &:after {
+            left: calc(50% - var(--beam-size-half));
+            width: var(--beam-size);
+            /* Distance from the starting position (90deg) to the center. */
+            --off: calc(var(--beam-size-half) + var(--core-size-half) + var(--icon-gap));
+            --x45: calc(var(--beam-circle-radius) * cos(45deg));
+            --y45: calc(var(--beam-circle-radius) * sin(45deg));
+            --x315: calc(var(--beam-circle-radius) * cos(315deg));
+            --y315: calc(var(--beam-circle-radius) * sin(315deg));
+            --x225: calc(var(--beam-circle-radius) * cos(225deg));
+            --y225: calc(var(--beam-circle-radius) * sin(225deg));
+            --x135: calc(var(--beam-circle-radius) * cos(135deg));
+            --y135: calc(var(--beam-circle-radius) * sin(135deg));
+            box-shadow:
+                /* Clockwise direction */
+                /* 45deg */
+                var(--x45) calc(var(--off) - var(--y45)),
+                /* 0deg */
+                var(--off) var(--off) 0,
+                /* 315deg */
+                var(--x315) calc(var(--off) - var(--y315)),
+                /* 270deg */
+                0 calc(var(--core-size) + var(--beam-size) + var(--icon-gap) * 2) 0,
+                /* 225deg */
+                var(--x225) calc(var(--off) - var(--y225)),
+                /* 180deg */
+                calc(0px - var(--off)) var(--off) 0,
+                /* 135deg */
+                var(--x135) calc(var(--off) - var(--y135));
+        }
+    }
+    %icon-css-sun-top {
+        &::before {
+            top: calc(var(--beam-size) + var(--icon-gap));
+        }
+        &::after {
+            top: 0;
+        }
+    }
+    %icon-css-sun-right {
+        &::before {
+            left: calc(100% - var(--full-core-to-outer));
+        }
+        &::after {
+            left: calc(100% - var(--outer-circle-radius) - var(--beam-size-half));
+        }
+    }
+    %icon-css-sun-bottom {
+        &::before {
+            top: calc(100% - var(--full-core-to-outer));
+        }
+    }
+    %icon-css-sun-left {
+        &::before {
+            left: calc(var(--beam-size) + var(--icon-gap));
+        }
+        &::after {
+            left: var(--beam-circle-radius);
+        }
+    }
+    // Spinner Icon
+    %spinner-icon {
+        --icon-size: 30px;
+        // Calculated
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        &::before {
+            width: var(--icon-width);
+            aspect-ratio: 1;
+            border: solid var(--icon-weight) var(--icon-color);
+            border-radius: 50%;
+            background: none;
+        }
+    }
+    // Spinner
+    %icon-css-spinner {
+        @extend %spinner-icon;
+        &::before {
+            border-right-color: transparent;
+        }
+    }
+    %icon-css-spinner-animated-start {
+        &::before {
+            animation: spin 0.8s infinite linear;
+        }
+    }
+    // Spinner Train Track
+    %icon-css-spinner-train-track {
+        @extend %spinner-icon;
+        --track-color: var(--icon-color);
+        --train-color: var(--icon-color-alt);
+        &::before {
+            border-color: var(--track-color);
+        }
+        &::after {
+            width: var(--icon-width);
+            aspect-ratio: 1;
+            border-style: solid;
+            border-width: var(--icon-weight);
+            border-color: var(--train-color) transparent transparent;
+            border-radius: 50%;
+            background: none;
+        }
+    }
+    %icon-css-spinner-train-track-animated-start {
+        &::after {
+            animation: spin 0.8s infinite ease-out;
+        }
+    }
+    // Spinner 2
+    %icon-css-spinner2 {
+        @extend %spinner-icon;
+        --icon-size-half: calc(var(--icon-size) / 2);
+        --part1-color: var(--icon-color);
+        --part2-color: var(--icon-color-alt);
+        &::before {
+            border-color: var(--part1-color) transparent transparent var(--part1-color);
+            clip-path: ellipse(var(--icon-size) var(--icon-size-half) at 0% 0%);
+        }
+        &::after {
+            width: var(--icon-width);
+            aspect-ratio: 1;
+            border-style: solid;
+            border-width: var(--icon-weight);
+            border-color: transparent var(--part2-color) var(--part2-color) transparent;
+            border-radius: 50%;
+            background: none;
+            clip-path: ellipse(var(--icon-size) var(--icon-size-half) at 100% 100%);
+        }
+    }
+    %icon-css-spinner2-animated-start {
+        &::before,
+        &::after {
+            animation: spin 0.8s infinite linear;
+        }
+    }
+    // Bell
+    %icon-css-bell {
+        --bell-housing-width: 30px;
+        --bell-housing-height: 30px;
+        --bubble-width: 8px;
+        --offset: 5px;
+        // Calculated
+        --off2: calc(var(--offset) - var(--icon-weight));
+        --icon-width: calc(var(--bell-housing-width) + var(--offset) * 2);
+        --icon-height: calc(var(--bell-housing-height) + var(--icon-weight) * 2 + var(--bubble-width-half) + var(--off2));
+        --bell-housing-width-half: calc(var(--bell-housing-width) / 2);
+        --bubble-width-half: calc(var(--bubble-width) / 2);
+        --icon-weight-double: calc(var(--icon-weight) * 2);
+        &::before {
+            top: calc(50% - var(--icon-height-half) - var(--off2));
+            width: var(--icon-width);
+            height: calc(var(--bell-housing-height) + var(--offset) * 2);
+            border-radius: var(--icon-width-half) var(--icon-width-half) 0 0;
+            outline: solid var(--icon-weight) var(--icon-color);
+            outline-offset: calc(0px - (var(--offset) + var(--icon-weight)));
+            border-bottom: solid var(--offset) transparent;
+            background: none;
+            box-shadow: inset 0 calc(0px - var(--icon-weight)) 0 0 var(--icon-color);
+        }
+        &::after {
+            --top-border: var(--icon-weight-double);
+            --bottom-border: calc(var(--bubble-width-half) + var(--off2));
+            --full-height: calc(var(--bell-housing-height) + var(--top-border) + var(--bottom-border));
+            position: absolute;
+            left: calc(50% - var(--bubble-width-half));
+            width: var(--bubble-width);
+            height: calc(var(--bell-housing-height) + var(--top-border) + var(--bottom-border));
+            background-color: transparent;
+            border: solid var(--icon-weight) var(--icon-color);
+            border-width: var(--top-border) 0 var(--bottom-border);
+            border-radius: var(--bubble-width);
+        }
+    }
+    %icon-css-bell-top {
+        &::before {
+            top: calc(0px - var(--off2));
+        }
+    }
+    %icon-css-bell-right {
+        &::after {
+            left: calc(100% - var(--icon-width-half) - var(--bubble-width-half));
+        }
+    }
+    %icon-css-bell-bottom {
+        &::before {
+            top: calc(100% - var(--icon-height) - var(--off2));
+        }
+    }
+    %icon-css-bell-left {
+        &::after {
+            left: calc(var(--icon-width-half) - var(--bubble-width-half));
+        }
+    }
+    // Person Profile
+    %icon-css-person-profile {
+        --head-size: 15px;
+        --body-width: 30px;
+        --body-height: 20px;
+        --neck-length: 5px;
+        --icon-width: max(var(--head-size), var(--body-width));
+        --icon-height: calc(var(--head-size) + var(--neck-length) + var(--body-height));
+        --body-width-half: calc(var(--body-width) / 2);
+        --head-size-half: calc(var(--head-size) / 2);
+        &::before {
+            left: calc(50% - var(--head-size) / 2);
+            width: var(--head-size);
+            height: var(--head-size);
+            border-radius: 50%;
+            border: solid var(--icon-weight) var(--icon-color);
+            background-color: transparent;
+        }
+        &::after {
+            top: calc(50% - var(--icon-height-half) + var(--head-size) + var(--neck-length));
+            width: var(--body-width);
+            height: calc(var(--body-width) + var(--body-width) / 3);
+            border-radius: 50%;
+            border: solid var(--icon-weight) var(--icon-color);
+            background-color: transparent;
+            clip-path: xywh(0px 0px 100% var(--body-height));
+        }
+    }
+    %icon-css-person-profile-top {
+        &::after {
+            top: calc(var(--head-size) + var(--neck-length));
+        }
+    }
+    %icon-css-person-profile-right {
+        &::before {
+            left: calc(100% - var(--body-width-half) - var(--head-size-half));
+        }
+    }
+    %icon-css-person-profile-bottom {
+        &::after {
+            top: calc(100% - var(--body-height));
+        }
+    }
+    %icon-css-person-profile-left {
+        &::before {
+            left: calc(var(--body-width-half) - var(--head-size-half));
+        }
+    }
+    // Clock
+    %icon-css-clock {
+        --icon-size: 30px;
+        --hand-gap: 3px;
+        // Calculated
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        --inner-size: calc(var(--icon-size) - var(--icon-weight) * 2);
+        --hand-len: calc(var(--inner-size) / 2 - var(--hand-gap) + var(--icon-weight-half));
+        &::before {
+            width: var(--icon-width);
+            height: var(--icon-height);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-radius: 50%;
+            background: transparent;
+        }
+        &::after {
+            top: calc(50% - (var(--hand-len) - var(--icon-weight-half)));
+            left: calc(50% - var(--icon-weight-half));
+            width: var(--hand-len);
+            height: var(--hand-len);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-top-width: 0;
+            border-right-width: 0;
+            background: none;
+        }
+    }
+    %icon-css-clock-top {
+        &::after {
+            top: calc(var(--icon-weight) + var(--hand-gap));
+        }
+    }
+    %icon-css-clock-right {
+        &::after {
+            left: calc(100% - (var(--icon-weight) + var(--hand-gap) + var(--hand-len)));
+        }
+    }
+    %icon-css-clock-bottom {
+        &::after {
+            top: calc(100% - (var(--icon-height-half) - var(--icon-weight-half) + var(--hand-len)));
+        }
+    }
+    %icon-css-clock-left {
+        &::after {
+            left: calc(var(--icon-width-half) - var(--icon-weight-half));
+        }
+    }
+    // Reload
+    %icon-css-reload {
+        --icon-size: 30px;
+        --pointer-size: 10px;
+        --pointer-offset: 1px;
+        // Calculated
+        --inner-size: calc(var(--icon-size) - var(--icon-weight) * 2);
+        --square-that-fits: calc(var(--inner-size) / sqrt(2));
+        --pointer-inner-size: calc(var(--pointer-size) - var(--icon-weight));
+        // The remainder parts of the circle that are not occupied by the largest square fitting inside it
+        --corner-segment-size: calc((var(--icon-size) - var(--square-that-fits)) / 2);
+        // A circle with a missing sector on the right hand side
+        --cutout-circle-width: calc(var(--corner-segment-size) + var(--square-that-fits) + var(--icon-weight-side-len));
+        // Corner segment + pointer offset + pointer weight
+        --o3: calc(var(--corner-segment-size) + var(--pointer-offset) + var(--icon-weight));
+        // Space above the cutout circle (0px if pointer does not overflow)
+        --tail: max(0px, var(--pointer-size) - var(--o3));
+        //
+        --tail-inset: min(0px, 0px - (var(--o3) - var(--pointer-size)));
+        --icon-width: calc(var(--cutout-circle-width) + var(--pointer-offset) + var(--icon-weight));
+        --icon-height: calc(var(--icon-size) + var(--tail));
+        &::before {
+            top: calc(50% - var(--icon-height-half) + var(--tail));
+            width: var(--icon-size);
+            height: var(--icon-size);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-right-color: transparent;
+            border-radius: 50%;
+            background: transparent;
+        }
+        &::after {
+            top: calc(50% - var(--icon-height-half) - var(--tail-inset));
+            left: calc(50% + var(--icon-width-half) - var(--pointer-size));
+            width: var(--pointer-size);
+            height: var(--pointer-size);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-top-width: 0;
+            border-left-width: 0;
+            background: transparent;
+        }
+    }
+    %icon-css-reload-top {
+        &::before {
+            top: var(--tail);
+        }
+        &::after {
+            top: max(0px, var(--o3) - var(--pointer-size));
+        }
+    }
+    %icon-css-reload-right {
+        &::after {
+            left: calc(100% - var(--pointer-size));
+        }
+    }
+    %icon-css-reload-bottom {
+        &::before {
+            top: calc(100% - var(--icon-height) + var(--tail));
+        }
+        &::after {
+            top: calc(100% - var(--icon-height) - var(--tail-inset));
+        }
+    }
+    %icon-css-reload-left {
+        &::after {
+            left: calc(var(--icon-width) - var(--pointer-size));
+        }
+    }
+    // Shutdown
+    %icon-css-shutdown {
+        --icon-size: 30px;
+        // Calculated
+        --icon-size-half: calc(var(--icon-size) / 2);
+        --icon-width: var(--icon-size);
+        --icon-height: var(--icon-size);
+        &::before {
+            width: var(--icon-width);
+            height: var(--icon-height);
+            border: solid var(--icon-weight) var(--icon-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            background: transparent;
+        }
+        &::after {
+            top: 50%;
+            left: 50%;
+            width: var(--icon-weight);
+            height: var(--icon-size-half);
+            margin-top: calc(0px - var(--icon-size-half));
+            margin-left: calc(0px - var(--icon-weight-half));
+            border-radius: var(--rounded-edges-by-icon-weight);
+        }
+    }
+    %icon-css-shutdown-top {
+        &::after {
+            top: 0;
+            margin-top: 0;
+        }
+    }
+    %icon-css-shutdown-right {
+        &::after {
+            left: calc(100% - var(--icon-size-half));
+        }
+    }
+    %icon-css-shutdown-bottom {
+        &::after {
+            top: calc(100% - var(--icon-size));
+            margin-top: 0;
+        }
+    }
+    %icon-css-shutdown-left {
+        &::after {
+            left: var(--icon-size-half);
+        }
+    }
+    // Sand Clock
+    %icon-css-sand-clock {
+        --housing-width: 20px;
+        --housing-height: 20px;
+        --offset: 5px;
+        // Calculated
+        --offset-norm: max(0px, var(--offset));
+        --icon-width: calc(var(--housing-width) + var(--offset-norm) * 2);
+        --icon-height: calc(var(--housing-height) * 2 - var(--icon-weight));
+        &::before,
+        &::after {
+            width: var(--icon-width);
+            height: calc(var(--housing-height) + var(--offset-norm) * 2);
+            background: none;
+            outline: solid var(--icon-weight) var(--icon-color);
+            outline-offset: calc(0px - (var(--offset-norm) + var(--icon-weight)));
+        }
+        &::before {
+            top: calc(50% - var(--offset-norm) - var(--icon-height-half));
+            border-radius: 0 0 var(--icon-width-half) var(--icon-width-half);
+            border-top: solid var(--offset-norm) transparent;
+            box-shadow: inset 0 var(--icon-weight) 0 0 var(--icon-color);
+        }
+        &::after {
+            top: calc(50% - var(--offset-norm) - var(--icon-weight-half));
+            border-radius: var(--icon-width-half) var(--icon-width-half) 0 0;
+            border-bottom: solid var(--offset-norm) transparent;
+            box-shadow: inset 0 calc(0px - var(--icon-weight)) 0 0 var(--icon-color);
+        }
+    }
+    %icon-css-sand-clock-top {
+        &::before {
+            top: calc(0px - var(--offset-norm));
+        }
+        &::after {
+            top: calc(var(--housing-height) - var(--offset-norm) - var(--icon-weight));
+        }
+    }
+    %icon-css-sand-clock-bottom {
+        &::before {
+            top: calc(100% - var(--offset-norm) - var(--icon-height));
+        }
+        &::after {
+            top: calc(100% - var(--offset-norm) - var(--icon-height-half) - var(--icon-weight-half));
+        }
+    }
+}

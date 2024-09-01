@@ -1,0 +1,50 @@
+/* Base */
+@layer normalize {
+  hr {
+    border: 0;
+  }
+  pre {
+    font: inherit;
+  }
+  strong {
+    font-weight: normal;
+  }
+  small {
+    font-size: 100%;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  cite {
+    font-style: normal;
+  }
+  mark {
+    background: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Text-Level Semantics */
+@layer normalize {
+  blockquote {
+    margin: 0;
+  }
+  em {
+    font-style: normal;
+  }
+  hr {
+    margin: 0;
+  }
+  mark {
+    color: inherit;
+  }
+  pre {
+    margin: 0;
+    white-space: normal;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

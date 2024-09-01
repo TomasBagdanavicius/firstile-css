@@ -1,0 +1,6 @@
+@use "../../../src/partials/root-props";
+@use "../../../src/partials/functions";
+$properties: (
+    // Add your custom properties here...
+);
+@include root-props.addProps(functions.apply-user-properties($properties, component-name));

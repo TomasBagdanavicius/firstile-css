@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Styles - List</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+<div class="demo-description">Demonstrates various list styles including regular and nested unordered and ordered lists, as well as description lists with label-value pairs, highlighting differences in bullet types, numbering, and indentation levels.</div>
+<section class="demo-section">
+    <h2 class="demo-section-title">Regular Unordered Bullet List</h2>
+    <ul class="regular-unordered-bullet-list">
+        <li>Item 1</li>
+        <li>Item 2<br>Line 2</li>
+        <li>Item 3</li>
+    </ul>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Regular Unordered Bullet List Deep</h2>
+    <ul class="regular-unordered-bullet-list-deep">
+        <li>Item 1</li>
+        <li>Item 2<br>Line 2</li>
+        <li>Item 3
+            <ul>
+                <li>Item 3.1</li>
+                <li>Item 3.2</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Regular Ordered Number List</h2>
+    <ol class="regular-ordered-number-list">
+        <li>Item 1</li>
+        <li>Item 2<br>Line 2</li>
+        <li>Item 3</li>
+    </ol>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Regular Ordered Number List Deep</h2>
+    <ol class="regular-ordered-number-list-deep">
+        <li>Item 1</li>
+        <li>Item 2<br>Line 2</li>
+        <li>Item 3
+            <ol>
+                <li>Item 3.1</li>
+                <li>Item 3.2
+                    <ol>
+                        <li>Item 3.2.1</li>
+                        <li>Item 3.2.2</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</section>
+<section class="demo-section">
+    <h2 class="demo-section-title">Description List Label-Value Pairs</h2>
+    <dl class="description-list-label-value-pairs">
+        <dt>Text 1</dt>
+        <dd>Details 1</dd>
+        <dt>Text 2</dt>
+        <dd>Details 2</dd>
+        <dt>Text 3</dt>
+        <dd>Details 3</dd>
+    </dl>
+</section>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

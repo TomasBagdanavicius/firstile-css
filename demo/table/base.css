@@ -1,0 +1,47 @@
+/* Base */
+@layer normalize {
+  th {
+    font-weight: normal;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  caption, th {
+    text-align: initial;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Table */
+@layer normalize {
+  table {
+    border-spacing: 0;
+  }
+  th,
+  td {
+    padding: 0;
+  }
+}
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Table */
+@layer base {}
+
+/*# sourceMappingURL=base.css.map */

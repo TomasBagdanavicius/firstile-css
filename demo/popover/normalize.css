@@ -1,0 +1,33 @@
+/* Base */
+@layer normalize {
+  [popover],
+  dialog {
+    margin: 0;
+    padding: 0;
+  }
+  [popover],
+  dialog {
+    border: 0;
+  }
+  :focus-visible {
+    outline: none;
+  }
+  [popover],
+  dialog {
+    background: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Popover */
+@layer normalize {
+  [popover],
+  dialog {
+    color: inherit;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

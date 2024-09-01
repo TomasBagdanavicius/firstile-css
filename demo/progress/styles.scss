@@ -1,0 +1,13 @@
+@use "../../src/components/progress/styles";
+.progress-bar {
+    @extend %progress-bar;
+    &.with-floating-value {
+        @extend %progress-bar-with-floating-value;
+    }
+}
+.progress-bar-vertical {
+    @extend %progress-bar-vertical;
+    &.with-floating-value {
+        @extend %progress-bar-vertical-with-floating-value;
+    }
+}

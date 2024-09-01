@@ -1,0 +1,22 @@
+/* Base */
+@layer normalize {
+  :focus-visible {
+    outline: none;
+  }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+}
+/* Details */
+@layer normalize {
+  details > summary:first-of-type {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=normalize.css.map */

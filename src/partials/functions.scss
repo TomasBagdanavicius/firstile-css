@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../../var/custom-properties";
+// String
+@function string-starts-with($string, $substring) {
+    @return str-index($string, $substring) == 1;
+}
+@function string-ends-with($string, $substring) {
+    $string-length: string.length($string);
+    $substring-length: string.length($substring);
+    @if $substring-length > $string-length {
+        @return false;
+    }
+    $string-end: string.slice($string, -$substring-length);
+    @return $string-end == $substring;
+}
+// Map
+@function map-is-empty($map) {
+    $is-empty: true;
+    @each $key, $value in $map {
+        $is-empty: false;
+    }
+    @return $is-empty;
+}
+@function merge-maps-using-first($map1, $map2) {
+    $merged-map: ();
+    @each $key, $value in $map1 {
+        // Map 2 contains key that is inside map 1
+        @if map.has-key($map2, $key) {
+            // Take values from map 2
+            $merged-map: map.merge($merged-map, ($key: map.get($map2, $key)));
+        } @else {
+            $merged-map: map.merge($merged-map, ($key: $value));
+        }
+    }
+    @return $merged-map;
+}
+@function map-intersection($map1, $map2) {
+    $intersection: ();
+    @each $key, $value in $map1 {
+        @if map.has-key($map2, $key) {
+            $intersection: map.merge($intersection, ($key: $value));
+        }
+    }
+    @return $intersection;
+}
+// Misc
+@function apply-user-properties($main-properties, $category) {
+    @if map.has-key(custom-properties.$custom-properties, $category) {
+        $custom-properties: map-get(custom-properties.$custom-properties, $category);
+        @return map.merge($main-properties, $custom-properties);
+    }
+    @return $main-properties;
+}

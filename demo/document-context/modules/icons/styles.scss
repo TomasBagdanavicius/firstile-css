@@ -1,0 +1,22 @@
+@use "../../../../src/components/document-context/modules/icons/icons";
+@use "../../../../src/components/document-context/modules/icons/css-icon-list";
+@each $icon-name in css-icon-list.$css-icon-list {
+    .icon-#{$icon-name}-self {
+        @include icons.icon(self, $type: css, $name: $icon-name, $animated: false);
+    }
+    .icon-#{$icon-name}-host {
+        @include icons.icon(host, $type: css, $name: $icon-name, $animated: false);
+    }
+    .icon-#{$icon-name}-host-top {
+        @include icons.icon(host, top, $type: css, $name: $icon-name, $animated: false);
+    }
+    .icon-#{$icon-name}-host-right {
+        @include icons.icon(host, right, $type: css, $name: $icon-name, $animated: false);
+    }
+    .icon-#{$icon-name}-host-bottom {
+        @include icons.icon(host, bottom, $type: css, $name: $icon-name, $animated: false);
+    }
+    .icon-#{$icon-name}-host-left {
+        @include icons.icon(host, left, $type: css, $name: $icon-name, $animated: false);
+    }
+}

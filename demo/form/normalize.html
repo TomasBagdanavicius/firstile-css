@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Normalize - Form</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="../demo-basic.css">
+<style>
+body {
+    line-height: 20px;
+}
+#checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+}
+</style>
+</head>
+<body>
+<div class="demo-description">Demonstrates the baseline styles for form elements, ensuring consistent rendering and basic appearance across different browsers.</div>
+<form method="get" action="">
+    <p><label for="text">Label:</label> <input type="text" name="text" id="text" value="Hello World! Lorem ipsum dolor sit amet"></p>
+    <p><input type="text" name="text" id="text" placeholder="Placeholder"></p>
+    <p><input type="text" name="text" id="text" placeholder="With datalist" list="datalist"></p>
+    <p><input type="email" name="email" id="email" value="john@example.com"></p>
+    <p><input type="url" name="url" id="url" value="https://example.com"></p>
+    <p><input type="number" name="number" id="number" value="12345"></p>
+    <p><input type="search" name="search" id="search" value="Search term"></p>
+    <!-- `results` attribute is Safari only -->
+    <p><input type="search" name="search" id="search-results" value="Search term (with results)" results="5"></p>
+    <p><input type="password" name="password" id="password" value="Password"></p>
+    <p><textarea name="textarea">Textarea</textarea></p>
+    <p><label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox"> Checkbox</label></p>
+    <fieldset>
+        <legend>Fieldset legend</legend>
+    </fieldset>
+    <p><select name="pets">
+        <option value="">Select list</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+    </select></p>
+    <p><input type="submit" value="Submit"></p>
+    <p><input type="reset" value="Reset"></p>
+    <p><input type="button" value="Button"></p>
+    <datalist id="datalist">
+        <option value="Foo"></option>
+        <option value="Bar"></option>
+        <option value="Baz"></option>
+        <option value="Lorem"></option>
+    </datalist>
+    <output>Output</output>
+</form>
+</body>
+</html>

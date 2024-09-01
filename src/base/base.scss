@@ -1,0 +1,47 @@
+@use "../partials/mixins";
+/* Base */
+@layer base {
+    %vw-font-size {
+        font-size: clamp(
+            calc(min(var(--font-size-min), var(--font-size)) * 1px),
+            calc(var(--font-size) * 100 / var(--container-width, 1000) * 1vw),
+            calc(var(--font-size) * 1px)
+        );
+    }
+    %enclosed {
+        @include mixins.enclosed();
+    }
+    %top-shade-visor,
+    %bottom-shade-visor {
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 10px;
+        pointer-events: none;
+        content: "";
+    }
+    %top-shade-visor {
+        top: 0;
+        background-image: linear-gradient(to bottom, var(--bg-color), transparent);
+    }
+    %bottom-shade-visor {
+        bottom: 0;
+        background-image: linear-gradient(to bottom, transparent, var(--bg-color));
+    }
+    %permanently-hidden {
+        display: none;
+    }
+    :focus,
+    :focus-visible {
+        outline: solid 2px var(--accent-color);
+        outline-offset: 1px;
+    }
+    .clickable {
+        cursor: pointer;
+    }
+    .group {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "functions";
+@use "variables";
+@use "../../var/custom-module-options";
+@mixin apply-map($map) {
+    @each $property, $value in $map {
+        #{$property}: $value;
+    }
+}
+@mixin enclosed {
+    @include apply-map(variables.$enclosed);
+}
+@mixin default-wait {
+    border: solid 2px currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: spin 0.8s infinite linear;
+}
+@mixin apply-module-options($main-map, $component-name, $module-name) {
+    @if map.has-key(custom-module-options.$module-options, $component-name) {
+        $component-map: map-get(custom-module-options.$module-options, $component-name);
+        @if map.has-key($component-map, $module-name) {
+            $module-map: functions.merge-maps-using-first($main-map, map-get($component-map, $module-name));
+            @include apply-map($module-map);
+        }
+    }
+}

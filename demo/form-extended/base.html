@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Base - Form Extended</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="document.css">
+<link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+<div class="demo-description">Demonstrates foundational styling for various extended form elements, including radio buttons, file inputs, color pickers, and range sliders, with consistent and accessible design across different states and interactions.</div>
+<form method="get" action="">
+    <p><label for="radio"><input type="radio" name="radio" id="radio"> Radio</label> <label for="radio2"><input type="radio" name="radio2" id="radio2" disabled> Radio disabled</label></p>
+    <p><label for="radio3"><input type="radio" name="radio3" id="radio3">Radio wrapped into label</label></p>
+    <p><input type="file" id="file" name="file" accept="image/png, image/jpeg"> <input type="file" id="file" name="file" accept="image/png, image/jpeg" disabled> <input type="file" id="file" name="file" accept="image/png, image/jpeg" class="button-accent"> <input type="file" id="file" name="file" accept="image/png, image/jpeg" class="button-accent" disabled></p>
+    <p><input type="color" id="color" name="color" value="#e66465"> <input type="color" id="color" name="color" value="#e66465" disabled></p>
+    <p><input type="date" id="date" name="date" min="2000-01-01" max="2200-01-01"></p>
+    <p><input type="date" id="date" name="date" value="2000-01-01" min="2000-01-01" max="2200-01-01"></p>
+    <p><input type="datetime-local" id="datetime-local" name="datetime-local" min="2000-01-01T00:00" max="2200-01-01T00:00"></p>
+    <p><input type="datetime-local" id="datetime-local" name="datetime-local" value="2000-01-01T00:00" min="2000-01-01T00:00" max="2200-01-01T00:00"></p>
+    <p><input type="month" id="month" name="month" min="2000-01"></p>
+    <p><input type="month" id="month" name="month" min="2000-01" value="2024-01"></p>
+    <p><input type="week" id="week" name="week" min="2000-W01"></p>
+    <p><input type="week" id="week" name="week" min="2000-W01" value="2024-W01"></p>
+    <p><input type="time" id="time" name="time"></p>
+    <p><input type="time" id="time" name="time" value="08:00"></p>
+    <p><input type="range" name="range" id="range" min="0" max="100"></p>
+    <p><input type="image" name="image" id="image" alt="Image" src="material/50x50_Earth.jpg"></p>
+</form>
+<script src="../color-mode-switching.min.js"></script>
+<script src="../demo.js"></script>
+</body>
+</html>

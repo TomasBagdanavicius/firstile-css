@@ -1,0 +1,8 @@
+$enclosed: (
+    --button-y-padding: 0px,
+    overflow: hidden,
+    align-items: flex-start,
+    height: 0,
+    // Resetting other sides to zero (eg. button inline side paddings are expected to be reset).
+    padding: var(--enclosed-height, var(--height)) 0 0,
+);

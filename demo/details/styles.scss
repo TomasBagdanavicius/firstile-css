@@ -1,0 +1,4 @@
+@use "../../src/components/details/styles";
+.open-small-text {
+    @extend %open-small-text;
+}

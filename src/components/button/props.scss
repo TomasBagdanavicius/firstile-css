@@ -1,0 +1,15 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    --button-height: 40px,
+    --button-bg-color: var(--fg-color),
+    --button-bg-color-rollover: var(--fg-color-active),
+    // Cannot use `currentColor` due to `hsl` restrictions.
+    --button-color: var(--color),
+    --button-border-width: 1px,
+    --button-border-radius: calc(var(--button-height) / 2),
+    --button-x-padding: 20px,
+    --button-y-padding: 5px,
+    --button-transition-speed: .15s,
+);
+@include root-props.addProps(functions.apply-user-properties($properties, button));

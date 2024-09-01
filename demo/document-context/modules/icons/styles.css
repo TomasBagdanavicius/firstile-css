@@ -1,0 +1,1186 @@
+/* Base */
+@layer base {
+  :focus,
+  :focus-visible {
+    outline: solid 2px var(--accent-color);
+    outline-offset: 1px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+/* Icon Host */
+@layer accessories {
+  .icon-checkmark-host, .icon-checkmark-host-top, .icon-checkmark-host-right, .icon-checkmark-host-bottom, .icon-checkmark-host-left, .icon-crossmark-host, .icon-crossmark-host-top, .icon-crossmark-host-right, .icon-crossmark-host-bottom, .icon-crossmark-host-left, .icon-burger-menu-host, .icon-burger-menu-host-top, .icon-burger-menu-host-right, .icon-burger-menu-host-bottom, .icon-burger-menu-host-left, .icon-triple-dot-menu-host, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-host-left, .icon-triple-dot-menu-horizontal-host, .icon-triple-dot-menu-horizontal-host-top, .icon-triple-dot-menu-horizontal-host-right, .icon-triple-dot-menu-horizontal-host-bottom, .icon-triple-dot-menu-horizontal-host-left, .icon-magnifying-glass-host, .icon-magnifying-glass-host-top, .icon-magnifying-glass-host-right, .icon-magnifying-glass-host-bottom, .icon-magnifying-glass-host-left, .icon-angle-rightwards-host, .icon-angle-rightwards-host-top, .icon-angle-rightwards-host-right, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-host-left, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-leftwards-host, .icon-angle-leftwards-host-top, .icon-angle-leftwards-host-right, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-host-left, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-upwards-host, .icon-angle-upwards-host-top, .icon-angle-upwards-host-right, .icon-angle-upwards-host-bottom, .icon-angle-upwards-host-left, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left, .icon-angle-downwards-host, .icon-angle-downwards-host-top, .icon-angle-downwards-host-right, .icon-angle-downwards-host-bottom, .icon-angle-downwards-host-left, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-maximize-host, .icon-maximize-host-top, .icon-maximize-host-right, .icon-maximize-host-bottom, .icon-maximize-host-left, .icon-minimize-host, .icon-minimize-host-top, .icon-minimize-host-right, .icon-minimize-host-bottom, .icon-minimize-host-left, .icon-options-host, .icon-options-host-top, .icon-options-host-right, .icon-options-host-bottom, .icon-options-host-left, .icon-sun-host, .icon-sun-host-top, .icon-sun-host-right, .icon-sun-host-bottom, .icon-sun-host-left, .icon-moon-host, .icon-moon-host-top, .icon-moon-host-right, .icon-moon-host-bottom, .icon-moon-host-left, .icon-color-scheme-host, .icon-color-scheme-host-top, .icon-color-scheme-host-right, .icon-color-scheme-host-bottom, .icon-color-scheme-host-left, .icon-empty-host, .icon-empty-host-top, .icon-empty-host-right, .icon-empty-host-bottom, .icon-empty-host-left, .icon-copy-host, .icon-copy-host-top, .icon-copy-host-right, .icon-copy-host-bottom, .icon-copy-host-left, .icon-spinner-host, .icon-spinner-host-top, .icon-spinner-host-right, .icon-spinner-host-bottom, .icon-spinner-host-left, .icon-spinner-train-track-host, .icon-spinner-train-track-host-top, .icon-spinner-train-track-host-right, .icon-spinner-train-track-host-bottom, .icon-spinner-train-track-host-left, .icon-spinner2-host, .icon-spinner2-host-top, .icon-spinner2-host-right, .icon-spinner2-host-bottom, .icon-spinner2-host-left, .icon-bell-host, .icon-bell-host-top, .icon-bell-host-right, .icon-bell-host-bottom, .icon-bell-host-left, .icon-person-profile-host, .icon-person-profile-host-top, .icon-person-profile-host-right, .icon-person-profile-host-bottom, .icon-person-profile-host-left, .icon-clock-host, .icon-clock-host-top, .icon-clock-host-right, .icon-clock-host-bottom, .icon-clock-host-left, .icon-reload-host, .icon-reload-host-top, .icon-reload-host-right, .icon-reload-host-bottom, .icon-reload-host-left, .icon-shutdown-host, .icon-shutdown-host-top, .icon-shutdown-host-right, .icon-shutdown-host-bottom, .icon-shutdown-host-left, .icon-sand-clock-host, .icon-sand-clock-host-top, .icon-sand-clock-host-right, .icon-sand-clock-host-bottom, .icon-sand-clock-host-left,
+  .icon-checkmark-self,
+  .icon-crossmark-self,
+  .icon-burger-menu-self,
+  .icon-triple-dot-menu-self,
+  .icon-triple-dot-menu-horizontal-self,
+  .icon-magnifying-glass-self,
+  .icon-angle-rightwards-self,
+  .icon-angle-rightwards-double-self,
+  .icon-angle-leftwards-self,
+  .icon-angle-leftwards-double-self,
+  .icon-angle-upwards-self,
+  .icon-angle-upwards-double-self,
+  .icon-angle-downwards-self,
+  .icon-angle-downwards-double-self,
+  .icon-maximize-self,
+  .icon-minimize-self,
+  .icon-options-self,
+  .icon-sun-self,
+  .icon-moon-self,
+  .icon-color-scheme-self,
+  .icon-empty-self,
+  .icon-copy-self,
+  .icon-spinner-self,
+  .icon-spinner-train-track-self,
+  .icon-spinner2-self,
+  .icon-bell-self,
+  .icon-person-profile-self,
+  .icon-clock-self,
+  .icon-reload-self,
+  .icon-shutdown-self,
+  .icon-sand-clock-self {
+    --icon-width: 32px;
+    --icon-height: 32px;
+    --icon-color: currentColor;
+    --icon-color-alt: var(--accent-color, royalblue);
+    --icon-width-half: calc(var(--icon-width) / 2);
+    --icon-width-negative: calc(0px - var(--icon-width));
+    --icon-height-half: calc(var(--icon-height) / 2);
+    --icon-height-negative: calc(0px - var(--icon-height));
+    --icon-weight-half: calc(var(--icon-weight) / 2);
+    /* Sides */
+    --icon-weight-side-len: calc(var(--icon-weight) * cos(45deg));
+    position: relative;
+  }
+  .icon-checkmark-host, .icon-checkmark-host-top, .icon-checkmark-host-right, .icon-checkmark-host-bottom, .icon-checkmark-host-left, .icon-crossmark-host, .icon-crossmark-host-top, .icon-crossmark-host-right, .icon-crossmark-host-bottom, .icon-crossmark-host-left, .icon-burger-menu-host, .icon-burger-menu-host-top, .icon-burger-menu-host-right, .icon-burger-menu-host-bottom, .icon-burger-menu-host-left, .icon-triple-dot-menu-host, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-host-left, .icon-triple-dot-menu-horizontal-host, .icon-triple-dot-menu-horizontal-host-top, .icon-triple-dot-menu-horizontal-host-right, .icon-triple-dot-menu-horizontal-host-bottom, .icon-triple-dot-menu-horizontal-host-left, .icon-magnifying-glass-host, .icon-magnifying-glass-host-top, .icon-magnifying-glass-host-right, .icon-magnifying-glass-host-bottom, .icon-magnifying-glass-host-left, .icon-angle-rightwards-host, .icon-angle-rightwards-host-top, .icon-angle-rightwards-host-right, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-host-left, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-leftwards-host, .icon-angle-leftwards-host-top, .icon-angle-leftwards-host-right, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-host-left, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-upwards-host, .icon-angle-upwards-host-top, .icon-angle-upwards-host-right, .icon-angle-upwards-host-bottom, .icon-angle-upwards-host-left, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left, .icon-angle-downwards-host, .icon-angle-downwards-host-top, .icon-angle-downwards-host-right, .icon-angle-downwards-host-bottom, .icon-angle-downwards-host-left, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-maximize-host, .icon-maximize-host-top, .icon-maximize-host-right, .icon-maximize-host-bottom, .icon-maximize-host-left, .icon-minimize-host, .icon-minimize-host-top, .icon-minimize-host-right, .icon-minimize-host-bottom, .icon-minimize-host-left, .icon-options-host, .icon-options-host-top, .icon-options-host-right, .icon-options-host-bottom, .icon-options-host-left, .icon-sun-host, .icon-sun-host-top, .icon-sun-host-right, .icon-sun-host-bottom, .icon-sun-host-left, .icon-moon-host, .icon-moon-host-top, .icon-moon-host-right, .icon-moon-host-bottom, .icon-moon-host-left, .icon-color-scheme-host, .icon-color-scheme-host-top, .icon-color-scheme-host-right, .icon-color-scheme-host-bottom, .icon-color-scheme-host-left, .icon-empty-host, .icon-empty-host-top, .icon-empty-host-right, .icon-empty-host-bottom, .icon-empty-host-left, .icon-copy-host, .icon-copy-host-top, .icon-copy-host-right, .icon-copy-host-bottom, .icon-copy-host-left, .icon-spinner-host, .icon-spinner-host-top, .icon-spinner-host-right, .icon-spinner-host-bottom, .icon-spinner-host-left, .icon-spinner-train-track-host, .icon-spinner-train-track-host-top, .icon-spinner-train-track-host-right, .icon-spinner-train-track-host-bottom, .icon-spinner-train-track-host-left, .icon-spinner2-host, .icon-spinner2-host-top, .icon-spinner2-host-right, .icon-spinner2-host-bottom, .icon-spinner2-host-left, .icon-bell-host, .icon-bell-host-top, .icon-bell-host-right, .icon-bell-host-bottom, .icon-bell-host-left, .icon-person-profile-host, .icon-person-profile-host-top, .icon-person-profile-host-right, .icon-person-profile-host-bottom, .icon-person-profile-host-left, .icon-clock-host, .icon-clock-host-top, .icon-clock-host-right, .icon-clock-host-bottom, .icon-clock-host-left, .icon-reload-host, .icon-reload-host-top, .icon-reload-host-right, .icon-reload-host-bottom, .icon-reload-host-left, .icon-shutdown-host, .icon-shutdown-host-top, .icon-shutdown-host-right, .icon-shutdown-host-bottom, .icon-shutdown-host-left, .icon-sand-clock-host, .icon-sand-clock-host-top, .icon-sand-clock-host-right, .icon-sand-clock-host-bottom, .icon-sand-clock-host-left {
+    --icon-host-gap-before: 0px;
+    --icon-host-gap-after: 5px;
+    --icon-host-x-padding: calc(var(--icon-width) + var(--icon-host-gap-before) + var(--icon-host-gap-after));
+    --icon-host-y-padding: calc(var(--icon-height) + var(--icon-host-gap-before) + var(--icon-host-gap-after));
+  }
+  .icon-checkmark-host::before, .icon-checkmark-host-top::before, .icon-checkmark-host-right::before, .icon-checkmark-host-bottom::before, .icon-checkmark-host-left::before, .icon-crossmark-host::before, .icon-crossmark-host-top::before, .icon-crossmark-host-right::before, .icon-crossmark-host-bottom::before, .icon-crossmark-host-left::before, .icon-burger-menu-host::before, .icon-burger-menu-host-top::before, .icon-burger-menu-host-right::before, .icon-burger-menu-host-bottom::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-host::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-host-left::before, .icon-triple-dot-menu-horizontal-host::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-triple-dot-menu-horizontal-host-left::before, .icon-magnifying-glass-host::before, .icon-magnifying-glass-host-top::before, .icon-magnifying-glass-host-right::before, .icon-magnifying-glass-host-bottom::before, .icon-magnifying-glass-host-left::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-maximize-host::before, .icon-maximize-host-top::before, .icon-maximize-host-right::before, .icon-maximize-host-bottom::before, .icon-maximize-host-left::before, .icon-minimize-host::before, .icon-minimize-host-top::before, .icon-minimize-host-right::before, .icon-minimize-host-bottom::before, .icon-minimize-host-left::before, .icon-options-host::before, .icon-options-host-top::before, .icon-options-host-right::before, .icon-options-host-bottom::before, .icon-options-host-left::before, .icon-sun-host::before, .icon-sun-host-top::before, .icon-sun-host-right::before, .icon-sun-host-bottom::before, .icon-sun-host-left::before, .icon-moon-host::before, .icon-moon-host-top::before, .icon-moon-host-right::before, .icon-moon-host-bottom::before, .icon-moon-host-left::before, .icon-color-scheme-host::before, .icon-color-scheme-host-top::before, .icon-color-scheme-host-right::before, .icon-color-scheme-host-bottom::before, .icon-color-scheme-host-left::before, .icon-empty-host::before, .icon-empty-host-top::before, .icon-empty-host-right::before, .icon-empty-host-bottom::before, .icon-empty-host-left::before, .icon-copy-host::before, .icon-copy-host-top::before, .icon-copy-host-right::before, .icon-copy-host-bottom::before, .icon-copy-host-left::before, .icon-spinner-host::before, .icon-spinner-host-top::before, .icon-spinner-host-right::before, .icon-spinner-host-bottom::before, .icon-spinner-host-left::before, .icon-spinner-train-track-host::before, .icon-spinner-train-track-host-top::before, .icon-spinner-train-track-host-right::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner-train-track-host-left::before, .icon-spinner2-host::before, .icon-spinner2-host-top::before, .icon-spinner2-host-right::before, .icon-spinner2-host-bottom::before, .icon-spinner2-host-left::before, .icon-bell-host::before, .icon-bell-host-top::before, .icon-bell-host-right::before, .icon-bell-host-bottom::before, .icon-bell-host-left::before, .icon-person-profile-host::before, .icon-person-profile-host-top::before, .icon-person-profile-host-right::before, .icon-person-profile-host-bottom::before, .icon-person-profile-host-left::before, .icon-clock-host::before, .icon-clock-host-top::before, .icon-clock-host-right::before, .icon-clock-host-bottom::before, .icon-clock-host-left::before, .icon-reload-host::before, .icon-reload-host-top::before, .icon-reload-host-right::before, .icon-reload-host-bottom::before, .icon-reload-host-left::before, .icon-shutdown-host::before, .icon-shutdown-host-top::before, .icon-shutdown-host-right::before, .icon-shutdown-host-bottom::before, .icon-shutdown-host-left::before, .icon-sand-clock-host::before, .icon-sand-clock-host-top::before, .icon-sand-clock-host-right::before, .icon-sand-clock-host-bottom::before, .icon-sand-clock-host-left::before {
+    position: absolute;
+  }
+  .icon-checkmark-self, .icon-crossmark-self, .icon-burger-menu-self, .icon-triple-dot-menu-self, .icon-triple-dot-menu-horizontal-self, .icon-magnifying-glass-self, .icon-angle-rightwards-self, .icon-angle-rightwards-double-self, .icon-angle-leftwards-self, .icon-angle-leftwards-double-self, .icon-angle-upwards-self, .icon-angle-upwards-double-self, .icon-angle-downwards-self, .icon-angle-downwards-double-self, .icon-maximize-self, .icon-minimize-self, .icon-options-self, .icon-sun-self, .icon-moon-self, .icon-color-scheme-self, .icon-empty-self, .icon-copy-self, .icon-spinner-self, .icon-spinner-train-track-self, .icon-spinner2-self, .icon-bell-self, .icon-person-profile-self, .icon-clock-self, .icon-reload-self, .icon-shutdown-self, .icon-sand-clock-self {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .icon-checkmark-host-top, .icon-crossmark-host-top, .icon-burger-menu-host-top, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-horizontal-host-top, .icon-magnifying-glass-host-top, .icon-angle-rightwards-host-top, .icon-angle-rightwards-double-host-top, .icon-angle-leftwards-host-top, .icon-angle-leftwards-double-host-top, .icon-angle-upwards-host-top, .icon-angle-upwards-double-host-top, .icon-angle-downwards-host-top, .icon-angle-downwards-double-host-top, .icon-maximize-host-top, .icon-minimize-host-top, .icon-options-host-top, .icon-sun-host-top, .icon-moon-host-top, .icon-color-scheme-host-top, .icon-empty-host-top, .icon-copy-host-top, .icon-spinner-host-top, .icon-spinner-train-track-host-top, .icon-spinner2-host-top, .icon-bell-host-top, .icon-person-profile-host-top, .icon-clock-host-top, .icon-reload-host-top, .icon-shutdown-host-top, .icon-sand-clock-host-top {
+    padding-top: var(--icon-host-y-padding);
+  }
+  .icon-checkmark-host-top::before, .icon-crossmark-host-top::before, .icon-burger-menu-host-top::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-magnifying-glass-host-top::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-double-host-top::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-double-host-top::before, .icon-maximize-host-top::before, .icon-minimize-host-top::before, .icon-options-host-top::before, .icon-sun-host-top::before, .icon-moon-host-top::before, .icon-color-scheme-host-top::before, .icon-empty-host-top::before, .icon-copy-host-top::before, .icon-spinner-host-top::before, .icon-spinner-train-track-host-top::before, .icon-spinner2-host-top::before, .icon-bell-host-top::before, .icon-person-profile-host-top::before, .icon-clock-host-top::before, .icon-reload-host-top::before, .icon-shutdown-host-top::before, .icon-sand-clock-host-top::before, .icon-checkmark-host-top::after, .icon-crossmark-host-top::after, .icon-burger-menu-host-top::after, .icon-triple-dot-menu-host-top::after, .icon-triple-dot-menu-horizontal-host-top::after, .icon-magnifying-glass-host-top::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-double-host-top::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-double-host-top::after, .icon-maximize-host-top::after, .icon-minimize-host-top::after, .icon-options-host-top::after, .icon-sun-host-top::after, .icon-moon-host-top::after, .icon-color-scheme-host-top::after, .icon-empty-host-top::after, .icon-copy-host-top::after, .icon-spinner-host-top::after, .icon-spinner-train-track-host-top::after, .icon-spinner2-host-top::after, .icon-bell-host-top::after, .icon-person-profile-host-top::after, .icon-clock-host-top::after, .icon-reload-host-top::after, .icon-shutdown-host-top::after, .icon-sand-clock-host-top::after {
+    translate: 0 var(--icon-host-gap-before);
+  }
+  .icon-checkmark-host-right, .icon-crossmark-host-right, .icon-burger-menu-host-right, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-horizontal-host-right, .icon-magnifying-glass-host-right, .icon-angle-rightwards-host-right, .icon-angle-rightwards-double-host-right, .icon-angle-leftwards-host-right, .icon-angle-leftwards-double-host-right, .icon-angle-upwards-host-right, .icon-angle-upwards-double-host-right, .icon-angle-downwards-host-right, .icon-angle-downwards-double-host-right, .icon-maximize-host-right, .icon-minimize-host-right, .icon-options-host-right, .icon-sun-host-right, .icon-moon-host-right, .icon-color-scheme-host-right, .icon-empty-host-right, .icon-copy-host-right, .icon-spinner-host-right, .icon-spinner-train-track-host-right, .icon-spinner2-host-right, .icon-bell-host-right, .icon-person-profile-host-right, .icon-clock-host-right, .icon-reload-host-right, .icon-shutdown-host-right, .icon-sand-clock-host-right {
+    padding-right: var(--icon-host-x-padding);
+  }
+  .icon-checkmark-host-right::before, .icon-crossmark-host-right::before, .icon-burger-menu-host-right::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-magnifying-glass-host-right::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-double-host-right::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-double-host-right::before, .icon-maximize-host-right::before, .icon-minimize-host-right::before, .icon-options-host-right::before, .icon-sun-host-right::before, .icon-moon-host-right::before, .icon-color-scheme-host-right::before, .icon-empty-host-right::before, .icon-copy-host-right::before, .icon-spinner-host-right::before, .icon-spinner-train-track-host-right::before, .icon-spinner2-host-right::before, .icon-bell-host-right::before, .icon-person-profile-host-right::before, .icon-clock-host-right::before, .icon-reload-host-right::before, .icon-shutdown-host-right::before, .icon-sand-clock-host-right::before, .icon-checkmark-host-right::after, .icon-crossmark-host-right::after, .icon-burger-menu-host-right::after, .icon-triple-dot-menu-host-right::after, .icon-triple-dot-menu-horizontal-host-right::after, .icon-magnifying-glass-host-right::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-double-host-right::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-double-host-right::after, .icon-maximize-host-right::after, .icon-minimize-host-right::after, .icon-options-host-right::after, .icon-sun-host-right::after, .icon-moon-host-right::after, .icon-color-scheme-host-right::after, .icon-empty-host-right::after, .icon-copy-host-right::after, .icon-spinner-host-right::after, .icon-spinner-train-track-host-right::after, .icon-spinner2-host-right::after, .icon-bell-host-right::after, .icon-person-profile-host-right::after, .icon-clock-host-right::after, .icon-reload-host-right::after, .icon-shutdown-host-right::after, .icon-sand-clock-host-right::after {
+    translate: calc(0px - var(--icon-host-gap-before)) 0;
+  }
+  .icon-checkmark-host-bottom, .icon-crossmark-host-bottom, .icon-burger-menu-host-bottom, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-horizontal-host-bottom, .icon-magnifying-glass-host-bottom, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-double-host-bottom, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-double-host-bottom, .icon-angle-upwards-host-bottom, .icon-angle-upwards-double-host-bottom, .icon-angle-downwards-host-bottom, .icon-angle-downwards-double-host-bottom, .icon-maximize-host-bottom, .icon-minimize-host-bottom, .icon-options-host-bottom, .icon-sun-host-bottom, .icon-moon-host-bottom, .icon-color-scheme-host-bottom, .icon-empty-host-bottom, .icon-copy-host-bottom, .icon-spinner-host-bottom, .icon-spinner-train-track-host-bottom, .icon-spinner2-host-bottom, .icon-bell-host-bottom, .icon-person-profile-host-bottom, .icon-clock-host-bottom, .icon-reload-host-bottom, .icon-shutdown-host-bottom, .icon-sand-clock-host-bottom {
+    padding-bottom: var(--icon-host-y-padding);
+  }
+  .icon-checkmark-host-bottom::before, .icon-crossmark-host-bottom::before, .icon-burger-menu-host-bottom::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-magnifying-glass-host-bottom::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-double-host-bottom::before, .icon-maximize-host-bottom::before, .icon-minimize-host-bottom::before, .icon-options-host-bottom::before, .icon-sun-host-bottom::before, .icon-moon-host-bottom::before, .icon-color-scheme-host-bottom::before, .icon-empty-host-bottom::before, .icon-copy-host-bottom::before, .icon-spinner-host-bottom::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner2-host-bottom::before, .icon-bell-host-bottom::before, .icon-person-profile-host-bottom::before, .icon-clock-host-bottom::before, .icon-reload-host-bottom::before, .icon-shutdown-host-bottom::before, .icon-sand-clock-host-bottom::before, .icon-checkmark-host-bottom::after, .icon-crossmark-host-bottom::after, .icon-burger-menu-host-bottom::after, .icon-triple-dot-menu-host-bottom::after, .icon-triple-dot-menu-horizontal-host-bottom::after, .icon-magnifying-glass-host-bottom::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-double-host-bottom::after, .icon-maximize-host-bottom::after, .icon-minimize-host-bottom::after, .icon-options-host-bottom::after, .icon-sun-host-bottom::after, .icon-moon-host-bottom::after, .icon-color-scheme-host-bottom::after, .icon-empty-host-bottom::after, .icon-copy-host-bottom::after, .icon-spinner-host-bottom::after, .icon-spinner-train-track-host-bottom::after, .icon-spinner2-host-bottom::after, .icon-bell-host-bottom::after, .icon-person-profile-host-bottom::after, .icon-clock-host-bottom::after, .icon-reload-host-bottom::after, .icon-shutdown-host-bottom::after, .icon-sand-clock-host-bottom::after {
+    translate: 0 calc(0px - var(--icon-host-gap-before));
+  }
+  .icon-checkmark-host-left, .icon-crossmark-host-left, .icon-burger-menu-host-left, .icon-triple-dot-menu-host-left, .icon-triple-dot-menu-horizontal-host-left, .icon-magnifying-glass-host-left, .icon-angle-rightwards-host-left, .icon-angle-rightwards-double-host-left, .icon-angle-leftwards-host-left, .icon-angle-leftwards-double-host-left, .icon-angle-upwards-host-left, .icon-angle-upwards-double-host-left, .icon-angle-downwards-host-left, .icon-angle-downwards-double-host-left, .icon-maximize-host-left, .icon-minimize-host-left, .icon-options-host-left, .icon-sun-host-left, .icon-moon-host-left, .icon-color-scheme-host-left, .icon-empty-host-left, .icon-copy-host-left, .icon-spinner-host-left, .icon-spinner-train-track-host-left, .icon-spinner2-host-left, .icon-bell-host-left, .icon-person-profile-host-left, .icon-clock-host-left, .icon-reload-host-left, .icon-shutdown-host-left, .icon-sand-clock-host-left {
+    padding-left: var(--icon-host-x-padding);
+  }
+  .icon-checkmark-host-left::before, .icon-crossmark-host-left::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-host-left::before, .icon-triple-dot-menu-horizontal-host-left::before, .icon-magnifying-glass-host-left::before, .icon-angle-rightwards-host-left::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-leftwards-host-left::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-upwards-host-left::before, .icon-angle-upwards-double-host-left::before, .icon-angle-downwards-host-left::before, .icon-angle-downwards-double-host-left::before, .icon-maximize-host-left::before, .icon-minimize-host-left::before, .icon-options-host-left::before, .icon-sun-host-left::before, .icon-moon-host-left::before, .icon-color-scheme-host-left::before, .icon-empty-host-left::before, .icon-copy-host-left::before, .icon-spinner-host-left::before, .icon-spinner-train-track-host-left::before, .icon-spinner2-host-left::before, .icon-bell-host-left::before, .icon-person-profile-host-left::before, .icon-clock-host-left::before, .icon-reload-host-left::before, .icon-shutdown-host-left::before, .icon-sand-clock-host-left::before, .icon-checkmark-host-left::after, .icon-crossmark-host-left::after, .icon-burger-menu-host-left::after, .icon-triple-dot-menu-host-left::after, .icon-triple-dot-menu-horizontal-host-left::after, .icon-magnifying-glass-host-left::after, .icon-angle-rightwards-host-left::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-leftwards-host-left::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-upwards-host-left::after, .icon-angle-upwards-double-host-left::after, .icon-angle-downwards-host-left::after, .icon-angle-downwards-double-host-left::after, .icon-maximize-host-left::after, .icon-minimize-host-left::after, .icon-options-host-left::after, .icon-sun-host-left::after, .icon-moon-host-left::after, .icon-color-scheme-host-left::after, .icon-empty-host-left::after, .icon-copy-host-left::after, .icon-spinner-host-left::after, .icon-spinner-train-track-host-left::after, .icon-spinner2-host-left::after, .icon-bell-host-left::after, .icon-person-profile-host-left::after, .icon-clock-host-left::after, .icon-reload-host-left::after, .icon-shutdown-host-left::after, .icon-sand-clock-host-left::after {
+    translate: var(--icon-host-gap-before) 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* CSS Icons */
+@layer accessories {
+  .icon-checkmark-self, .icon-checkmark-host, .icon-checkmark-host-top, .icon-checkmark-host-right, .icon-checkmark-host-bottom, .icon-checkmark-host-left, .icon-crossmark-self, .icon-crossmark-host, .icon-crossmark-host-top, .icon-crossmark-host-right, .icon-crossmark-host-bottom, .icon-crossmark-host-left, .icon-burger-menu-self, .icon-burger-menu-host, .icon-burger-menu-host-top, .icon-burger-menu-host-right, .icon-burger-menu-host-bottom, .icon-burger-menu-host-left, .icon-triple-dot-menu-self, .icon-triple-dot-menu-host, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-host-left, .icon-triple-dot-menu-horizontal-self, .icon-triple-dot-menu-horizontal-host, .icon-triple-dot-menu-horizontal-host-top, .icon-triple-dot-menu-horizontal-host-right, .icon-triple-dot-menu-horizontal-host-bottom, .icon-triple-dot-menu-horizontal-host-left, .icon-magnifying-glass-self, .icon-magnifying-glass-host, .icon-magnifying-glass-host-top, .icon-magnifying-glass-host-right, .icon-magnifying-glass-host-bottom, .icon-magnifying-glass-host-left, .icon-angle-rightwards-self, .icon-angle-rightwards-host, .icon-angle-rightwards-host-top, .icon-angle-rightwards-host-right, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-host-left, .icon-angle-rightwards-double-self, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-leftwards-self, .icon-angle-leftwards-host, .icon-angle-leftwards-host-top, .icon-angle-leftwards-host-right, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-host-left, .icon-angle-leftwards-double-self, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-upwards-self, .icon-angle-upwards-host, .icon-angle-upwards-host-top, .icon-angle-upwards-host-right, .icon-angle-upwards-host-bottom, .icon-angle-upwards-host-left, .icon-angle-upwards-double-self, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left, .icon-angle-downwards-self, .icon-angle-downwards-host, .icon-angle-downwards-host-top, .icon-angle-downwards-host-right, .icon-angle-downwards-host-bottom, .icon-angle-downwards-host-left, .icon-angle-downwards-double-self, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-maximize-self, .icon-maximize-host, .icon-maximize-host-top, .icon-maximize-host-right, .icon-maximize-host-bottom, .icon-maximize-host-left, .icon-minimize-self, .icon-minimize-host, .icon-minimize-host-top, .icon-minimize-host-right, .icon-minimize-host-bottom, .icon-minimize-host-left, .icon-options-self, .icon-options-host, .icon-options-host-top, .icon-options-host-right, .icon-options-host-bottom, .icon-options-host-left, .icon-sun-self, .icon-sun-host, .icon-sun-host-top, .icon-sun-host-right, .icon-sun-host-bottom, .icon-sun-host-left, .icon-moon-self, .icon-moon-host, .icon-moon-host-top, .icon-moon-host-right, .icon-moon-host-bottom, .icon-moon-host-left, .icon-color-scheme-self, .icon-color-scheme-host, .icon-color-scheme-host-top, .icon-color-scheme-host-right, .icon-color-scheme-host-bottom, .icon-color-scheme-host-left, .icon-empty-self, .icon-empty-host, .icon-empty-host-top, .icon-empty-host-right, .icon-empty-host-bottom, .icon-empty-host-left, .icon-copy-self, .icon-copy-host, .icon-copy-host-top, .icon-copy-host-right, .icon-copy-host-bottom, .icon-copy-host-left, .icon-spinner-self, .icon-spinner-host, .icon-spinner-host-top, .icon-spinner-host-right, .icon-spinner-host-bottom, .icon-spinner-host-left, .icon-spinner-train-track-self, .icon-spinner-train-track-host, .icon-spinner-train-track-host-top, .icon-spinner-train-track-host-right, .icon-spinner-train-track-host-bottom, .icon-spinner-train-track-host-left, .icon-spinner2-self, .icon-spinner2-host, .icon-spinner2-host-top, .icon-spinner2-host-right, .icon-spinner2-host-bottom, .icon-spinner2-host-left, .icon-bell-self, .icon-bell-host, .icon-bell-host-top, .icon-bell-host-right, .icon-bell-host-bottom, .icon-bell-host-left, .icon-person-profile-self, .icon-person-profile-host, .icon-person-profile-host-top, .icon-person-profile-host-right, .icon-person-profile-host-bottom, .icon-person-profile-host-left, .icon-clock-self, .icon-clock-host, .icon-clock-host-top, .icon-clock-host-right, .icon-clock-host-bottom, .icon-clock-host-left, .icon-reload-self, .icon-reload-host, .icon-reload-host-top, .icon-reload-host-right, .icon-reload-host-bottom, .icon-reload-host-left, .icon-shutdown-self, .icon-shutdown-host, .icon-shutdown-host-top, .icon-shutdown-host-right, .icon-shutdown-host-bottom, .icon-shutdown-host-left, .icon-sand-clock-self, .icon-sand-clock-host, .icon-sand-clock-host-top, .icon-sand-clock-host-right, .icon-sand-clock-host-bottom, .icon-sand-clock-host-left {
+    --box-width: 50px;
+    --box-height: 50px;
+    --box-border-width: 0px;
+    --icon-weight: 3px;
+    --is-rounded-edges: 0;
+    --box-inner-width: calc(var(--box-width) - var(--box-border-width) * 2);
+    --box-inner-height: calc(var(--box-height) - var(--box-border-width) * 2);
+    --remaining-x-space: calc(var(--box-inner-width) - var(--icon-width));
+    --remaining-x-space-half: calc(var(--remaining-x-space) / 2);
+    --remaining-y-space: calc(var(--box-inner-height) - var(--icon-height));
+    --remaining-y-space-half: calc(var(--remaining-y-space) / 2);
+    --is-rounded-edges-norm: clamp(0, var(--is-rounded-edges), 1);
+    --rounded-edges-by-icon-weight: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * var(--icon-weight-half));
+  }
+  .icon-checkmark-self::before, .icon-checkmark-host::before, .icon-checkmark-host-top::before, .icon-checkmark-host-right::before, .icon-checkmark-host-bottom::before, .icon-checkmark-host-left::before, .icon-crossmark-self::before, .icon-crossmark-host::before, .icon-crossmark-host-top::before, .icon-crossmark-host-right::before, .icon-crossmark-host-bottom::before, .icon-crossmark-host-left::before, .icon-burger-menu-self::before, .icon-burger-menu-host::before, .icon-burger-menu-host-top::before, .icon-burger-menu-host-right::before, .icon-burger-menu-host-bottom::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-self::before, .icon-triple-dot-menu-host::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-host-left::before, .icon-triple-dot-menu-horizontal-self::before, .icon-triple-dot-menu-horizontal-host::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-triple-dot-menu-horizontal-host-left::before, .icon-magnifying-glass-self::before, .icon-magnifying-glass-host::before, .icon-magnifying-glass-host-top::before, .icon-magnifying-glass-host-right::before, .icon-magnifying-glass-host-bottom::before, .icon-magnifying-glass-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before, .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-leftwards-self::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before, .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-upwards-self::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before, .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-maximize-self::before, .icon-maximize-host::before, .icon-maximize-host-top::before, .icon-maximize-host-right::before, .icon-maximize-host-bottom::before, .icon-maximize-host-left::before, .icon-minimize-self::before, .icon-minimize-host::before, .icon-minimize-host-top::before, .icon-minimize-host-right::before, .icon-minimize-host-bottom::before, .icon-minimize-host-left::before, .icon-options-self::before, .icon-options-host::before, .icon-options-host-top::before, .icon-options-host-right::before, .icon-options-host-bottom::before, .icon-options-host-left::before, .icon-sun-self::before, .icon-sun-host::before, .icon-sun-host-top::before, .icon-sun-host-right::before, .icon-sun-host-bottom::before, .icon-sun-host-left::before, .icon-moon-self::before, .icon-moon-host::before, .icon-moon-host-top::before, .icon-moon-host-right::before, .icon-moon-host-bottom::before, .icon-moon-host-left::before, .icon-color-scheme-self::before, .icon-color-scheme-host::before, .icon-color-scheme-host-top::before, .icon-color-scheme-host-right::before, .icon-color-scheme-host-bottom::before, .icon-color-scheme-host-left::before, .icon-empty-self::before, .icon-empty-host::before, .icon-empty-host-top::before, .icon-empty-host-right::before, .icon-empty-host-bottom::before, .icon-empty-host-left::before, .icon-copy-self::before, .icon-copy-host::before, .icon-copy-host-top::before, .icon-copy-host-right::before, .icon-copy-host-bottom::before, .icon-copy-host-left::before, .icon-spinner-self::before, .icon-spinner-host::before, .icon-spinner-host-top::before, .icon-spinner-host-right::before, .icon-spinner-host-bottom::before, .icon-spinner-host-left::before, .icon-spinner-train-track-self::before, .icon-spinner-train-track-host::before, .icon-spinner-train-track-host-top::before, .icon-spinner-train-track-host-right::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner-train-track-host-left::before, .icon-spinner2-self::before, .icon-spinner2-host::before, .icon-spinner2-host-top::before, .icon-spinner2-host-right::before, .icon-spinner2-host-bottom::before, .icon-spinner2-host-left::before, .icon-bell-self::before, .icon-bell-host::before, .icon-bell-host-top::before, .icon-bell-host-right::before, .icon-bell-host-bottom::before, .icon-bell-host-left::before, .icon-person-profile-self::before, .icon-person-profile-host::before, .icon-person-profile-host-top::before, .icon-person-profile-host-right::before, .icon-person-profile-host-bottom::before, .icon-person-profile-host-left::before, .icon-clock-self::before, .icon-clock-host::before, .icon-clock-host-top::before, .icon-clock-host-right::before, .icon-clock-host-bottom::before, .icon-clock-host-left::before, .icon-reload-self::before, .icon-reload-host::before, .icon-reload-host-top::before, .icon-reload-host-right::before, .icon-reload-host-bottom::before, .icon-reload-host-left::before, .icon-shutdown-self::before, .icon-shutdown-host::before, .icon-shutdown-host-top::before, .icon-shutdown-host-right::before, .icon-shutdown-host-bottom::before, .icon-shutdown-host-left::before, .icon-sand-clock-self::before, .icon-sand-clock-host::before, .icon-sand-clock-host-top::before, .icon-sand-clock-host-right::before, .icon-sand-clock-host-bottom::before, .icon-sand-clock-host-left::before, .icon-checkmark-self::after, .icon-checkmark-host::after, .icon-checkmark-host-top::after, .icon-checkmark-host-right::after, .icon-checkmark-host-bottom::after, .icon-checkmark-host-left::after, .icon-crossmark-self::after, .icon-crossmark-host::after, .icon-crossmark-host-top::after, .icon-crossmark-host-right::after, .icon-crossmark-host-bottom::after, .icon-crossmark-host-left::after, .icon-burger-menu-self::after, .icon-burger-menu-host::after, .icon-burger-menu-host-top::after, .icon-burger-menu-host-right::after, .icon-burger-menu-host-bottom::after, .icon-burger-menu-host-left::after, .icon-triple-dot-menu-self::after, .icon-triple-dot-menu-host::after, .icon-triple-dot-menu-host-top::after, .icon-triple-dot-menu-host-right::after, .icon-triple-dot-menu-host-bottom::after, .icon-triple-dot-menu-host-left::after, .icon-triple-dot-menu-horizontal-self::after, .icon-triple-dot-menu-horizontal-host::after, .icon-triple-dot-menu-horizontal-host-top::after, .icon-triple-dot-menu-horizontal-host-right::after, .icon-triple-dot-menu-horizontal-host-bottom::after, .icon-triple-dot-menu-horizontal-host-left::after, .icon-magnifying-glass-self::after, .icon-magnifying-glass-host::after, .icon-magnifying-glass-host-top::after, .icon-magnifying-glass-host-right::after, .icon-magnifying-glass-host-bottom::after, .icon-magnifying-glass-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after, .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-leftwards-self::after, .icon-angle-leftwards-host::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-host-left::after, .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-upwards-self::after, .icon-angle-upwards-host::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-host-left::after, .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after, .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-maximize-self::after, .icon-maximize-host::after, .icon-maximize-host-top::after, .icon-maximize-host-right::after, .icon-maximize-host-bottom::after, .icon-maximize-host-left::after, .icon-minimize-self::after, .icon-minimize-host::after, .icon-minimize-host-top::after, .icon-minimize-host-right::after, .icon-minimize-host-bottom::after, .icon-minimize-host-left::after, .icon-options-self::after, .icon-options-host::after, .icon-options-host-top::after, .icon-options-host-right::after, .icon-options-host-bottom::after, .icon-options-host-left::after, .icon-sun-self::after, .icon-sun-host::after, .icon-sun-host-top::after, .icon-sun-host-right::after, .icon-sun-host-bottom::after, .icon-sun-host-left::after, .icon-moon-self::after, .icon-moon-host::after, .icon-moon-host-top::after, .icon-moon-host-right::after, .icon-moon-host-bottom::after, .icon-moon-host-left::after, .icon-color-scheme-self::after, .icon-color-scheme-host::after, .icon-color-scheme-host-top::after, .icon-color-scheme-host-right::after, .icon-color-scheme-host-bottom::after, .icon-color-scheme-host-left::after, .icon-empty-self::after, .icon-empty-host::after, .icon-empty-host-top::after, .icon-empty-host-right::after, .icon-empty-host-bottom::after, .icon-empty-host-left::after, .icon-copy-self::after, .icon-copy-host::after, .icon-copy-host-top::after, .icon-copy-host-right::after, .icon-copy-host-bottom::after, .icon-copy-host-left::after, .icon-spinner-self::after, .icon-spinner-host::after, .icon-spinner-host-top::after, .icon-spinner-host-right::after, .icon-spinner-host-bottom::after, .icon-spinner-host-left::after, .icon-spinner-train-track-self::after, .icon-spinner-train-track-host::after, .icon-spinner-train-track-host-top::after, .icon-spinner-train-track-host-right::after, .icon-spinner-train-track-host-bottom::after, .icon-spinner-train-track-host-left::after, .icon-spinner2-self::after, .icon-spinner2-host::after, .icon-spinner2-host-top::after, .icon-spinner2-host-right::after, .icon-spinner2-host-bottom::after, .icon-spinner2-host-left::after, .icon-bell-self::after, .icon-bell-host::after, .icon-bell-host-top::after, .icon-bell-host-right::after, .icon-bell-host-bottom::after, .icon-bell-host-left::after, .icon-person-profile-self::after, .icon-person-profile-host::after, .icon-person-profile-host-top::after, .icon-person-profile-host-right::after, .icon-person-profile-host-bottom::after, .icon-person-profile-host-left::after, .icon-clock-self::after, .icon-clock-host::after, .icon-clock-host-top::after, .icon-clock-host-right::after, .icon-clock-host-bottom::after, .icon-clock-host-left::after, .icon-reload-self::after, .icon-reload-host::after, .icon-reload-host-top::after, .icon-reload-host-right::after, .icon-reload-host-bottom::after, .icon-reload-host-left::after, .icon-shutdown-self::after, .icon-shutdown-host::after, .icon-shutdown-host-top::after, .icon-shutdown-host-right::after, .icon-shutdown-host-bottom::after, .icon-shutdown-host-left::after, .icon-sand-clock-self::after, .icon-sand-clock-host::after, .icon-sand-clock-host-top::after, .icon-sand-clock-host-right::after, .icon-sand-clock-host-bottom::after, .icon-sand-clock-host-left::after {
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - var(--icon-height-half));
+    left: calc(50% - var(--icon-width-half));
+    z-index: 1;
+    background: var(--icon-color);
+    pointer-events: none;
+    content: "";
+  }
+  .icon-checkmark-self, .icon-crossmark-self, .icon-burger-menu-self, .icon-triple-dot-menu-self, .icon-triple-dot-menu-horizontal-self, .icon-magnifying-glass-self, .icon-angle-rightwards-self, .icon-angle-rightwards-double-self, .icon-angle-leftwards-self, .icon-angle-leftwards-double-self, .icon-angle-upwards-self, .icon-angle-upwards-double-self, .icon-angle-downwards-self, .icon-angle-downwards-double-self, .icon-maximize-self, .icon-minimize-self, .icon-options-self, .icon-sun-self, .icon-moon-self, .icon-color-scheme-self, .icon-empty-self, .icon-copy-self, .icon-spinner-self, .icon-spinner-train-track-self, .icon-spinner2-self, .icon-bell-self, .icon-person-profile-self, .icon-clock-self, .icon-reload-self, .icon-shutdown-self, .icon-sand-clock-self {
+    --box-width: calc(var(--icon-width) + var(--box-border-width) * 2);
+    --box-height: calc(var(--icon-height) + var(--box-border-width) * 2);
+    width: var(--box-width);
+    height: var(--box-height);
+  }
+  .icon-checkmark-host-top::before, .icon-crossmark-host-top::before, .icon-burger-menu-host-top::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-magnifying-glass-host-top::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-double-host-top::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-double-host-top::before, .icon-maximize-host-top::before, .icon-minimize-host-top::before, .icon-options-host-top::before, .icon-sun-host-top::before, .icon-moon-host-top::before, .icon-color-scheme-host-top::before, .icon-empty-host-top::before, .icon-copy-host-top::before, .icon-spinner-host-top::before, .icon-spinner-train-track-host-top::before, .icon-spinner2-host-top::before, .icon-bell-host-top::before, .icon-person-profile-host-top::before, .icon-clock-host-top::before, .icon-reload-host-top::before, .icon-shutdown-host-top::before, .icon-sand-clock-host-top::before, .icon-checkmark-host-top::after, .icon-crossmark-host-top::after, .icon-burger-menu-host-top::after, .icon-triple-dot-menu-host-top::after, .icon-triple-dot-menu-horizontal-host-top::after, .icon-magnifying-glass-host-top::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-double-host-top::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-double-host-top::after, .icon-maximize-host-top::after, .icon-minimize-host-top::after, .icon-options-host-top::after, .icon-sun-host-top::after, .icon-moon-host-top::after, .icon-color-scheme-host-top::after, .icon-empty-host-top::after, .icon-copy-host-top::after, .icon-spinner-host-top::after, .icon-spinner-train-track-host-top::after, .icon-spinner2-host-top::after, .icon-bell-host-top::after, .icon-person-profile-host-top::after, .icon-clock-host-top::after, .icon-reload-host-top::after, .icon-shutdown-host-top::after, .icon-sand-clock-host-top::after {
+    top: 0;
+  }
+  .icon-checkmark-host-right::before, .icon-crossmark-host-right::before, .icon-burger-menu-host-right::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-magnifying-glass-host-right::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-double-host-right::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-double-host-right::before, .icon-maximize-host-right::before, .icon-minimize-host-right::before, .icon-options-host-right::before, .icon-sun-host-right::before, .icon-moon-host-right::before, .icon-color-scheme-host-right::before, .icon-empty-host-right::before, .icon-copy-host-right::before, .icon-spinner-host-right::before, .icon-spinner-train-track-host-right::before, .icon-spinner2-host-right::before, .icon-bell-host-right::before, .icon-person-profile-host-right::before, .icon-clock-host-right::before, .icon-reload-host-right::before, .icon-shutdown-host-right::before, .icon-sand-clock-host-right::before, .icon-checkmark-host-right::after, .icon-crossmark-host-right::after, .icon-burger-menu-host-right::after, .icon-triple-dot-menu-host-right::after, .icon-triple-dot-menu-horizontal-host-right::after, .icon-magnifying-glass-host-right::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-double-host-right::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-double-host-right::after, .icon-maximize-host-right::after, .icon-minimize-host-right::after, .icon-options-host-right::after, .icon-sun-host-right::after, .icon-moon-host-right::after, .icon-color-scheme-host-right::after, .icon-empty-host-right::after, .icon-copy-host-right::after, .icon-spinner-host-right::after, .icon-spinner-train-track-host-right::after, .icon-spinner2-host-right::after, .icon-bell-host-right::after, .icon-person-profile-host-right::after, .icon-clock-host-right::after, .icon-reload-host-right::after, .icon-shutdown-host-right::after, .icon-sand-clock-host-right::after {
+    left: calc(100% - var(--icon-width));
+  }
+  .icon-checkmark-host-bottom::before, .icon-crossmark-host-bottom::before, .icon-burger-menu-host-bottom::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-magnifying-glass-host-bottom::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-double-host-bottom::before, .icon-maximize-host-bottom::before, .icon-minimize-host-bottom::before, .icon-options-host-bottom::before, .icon-sun-host-bottom::before, .icon-moon-host-bottom::before, .icon-color-scheme-host-bottom::before, .icon-empty-host-bottom::before, .icon-copy-host-bottom::before, .icon-spinner-host-bottom::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner2-host-bottom::before, .icon-bell-host-bottom::before, .icon-person-profile-host-bottom::before, .icon-clock-host-bottom::before, .icon-reload-host-bottom::before, .icon-shutdown-host-bottom::before, .icon-sand-clock-host-bottom::before, .icon-checkmark-host-bottom::after, .icon-crossmark-host-bottom::after, .icon-burger-menu-host-bottom::after, .icon-triple-dot-menu-host-bottom::after, .icon-triple-dot-menu-horizontal-host-bottom::after, .icon-magnifying-glass-host-bottom::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-double-host-bottom::after, .icon-maximize-host-bottom::after, .icon-minimize-host-bottom::after, .icon-options-host-bottom::after, .icon-sun-host-bottom::after, .icon-moon-host-bottom::after, .icon-color-scheme-host-bottom::after, .icon-empty-host-bottom::after, .icon-copy-host-bottom::after, .icon-spinner-host-bottom::after, .icon-spinner-train-track-host-bottom::after, .icon-spinner2-host-bottom::after, .icon-bell-host-bottom::after, .icon-person-profile-host-bottom::after, .icon-clock-host-bottom::after, .icon-reload-host-bottom::after, .icon-shutdown-host-bottom::after, .icon-sand-clock-host-bottom::after {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-checkmark-host-left::before, .icon-crossmark-host-left::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-host-left::before, .icon-triple-dot-menu-horizontal-host-left::before, .icon-magnifying-glass-host-left::before, .icon-angle-rightwards-host-left::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-leftwards-host-left::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-upwards-host-left::before, .icon-angle-upwards-double-host-left::before, .icon-angle-downwards-host-left::before, .icon-angle-downwards-double-host-left::before, .icon-maximize-host-left::before, .icon-minimize-host-left::before, .icon-options-host-left::before, .icon-sun-host-left::before, .icon-moon-host-left::before, .icon-color-scheme-host-left::before, .icon-empty-host-left::before, .icon-copy-host-left::before, .icon-spinner-host-left::before, .icon-spinner-train-track-host-left::before, .icon-spinner2-host-left::before, .icon-bell-host-left::before, .icon-person-profile-host-left::before, .icon-clock-host-left::before, .icon-reload-host-left::before, .icon-shutdown-host-left::before, .icon-sand-clock-host-left::before, .icon-checkmark-host-left::after, .icon-crossmark-host-left::after, .icon-burger-menu-host-left::after, .icon-triple-dot-menu-host-left::after, .icon-triple-dot-menu-horizontal-host-left::after, .icon-magnifying-glass-host-left::after, .icon-angle-rightwards-host-left::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-leftwards-host-left::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-upwards-host-left::after, .icon-angle-upwards-double-host-left::after, .icon-angle-downwards-host-left::after, .icon-angle-downwards-double-host-left::after, .icon-maximize-host-left::after, .icon-minimize-host-left::after, .icon-options-host-left::after, .icon-sun-host-left::after, .icon-moon-host-left::after, .icon-color-scheme-host-left::after, .icon-empty-host-left::after, .icon-copy-host-left::after, .icon-spinner-host-left::after, .icon-spinner-train-track-host-left::after, .icon-spinner2-host-left::after, .icon-bell-host-left::after, .icon-person-profile-host-left::after, .icon-clock-host-left::after, .icon-reload-host-left::after, .icon-shutdown-host-left::after, .icon-sand-clock-host-left::after {
+    left: 0;
+  }
+  .icon-checkmark-self, .icon-checkmark-host, .icon-checkmark-host-top, .icon-checkmark-host-right, .icon-checkmark-host-bottom, .icon-checkmark-host-left {
+    --wing-angle: 45deg;
+    --left-wing-size: 20px;
+    --right-wing-size: 35px;
+    --transition-speed: .15s;
+    --left-wing-angle: var(--wing-angle);
+    --right-wing-angle: calc(90deg - var(--left-wing-angle));
+    --right-wing-x-length: calc(var(--right-wing-size) * sin(var(--right-wing-angle)));
+    --left-wing-x-length: calc(var(--left-wing-size) * sin(var(--left-wing-angle)));
+    --right-wing-y-length: calc(var(--right-wing-size) * cos(var(--right-wing-angle)));
+    --left-wing-y-length: calc(var(--left-wing-size) * cos(var(--left-wing-angle)));
+    --right-wing-head-height: calc(var(--icon-weight) * sin(var(--right-wing-angle)));
+    --right-wing-y-space: calc(var(--right-wing-y-length) + var(--right-wing-head-height));
+    --left-wing-head-height: calc(var(--icon-weight) * sin(var(--left-wing-angle)));
+    --left-wing-y-space: calc(var(--left-wing-y-length) + var(--left-wing-head-height));
+    --icon-width: calc(var(--right-wing-x-length) + var(--left-wing-x-length));
+    --icon-height: calc(max(var(--right-wing-y-space), var(--left-wing-y-space)));
+  }
+  .icon-checkmark-self::before, .icon-checkmark-host::before, .icon-checkmark-host-top::before, .icon-checkmark-host-right::before, .icon-checkmark-host-bottom::before, .icon-checkmark-host-left::before, .icon-checkmark-self::after, .icon-checkmark-host::after, .icon-checkmark-host-top::after, .icon-checkmark-host-right::after, .icon-checkmark-host-bottom::after, .icon-checkmark-host-left::after {
+    top: auto;
+    bottom: calc(50% - var(--icon-height-half));
+    width: var(--icon-weight);
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-checkmark-self:before, .icon-checkmark-host:before, .icon-checkmark-host-top:before, .icon-checkmark-host-right:before, .icon-checkmark-host-bottom:before, .icon-checkmark-host-left:before {
+    left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length)));
+    height: var(--left-wing-size);
+    rotate: calc(0deg - var(--wing-angle));
+    transform-origin: 0 100%;
+  }
+  .icon-checkmark-self::after, .icon-checkmark-host::after, .icon-checkmark-host-top::after, .icon-checkmark-host-right::after, .icon-checkmark-host-bottom::after, .icon-checkmark-host-left::after {
+    left: calc(50% - (var(--icon-width-half) - var(--left-wing-x-length) + var(--icon-weight)));
+    height: var(--right-wing-size);
+    transform-origin: 100% 100%;
+    rotate: var(--right-wing-angle);
+  }
+  .icon-checkmark-host-top::before {
+    top: calc(var(--right-wing-y-space) - var(--left-wing-size));
+  }
+  .icon-checkmark-host-top::after {
+    top: calc(0px - var(--right-wing-size) + var(--right-wing-y-space));
+  }
+  .icon-checkmark-host-right::before {
+    left: calc(100% - var(--right-wing-x-length));
+  }
+  .icon-checkmark-host-right::after {
+    left: calc(100% - (var(--right-wing-x-length) + var(--icon-weight)));
+  }
+  .icon-checkmark-host-bottom::before {
+    top: calc(100% - var(--left-wing-size));
+  }
+  .icon-checkmark-host-bottom::after {
+    top: calc(100% - var(--right-wing-size));
+  }
+  .icon-checkmark-host-left::before {
+    left: var(--left-wing-x-length);
+  }
+  .icon-checkmark-host-left::after {
+    left: calc(var(--left-wing-x-length) - var(--icon-weight));
+  }
+  .icon-crossmark-self, .icon-crossmark-host, .icon-crossmark-host-top, .icon-crossmark-host-right, .icon-crossmark-host-bottom, .icon-crossmark-host-left {
+    --propeller-size: 40px;
+    --blade-length: calc((var(--propeller-size) - var(--icon-weight)) / 2);
+    --inner-space-length: calc(var(--blade-length) * cos(45deg) * 2);
+    --propeller-side-length: calc(var(--propeller-size) * cos(45deg));
+    --head-x-offset: calc(var(--icon-weight) - var(--icon-weight-side-len));
+    --size: calc(var(--inner-space-length) + var(--icon-weight-side-len) * 2);
+    --size-half: calc(var(--size) / 2);
+    --icon-width: var(--size);
+    --icon-height: var(--size);
+  }
+  .icon-crossmark-self::before, .icon-crossmark-host::before, .icon-crossmark-host-top::before, .icon-crossmark-host-right::before, .icon-crossmark-host-bottom::before, .icon-crossmark-host-left::before, .icon-crossmark-self::after, .icon-crossmark-host::after, .icon-crossmark-host-top::after, .icon-crossmark-host-right::after, .icon-crossmark-host-bottom::after, .icon-crossmark-host-left::after {
+    width: var(--icon-weight);
+    height: var(--propeller-size);
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-crossmark-self::before, .icon-crossmark-host::before, .icon-crossmark-host-top::before, .icon-crossmark-host-right::before, .icon-crossmark-host-bottom::before, .icon-crossmark-host-left::before {
+    top: calc(50% - var(--size-half));
+    left: calc(50% - var(--size-half) - (var(--icon-weight) - var(--icon-weight-side-len)));
+    transform-origin: 100% 0;
+    rotate: -45deg;
+  }
+  .icon-crossmark-self::after, .icon-crossmark-host::after, .icon-crossmark-host-top::after, .icon-crossmark-host-right::after, .icon-crossmark-host-bottom::after, .icon-crossmark-host-left::after {
+    top: calc(50% - var(--size-half));
+    left: calc(50% + var(--size-half) - var(--icon-weight-side-len));
+    transform-origin: 0 0;
+    rotate: 45deg;
+  }
+  .icon-crossmark-host-top::before, .icon-crossmark-host-top::after {
+    top: 0;
+  }
+  .icon-crossmark-host-right::before {
+    left: calc(100% - (var(--icon-weight-side-len) + var(--propeller-side-length) + var(--head-x-offset)));
+  }
+  .icon-crossmark-host-right::after {
+    left: calc(100% - var(--icon-weight-side-len));
+  }
+  .icon-crossmark-host-bottom::before, .icon-crossmark-host-bottom::after {
+    top: calc(100% - (var(--propeller-side-length) + var(--icon-weight-side-len)));
+  }
+  .icon-crossmark-host-left::before {
+    left: calc(0px - var(--head-x-offset));
+  }
+  .icon-crossmark-host-left::after {
+    left: calc(var(--icon-weight) - var(--head-x-offset) + var(--inner-space-length));
+  }
+  .icon-triple-dot-menu-self, .icon-triple-dot-menu-host, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-host-left, .icon-burger-menu-self, .icon-burger-menu-host, .icon-burger-menu-host-top, .icon-burger-menu-host-right, .icon-burger-menu-host-bottom, .icon-burger-menu-host-left {
+    --icon-width: var(--marker-width);
+    --icon-height: calc((var(--marker-height) * 3) + (var(--icon-gap) * 2));
+    --marker-width-half: calc(var(--marker-width) / 2);
+    --marker-height-half: calc(var(--marker-height) / 2);
+    --marker-plus-gap: calc(var(--marker-height) + var(--icon-gap));
+    --marker1-color: var(--icon-color);
+    --marker2-color: var(--icon-color);
+    --marker3-color: var(--icon-color);
+  }
+  .icon-triple-dot-menu-self::before, .icon-triple-dot-menu-host::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-host-left::before, .icon-burger-menu-self::before, .icon-burger-menu-host::before, .icon-burger-menu-host-top::before, .icon-burger-menu-host-right::before, .icon-burger-menu-host-bottom::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-self::after, .icon-triple-dot-menu-host::after, .icon-triple-dot-menu-host-top::after, .icon-triple-dot-menu-host-right::after, .icon-triple-dot-menu-host-bottom::after, .icon-triple-dot-menu-host-left::after, .icon-burger-menu-self::after, .icon-burger-menu-host::after, .icon-burger-menu-host-top::after, .icon-burger-menu-host-right::after, .icon-burger-menu-host-bottom::after, .icon-burger-menu-host-left::after {
+    width: var(--icon-width);
+    height: var(--marker-height);
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-triple-dot-menu-self::before, .icon-triple-dot-menu-host::before, .icon-triple-dot-menu-host-top::before, .icon-triple-dot-menu-host-right::before, .icon-triple-dot-menu-host-bottom::before, .icon-triple-dot-menu-host-left::before, .icon-burger-menu-self::before, .icon-burger-menu-host::before, .icon-burger-menu-host-top::before, .icon-burger-menu-host-right::before, .icon-burger-menu-host-bottom::before, .icon-burger-menu-host-left::before {
+    background-color: var(--marker1-color);
+    box-shadow: 0 var(--marker-plus-gap) 0 var(--marker2-color);
+  }
+  .icon-triple-dot-menu-self::after, .icon-triple-dot-menu-host::after, .icon-triple-dot-menu-host-top::after, .icon-triple-dot-menu-host-right::after, .icon-triple-dot-menu-host-bottom::after, .icon-triple-dot-menu-host-left::after, .icon-burger-menu-self::after, .icon-burger-menu-host::after, .icon-burger-menu-host-top::after, .icon-burger-menu-host-right::after, .icon-burger-menu-host-bottom::after, .icon-burger-menu-host-left::after {
+    top: calc(50% + var(--marker-height-half) + var(--icon-gap));
+    background-color: var(--marker3-color);
+  }
+  .icon-triple-dot-menu-host-top::before, .icon-burger-menu-host-top::before {
+    top: 0;
+  }
+  .icon-triple-dot-menu-host-top::after, .icon-burger-menu-host-top::after {
+    top: calc(var(--icon-height) - var(--marker-height));
+  }
+  .icon-triple-dot-menu-host-right::before, .icon-burger-menu-host-right::before {
+    right: 0;
+    left: auto;
+  }
+  .icon-triple-dot-menu-host-right::after, .icon-burger-menu-host-right::after {
+    right: 0;
+    left: auto;
+  }
+  .icon-triple-dot-menu-host-bottom::before, .icon-burger-menu-host-bottom::before {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-triple-dot-menu-host-bottom::after, .icon-burger-menu-host-bottom::after {
+    top: calc(100% - var(--marker-height));
+  }
+  .icon-triple-dot-menu-host-left::before, .icon-burger-menu-host-left::before, .icon-triple-dot-menu-host-left::after, .icon-burger-menu-host-left::after {
+    left: 0;
+  }
+  .icon-burger-menu-self, .icon-burger-menu-host, .icon-burger-menu-host-top, .icon-burger-menu-host-right, .icon-burger-menu-host-bottom, .icon-burger-menu-host-left {
+    --stripe-size: 40px;
+    --icon-gap: 5px;
+    --stripe1-color: var(--icon-color);
+    --stripe2-color: var(--icon-color);
+    --stripe3-color: var(--icon-color);
+    --stripe-plus-gap: calc(var(--icon-weight) + var(--icon-gap));
+    --marker-width: var(--stripe-size);
+    --marker-height: var(--icon-weight);
+    --marker1-color: var(--stripe1-color);
+    --marker2-color: var(--stripe2-color);
+    --marker3-color: var(--stripe3-color);
+  }
+  .icon-burger-menu-self::before, .icon-burger-menu-host::before, .icon-burger-menu-host-top::before, .icon-burger-menu-host-right::before, .icon-burger-menu-host-bottom::before, .icon-burger-menu-host-left::before, .icon-burger-menu-self::after, .icon-burger-menu-host::after, .icon-burger-menu-host-top::after, .icon-burger-menu-host-right::after, .icon-burger-menu-host-bottom::after, .icon-burger-menu-host-left::after {
+    transition-property: top, left, right, rotate, transform-origin, box-shadow;
+    transition-duration: 0.5s;
+  }
+  .icon-triple-dot-menu-horizontal-self, .icon-triple-dot-menu-horizontal-host, .icon-triple-dot-menu-horizontal-host-top, .icon-triple-dot-menu-horizontal-host-right, .icon-triple-dot-menu-horizontal-host-bottom, .icon-triple-dot-menu-horizontal-host-left, .icon-triple-dot-menu-self, .icon-triple-dot-menu-host, .icon-triple-dot-menu-host-top, .icon-triple-dot-menu-host-right, .icon-triple-dot-menu-host-bottom, .icon-triple-dot-menu-host-left {
+    --icon-weight: var(--dot-size);
+    --dot-size: 5px;
+    --icon-gap: 3px;
+    --dot1-color: var(--icon-color);
+    --dot2-color: var(--icon-color);
+    --dot3-color: var(--icon-color);
+    --dot-size-half: calc(var(--dot-size) / 2);
+    --dot-plus-gap: calc(var(--dot-size) + var(--icon-gap));
+    --marker-width: var(--dot-size);
+    --marker-height: var(--dot-size);
+    --marker1-color: var(--dot1-color);
+    --marker2-color: var(--dot2-color);
+    --marker3-color: var(--dot3-color);
+  }
+  .icon-triple-dot-menu-horizontal-self, .icon-triple-dot-menu-horizontal-host, .icon-triple-dot-menu-horizontal-host-top, .icon-triple-dot-menu-horizontal-host-right, .icon-triple-dot-menu-horizontal-host-bottom, .icon-triple-dot-menu-horizontal-host-left {
+    --icon-width: calc((var(--dot-size) * 3) + (var(--icon-gap) * 2));
+    --icon-height: var(--dot-size);
+  }
+  .icon-triple-dot-menu-horizontal-self::before, .icon-triple-dot-menu-horizontal-host::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-triple-dot-menu-horizontal-host-left::before, .icon-triple-dot-menu-horizontal-self::after, .icon-triple-dot-menu-horizontal-host::after, .icon-triple-dot-menu-horizontal-host-top::after, .icon-triple-dot-menu-horizontal-host-right::after, .icon-triple-dot-menu-horizontal-host-bottom::after, .icon-triple-dot-menu-horizontal-host-left::after {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-triple-dot-menu-horizontal-self::before, .icon-triple-dot-menu-horizontal-host::before, .icon-triple-dot-menu-horizontal-host-top::before, .icon-triple-dot-menu-horizontal-host-right::before, .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-triple-dot-menu-horizontal-host-left::before {
+    box-shadow: var(--dot-plus-gap) 0 0;
+  }
+  .icon-triple-dot-menu-horizontal-self::after, .icon-triple-dot-menu-horizontal-host::after, .icon-triple-dot-menu-horizontal-host-top::after, .icon-triple-dot-menu-horizontal-host-right::after, .icon-triple-dot-menu-horizontal-host-bottom::after, .icon-triple-dot-menu-horizontal-host-left::after {
+    left: calc(50% + var(--dot-size-half) + var(--icon-gap));
+  }
+  .icon-triple-dot-menu-horizontal-host-top::before, .icon-triple-dot-menu-horizontal-host-top::after {
+    top: 0;
+  }
+  .icon-triple-dot-menu-horizontal-host-right::before {
+    left: calc(100% - var(--icon-width));
+  }
+  .icon-triple-dot-menu-horizontal-host-right::after {
+    left: calc(100% - var(--dot-size));
+  }
+  .icon-triple-dot-menu-horizontal-host-bottom::before, .icon-triple-dot-menu-horizontal-host-bottom::after {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-triple-dot-menu-horizontal-host-left::before {
+    left: 0;
+  }
+  .icon-triple-dot-menu-horizontal-host-left::after {
+    left: calc(var(--icon-width) - var(--dot-size));
+  }
+  .icon-magnifying-glass-self, .icon-magnifying-glass-host, .icon-magnifying-glass-host-top, .icon-magnifying-glass-host-right, .icon-magnifying-glass-host-bottom, .icon-magnifying-glass-host-left {
+    --glass-frame-size: 30px;
+    --handle-length: 20px;
+    /* Binary options */
+    --is-handle-lhs: 0;
+    --glass-frame-size-half: calc(var(--glass-frame-size) / 2);
+    /* Imaginary handle line starting at the middle of the glass frame. */
+    --handle-line-len: calc((var(--handle-length) + var(--glass-frame-size-half) - 1px) * cos(45deg));
+    --half-icon-weight-side-len: calc(var(--icon-weight-half) * cos(45deg));
+    /* Not less than glass frame size, in case the handle is very short. */
+    --icon-size: max(var(--glass-frame-size), calc(var(--glass-frame-size-half) + var(--half-icon-weight-side-len) + var(--handle-line-len)));
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+    --icon-gap: calc(var(--icon-size) - var(--glass-frame-size));
+    --is-handle-lhs-calc: clamp(0, var(--is-handle-lhs), 1);
+    --handle-angle: calc((-45 + (var(--is-handle-lhs-calc) * (45 - -45))) * 1deg);
+    --glass-frame-offset: calc(0px + (var(--is-handle-lhs-calc) * (var(--icon-gap) - 0px)));
+  }
+  .icon-magnifying-glass-self::before, .icon-magnifying-glass-host::before, .icon-magnifying-glass-host-top::before, .icon-magnifying-glass-host-right::before, .icon-magnifying-glass-host-bottom::before, .icon-magnifying-glass-host-left::before {
+    left: calc(50% - var(--icon-width-half) + var(--glass-frame-offset));
+    width: var(--glass-frame-size);
+    aspect-ratio: 1;
+    border: solid var(--icon-weight) currentColor;
+    border-radius: 50%;
+    background: transparent;
+  }
+  .icon-magnifying-glass-self::after, .icon-magnifying-glass-host::after, .icon-magnifying-glass-host-top::after, .icon-magnifying-glass-host-right::after, .icon-magnifying-glass-host-bottom::after, .icon-magnifying-glass-host-left::after {
+    top: calc(50% + var(--glass-frame-size-half) - var(--icon-height-half));
+    left: calc(50% - (var(--icon-gap) + var(--icon-weight)) / 2 + var(--glass-frame-offset));
+    width: var(--icon-weight);
+    height: var(--handle-length);
+    transform-origin: 50% 0;
+    /* `-1px` is used to fully intersect with the glass frame, otherwise there are gap pixels. */
+    transform: rotate(var(--handle-angle)) translateY(calc(var(--glass-frame-size-half) - 1px));
+    border-radius: 0 0 var(--rounded-edges-by-icon-weight) var(--rounded-edges-by-icon-weight);
+  }
+  .icon-magnifying-glass-host-top::before {
+    top: 0;
+  }
+  .icon-magnifying-glass-host-top::after {
+    top: var(--glass-frame-size-half);
+  }
+  .icon-magnifying-glass-host-right::before {
+    left: calc(100% - var(--icon-width) + var(--glass-frame-offset));
+  }
+  .icon-magnifying-glass-host-right::after {
+    left: calc(100% - var(--icon-gap) - var(--glass-frame-size-half) - var(--icon-weight-half) + var(--glass-frame-offset));
+  }
+  .icon-magnifying-glass-host-bottom::before {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-magnifying-glass-host-bottom::after {
+    top: calc(100% - var(--icon-gap) - var(--glass-frame-size-half));
+  }
+  .icon-magnifying-glass-host-left::before {
+    left: var(--glass-frame-offset);
+  }
+  .icon-magnifying-glass-host-left::after {
+    left: calc(var(--glass-frame-size-half) - var(--icon-weight-half) + var(--glass-frame-offset));
+  }
+  .icon-angle-leftwards-double-self, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-leftwards-self, .icon-angle-leftwards-host, .icon-angle-leftwards-host-top, .icon-angle-leftwards-host-right, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-host-left, .icon-angle-downwards-double-self, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-angle-downwards-self, .icon-angle-downwards-host, .icon-angle-downwards-host-top, .icon-angle-downwards-host-right, .icon-angle-downwards-host-bottom, .icon-angle-downwards-host-left, .icon-angle-rightwards-double-self, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-rightwards-self, .icon-angle-rightwards-host, .icon-angle-rightwards-host-top, .icon-angle-rightwards-host-right, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-host-left, .icon-angle-upwards-double-self, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left, .icon-angle-upwards-self, .icon-angle-upwards-host, .icon-angle-upwards-host-top, .icon-angle-upwards-host-right, .icon-angle-upwards-host-bottom, .icon-angle-upwards-host-left {
+    --wing-length: 20px;
+    --wing-length-side-len: calc(var(--wing-length) * cos(45deg));
+    --wing-inner-length: calc(var(--wing-length) - var(--icon-weight));
+    --wing-inner-length-side-len: calc(var(--wing-inner-length) * cos(45deg));
+  }
+  .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-leftwards-self::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before, .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before, .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-upwards-self::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before, .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-leftwards-self::after, .icon-angle-leftwards-host::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-host-left::after, .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after, .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after, .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after, .icon-angle-upwards-self::after, .icon-angle-upwards-host::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-host-left::after {
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-angle-leftwards-double-self, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-leftwards-self, .icon-angle-leftwards-host, .icon-angle-leftwards-host-top, .icon-angle-leftwards-host-right, .icon-angle-leftwards-host-bottom, .icon-angle-leftwards-host-left, .icon-angle-rightwards-double-self, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-rightwards-self, .icon-angle-rightwards-host, .icon-angle-rightwards-host-top, .icon-angle-rightwards-host-right, .icon-angle-rightwards-host-bottom, .icon-angle-rightwards-host-left {
+    --icon-width: calc(var(--wing-inner-length-side-len) + var(--icon-weight-side-len) * 2);
+    --icon-height: calc(var(--icon-weight-side-len) * 2 + var(--wing-inner-length-side-len) * 2);
+  }
+  .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-leftwards-self::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before, .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before, .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-leftwards-self::after, .icon-angle-leftwards-host::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-host-left::after, .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after {
+    width: var(--wing-length);
+    height: var(--icon-weight);
+  }
+  .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-leftwards-self::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before, .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before {
+    top: 50%;
+  }
+  .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-leftwards-self::after, .icon-angle-leftwards-host::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-host-left::after, .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after {
+    top: calc(50% - var(--icon-weight));
+  }
+  .icon-angle-leftwards-host-top::before,
+  .icon-angle-leftwards-double-host-top::before, .icon-angle-rightwards-host-top::before,
+  .icon-angle-rightwards-double-host-top::before {
+    top: var(--wing-length-side-len);
+  }
+  .icon-angle-leftwards-host-top::after,
+  .icon-angle-leftwards-double-host-top::after, .icon-angle-rightwards-host-top::after,
+  .icon-angle-rightwards-double-host-top::after {
+    top: calc(var(--wing-length-side-len) - var(--icon-weight));
+  }
+  .icon-angle-leftwards-host-bottom::before,
+  .icon-angle-leftwards-double-host-bottom::before, .icon-angle-rightwards-host-bottom::before,
+  .icon-angle-rightwards-double-host-bottom::before {
+    top: calc(100% - var(--wing-length-side-len));
+  }
+  .icon-angle-leftwards-host-bottom::after,
+  .icon-angle-leftwards-double-host-bottom::after, .icon-angle-rightwards-host-bottom::after,
+  .icon-angle-rightwards-double-host-bottom::after {
+    top: calc(100% - (var(--wing-length-side-len) + var(--icon-weight)));
+  }
+  .icon-angle-downwards-double-self, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-angle-downwards-self, .icon-angle-downwards-host, .icon-angle-downwards-host-top, .icon-angle-downwards-host-right, .icon-angle-downwards-host-bottom, .icon-angle-downwards-host-left, .icon-angle-upwards-double-self, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left, .icon-angle-upwards-self, .icon-angle-upwards-host, .icon-angle-upwards-host-top, .icon-angle-upwards-host-right, .icon-angle-upwards-host-bottom, .icon-angle-upwards-host-left {
+    --icon-width: calc(var(--icon-weight-side-len) * 2 + var(--wing-inner-length-side-len) * 2);
+    --icon-height: calc(var(--wing-inner-length-side-len) + var(--icon-weight-side-len) * 2);
+  }
+  .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-upwards-self::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before, .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after, .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after, .icon-angle-upwards-self::after, .icon-angle-upwards-host::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-host-left::after {
+    width: var(--icon-weight);
+    height: var(--wing-length);
+  }
+  .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-upwards-self::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before {
+    left: 50%;
+  }
+  .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after, .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after, .icon-angle-upwards-self::after, .icon-angle-upwards-host::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-host-left::after {
+    left: calc(50% - var(--icon-weight));
+  }
+  .icon-angle-downwards-host-right::before,
+  .icon-angle-downwards-double-host-right::before, .icon-angle-upwards-host-right::before,
+  .icon-angle-upwards-double-host-right::before {
+    left: calc(100% - var(--wing-length-side-len));
+  }
+  .icon-angle-downwards-host-right::after,
+  .icon-angle-downwards-double-host-right::after, .icon-angle-upwards-host-right::after,
+  .icon-angle-upwards-double-host-right::after {
+    left: calc(100% - (var(--wing-length-side-len) + var(--icon-weight)));
+  }
+  .icon-angle-downwards-host-left::before,
+  .icon-angle-downwards-double-host-left::before, .icon-angle-upwards-host-left::before,
+  .icon-angle-upwards-double-host-left::before {
+    left: var(--wing-length-side-len);
+  }
+  .icon-angle-downwards-host-left::after,
+  .icon-angle-downwards-double-host-left::after, .icon-angle-upwards-host-left::after,
+  .icon-angle-upwards-double-host-left::after {
+    left: calc(var(--wing-length-side-len) - var(--icon-weight));
+  }
+  .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before, .icon-angle-upwards-self::before, .icon-angle-upwards-host::before, .icon-angle-upwards-host-top::before, .icon-angle-upwards-host-right::before, .icon-angle-upwards-host-bottom::before, .icon-angle-upwards-host-left::before {
+    rotate: 45deg;
+    transform-origin: 0 0;
+  }
+  .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after, .icon-angle-upwards-self::after, .icon-angle-upwards-host::after, .icon-angle-upwards-host-top::after, .icon-angle-upwards-host-right::after, .icon-angle-upwards-host-bottom::after, .icon-angle-upwards-host-left::after {
+    rotate: -45deg;
+    transform-origin: 100% 0;
+  }
+  .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before, .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after {
+    left: calc(50% - (var(--wing-length) - var(--icon-width-half)));
+  }
+  .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-self::before, .icon-angle-rightwards-host::before, .icon-angle-rightwards-host-top::before, .icon-angle-rightwards-host-right::before, .icon-angle-rightwards-host-bottom::before, .icon-angle-rightwards-host-left::before {
+    rotate: 45deg;
+    transform-origin: 100% 0;
+  }
+  .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after, .icon-angle-rightwards-self::after, .icon-angle-rightwards-host::after, .icon-angle-rightwards-host-top::after, .icon-angle-rightwards-host-right::after, .icon-angle-rightwards-host-bottom::after, .icon-angle-rightwards-host-left::after {
+    rotate: -45deg;
+    transform-origin: 100% 100%;
+  }
+  .icon-angle-rightwards-host-right::before,
+  .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-host-right::after,
+  .icon-angle-rightwards-double-host-right::after {
+    left: calc(100% - (var(--wing-length) - var(--icon-width) + var(--icon-width)));
+  }
+  .icon-angle-rightwards-host-left::before,
+  .icon-angle-rightwards-double-host-left::before, .icon-angle-rightwards-host-left::after,
+  .icon-angle-rightwards-double-host-left::after {
+    left: calc(0px - (var(--wing-length) - var(--icon-width)));
+  }
+  .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before, .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after {
+    top: calc(50% - (var(--wing-length) - var(--icon-height-half)));
+  }
+  .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before, .icon-angle-downwards-self::before, .icon-angle-downwards-host::before, .icon-angle-downwards-host-top::before, .icon-angle-downwards-host-right::before, .icon-angle-downwards-host-bottom::before, .icon-angle-downwards-host-left::before {
+    rotate: -45deg;
+    transform-origin: 0 100%;
+  }
+  .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after, .icon-angle-downwards-self::after, .icon-angle-downwards-host::after, .icon-angle-downwards-host-top::after, .icon-angle-downwards-host-right::after, .icon-angle-downwards-host-bottom::after, .icon-angle-downwards-host-left::after {
+    rotate: 45deg;
+    transform-origin: 100% 100%;
+  }
+  .icon-angle-downwards-host-top::before,
+  .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-host-top::after,
+  .icon-angle-downwards-double-host-top::after {
+    top: calc(0px - (var(--wing-length) - var(--icon-height)));
+  }
+  .icon-angle-downwards-host-bottom::before,
+  .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-host-bottom::after,
+  .icon-angle-downwards-double-host-bottom::after {
+    top: calc(100% - var(--wing-length));
+  }
+  .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before, .icon-angle-leftwards-self::before, .icon-angle-leftwards-host::before, .icon-angle-leftwards-host-top::before, .icon-angle-leftwards-host-right::before, .icon-angle-leftwards-host-bottom::before, .icon-angle-leftwards-host-left::before {
+    rotate: -45deg;
+    transform-origin: 0 0;
+  }
+  .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after, .icon-angle-leftwards-self::after, .icon-angle-leftwards-host::after, .icon-angle-leftwards-host-top::after, .icon-angle-leftwards-host-right::after, .icon-angle-leftwards-host-bottom::after, .icon-angle-leftwards-host-left::after {
+    rotate: 45deg;
+    transform-origin: 0 100%;
+  }
+  .icon-angle-leftwards-double-self, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-downwards-double-self, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-angle-rightwards-double-self, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left, .icon-angle-upwards-double-self, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left {
+    --icon-gap: 10px;
+    --icon-weight-hyp-len: calc(var(--icon-weight) / cos(45deg));
+    --icon-gap-side-len: calc(var(--icon-gap) * cos(45deg));
+    --offset: calc(var(--icon-weight) + var(--icon-gap-side-len));
+    --offset-negative: calc(0px - var(--offset));
+    --icon-inline-size: calc(var(--icon-weight-hyp-len) * 2 + var(--icon-gap) + var(--wing-inner-length-side-len));
+  }
+  .icon-angle-leftwards-double-self, .icon-angle-leftwards-double-host, .icon-angle-leftwards-double-host-top, .icon-angle-leftwards-double-host-right, .icon-angle-leftwards-double-host-bottom, .icon-angle-leftwards-double-host-left, .icon-angle-rightwards-double-self, .icon-angle-rightwards-double-host, .icon-angle-rightwards-double-host-top, .icon-angle-rightwards-double-host-right, .icon-angle-rightwards-double-host-bottom, .icon-angle-rightwards-double-host-left {
+    --icon-width: var(--icon-inline-size);
+  }
+  .icon-angle-downwards-double-self, .icon-angle-downwards-double-host, .icon-angle-downwards-double-host-top, .icon-angle-downwards-double-host-right, .icon-angle-downwards-double-host-bottom, .icon-angle-downwards-double-host-left, .icon-angle-upwards-double-self, .icon-angle-upwards-double-host, .icon-angle-upwards-double-host-top, .icon-angle-upwards-double-host-right, .icon-angle-upwards-double-host-bottom, .icon-angle-upwards-double-host-left {
+    --icon-height: var(--icon-inline-size);
+  }
+  .icon-angle-upwards-double-self::before, .icon-angle-upwards-double-host::before, .icon-angle-upwards-double-host-top::before, .icon-angle-upwards-double-host-right::before, .icon-angle-upwards-double-host-bottom::before, .icon-angle-upwards-double-host-left::before {
+    box-shadow: var(--offset) var(--offset) 0;
+  }
+  .icon-angle-upwards-double-self::after, .icon-angle-upwards-double-host::after, .icon-angle-upwards-double-host-top::after, .icon-angle-upwards-double-host-right::after, .icon-angle-upwards-double-host-bottom::after, .icon-angle-upwards-double-host-left::after {
+    box-shadow: var(--offset-negative) var(--offset) 0;
+  }
+  .icon-angle-rightwards-double-self::before, .icon-angle-rightwards-double-host::before, .icon-angle-rightwards-double-host-top::before, .icon-angle-rightwards-double-host-right::before, .icon-angle-rightwards-double-host-bottom::before, .icon-angle-rightwards-double-host-left::before {
+    box-shadow: var(--offset-negative) var(--offset) 0;
+  }
+  .icon-angle-rightwards-double-self::after, .icon-angle-rightwards-double-host::after, .icon-angle-rightwards-double-host-top::after, .icon-angle-rightwards-double-host-right::after, .icon-angle-rightwards-double-host-bottom::after, .icon-angle-rightwards-double-host-left::after {
+    box-shadow: var(--offset-negative) var(--offset-negative) 0;
+  }
+  .icon-angle-downwards-double-self::before, .icon-angle-downwards-double-host::before, .icon-angle-downwards-double-host-top::before, .icon-angle-downwards-double-host-right::before, .icon-angle-downwards-double-host-bottom::before, .icon-angle-downwards-double-host-left::before {
+    box-shadow: var(--offset) var(--offset-negative) 0;
+  }
+  .icon-angle-downwards-double-self::after, .icon-angle-downwards-double-host::after, .icon-angle-downwards-double-host-top::after, .icon-angle-downwards-double-host-right::after, .icon-angle-downwards-double-host-bottom::after, .icon-angle-downwards-double-host-left::after {
+    box-shadow: var(--offset-negative) var(--offset-negative) 0;
+  }
+  .icon-angle-leftwards-double-self::before, .icon-angle-leftwards-double-host::before, .icon-angle-leftwards-double-host-top::before, .icon-angle-leftwards-double-host-right::before, .icon-angle-leftwards-double-host-bottom::before, .icon-angle-leftwards-double-host-left::before {
+    box-shadow: var(--offset) var(--offset) 0;
+  }
+  .icon-angle-leftwards-double-self::after, .icon-angle-leftwards-double-host::after, .icon-angle-leftwards-double-host-top::after, .icon-angle-leftwards-double-host-right::after, .icon-angle-leftwards-double-host-bottom::after, .icon-angle-leftwards-double-host-left::after {
+    box-shadow: var(--offset) var(--offset-negative) 0;
+  }
+  .icon-minimize-self, .icon-minimize-host, .icon-minimize-host-top, .icon-minimize-host-right, .icon-minimize-host-bottom, .icon-minimize-host-left, .icon-maximize-self, .icon-maximize-host, .icon-maximize-host-top, .icon-maximize-host-right, .icon-maximize-host-bottom, .icon-maximize-host-left {
+    --part-length: 10px;
+    --icon-gap: 5px;
+    --icon-size: calc(var(--part-length) * 2 + var(--icon-gap));
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+    --part-inner-length: calc(var(--part-length) - var(--icon-weight));
+    --icon-gap-half: calc(var(--icon-gap) / 2);
+    --offset1: calc(var(--icon-size) - var(--part-length));
+    --offset2: calc(var(--icon-size) - var(--icon-weight));
+  }
+  .icon-minimize-self::before, .icon-minimize-host::before, .icon-minimize-host-top::before, .icon-minimize-host-right::before, .icon-minimize-host-bottom::before, .icon-minimize-host-left::before, .icon-maximize-self::before, .icon-maximize-host::before, .icon-maximize-host-top::before, .icon-maximize-host-right::before, .icon-maximize-host-bottom::before, .icon-maximize-host-left::before, .icon-minimize-self::after, .icon-minimize-host::after, .icon-minimize-host-top::after, .icon-minimize-host-right::after, .icon-minimize-host-bottom::after, .icon-minimize-host-left::after, .icon-maximize-self::after, .icon-maximize-host::after, .icon-maximize-host-top::after, .icon-maximize-host-right::after, .icon-maximize-host-bottom::after, .icon-maximize-host-left::after {
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-minimize-self::before, .icon-minimize-host::before, .icon-minimize-host-top::before, .icon-minimize-host-right::before, .icon-minimize-host-bottom::before, .icon-minimize-host-left::before, .icon-maximize-self::before, .icon-maximize-host::before, .icon-maximize-host-top::before, .icon-maximize-host-right::before, .icon-maximize-host-bottom::before, .icon-maximize-host-left::before {
+    width: var(--part-length);
+    height: var(--icon-weight);
+    box-shadow: var(--offset1) 0 0, 0 var(--offset2) 0, var(--offset1) var(--offset2) 0;
+  }
+  .icon-minimize-self::after, .icon-minimize-host::after, .icon-minimize-host-top::after, .icon-minimize-host-right::after, .icon-minimize-host-bottom::after, .icon-minimize-host-left::after, .icon-maximize-self::after, .icon-maximize-host::after, .icon-maximize-host-top::after, .icon-maximize-host-right::after, .icon-maximize-host-bottom::after, .icon-maximize-host-left::after {
+    width: var(--icon-weight);
+    height: var(--part-length);
+    box-shadow: var(--offset2) 0 0, 0 var(--offset1) 0, var(--offset2) var(--offset1) 0;
+  }
+  .icon-maximize-host-top::before, .icon-maximize-host-top::after {
+    top: 0;
+  }
+  .icon-maximize-host-right::before, .icon-maximize-host-right::after {
+    left: calc(100% - var(--icon-width));
+  }
+  .icon-maximize-host-bottom::before, .icon-maximize-host-bottom::after {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-maximize-host-left::before, .icon-maximize-host-left::after {
+    left: 0;
+  }
+  .icon-minimize-self, .icon-minimize-host, .icon-minimize-host-top, .icon-minimize-host-right, .icon-minimize-host-bottom, .icon-minimize-host-left {
+    --offset1: calc(var(--icon-size) - var(--part-length));
+    --offset2: calc(var(--offset1) - var(--part-inner-length));
+    --block-pipe-centralize: calc(50% - ((var(--icon-gap) + var(--icon-weight) * 2) / 2));
+    --inline-pipe-centralize: calc(50% - (var(--part-length) + var(--icon-gap-half)));
+  }
+  .icon-minimize-self::before, .icon-minimize-host::before, .icon-minimize-host-top::before, .icon-minimize-host-right::before, .icon-minimize-host-bottom::before, .icon-minimize-host-left::before {
+    top: var(--block-pipe-centralize);
+    left: var(--inline-pipe-centralize);
+    box-shadow: var(--offset1) 0 0, 0 var(--offset2) 0, var(--offset1) var(--offset2) 0;
+  }
+  .icon-minimize-self::after, .icon-minimize-host::after, .icon-minimize-host-top::after, .icon-minimize-host-right::after, .icon-minimize-host-bottom::after, .icon-minimize-host-left::after {
+    top: var(--inline-pipe-centralize);
+    left: var(--block-pipe-centralize);
+    box-shadow: var(--offset2) 0 0, 0 var(--offset1) 0, var(--offset2) var(--offset1) 0;
+  }
+  .icon-minimize-host-top::before {
+    top: var(--part-inner-length);
+  }
+  .icon-minimize-host-top::after {
+    top: 0;
+  }
+  .icon-minimize-host-right::before {
+    left: calc(100% - var(--icon-width));
+  }
+  .icon-minimize-host-right::after {
+    left: calc(100% - (var(--part-length) + var(--icon-gap) + var(--icon-weight)));
+  }
+  .icon-minimize-host-bottom::before {
+    top: calc(100% - (var(--part-length) + var(--icon-gap) + var(--icon-weight)));
+  }
+  .icon-minimize-host-bottom::after {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-minimize-host-left::before {
+    left: 0;
+  }
+  .icon-minimize-host-left::after {
+    left: var(--part-inner-length);
+  }
+  .icon-options-self, .icon-options-host, .icon-options-host-top, .icon-options-host-right, .icon-options-host-bottom, .icon-options-host-left {
+    --circle-size: 9px;
+    --track-width: 30px;
+    --icon-gap: 0px;
+    --circle-size-half: calc(var(--circle-size) / 2);
+    --icon-width: var(--track-width);
+    --icon-height: calc(var(--circle-size) * 3 + var(--icon-gap) * 2);
+    --circle-overflow: calc((var(--circle-size) - var(--icon-weight)) / 2);
+  }
+  .icon-options-self::before, .icon-options-host::before, .icon-options-host-top::before, .icon-options-host-right::before, .icon-options-host-bottom::before, .icon-options-host-left::before {
+    --shadow-y-offset: calc(var(--icon-weight) + calc(var(--circle-overflow) * 2) + var(--icon-gap));
+    top: calc(50% - var(--icon-height-half) + var(--circle-overflow));
+    width: var(--track-width);
+    height: var(--icon-weight);
+    box-shadow: 0px var(--shadow-y-offset) 0, 0px calc(var(--shadow-y-offset) * 2) 0;
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-options-self::after, .icon-options-host::after, .icon-options-host-top::after, .icon-options-host-right::after, .icon-options-host-bottom::after, .icon-options-host-left::after {
+    --shadow-y-offset: calc(var(--circle-size) + var(--icon-gap));
+    /* 40% */
+    --pos-1: calc(var(--icon-width) * 40 / 100);
+    /* 75% */
+    --pos-2: calc(var(--icon-width) * 75 / 100);
+    /* 25% */
+    --pos-3: calc(var(--icon-width) * 25 / 100);
+    --left: calc(var(--pos-1) - var(--circle-size-half));
+    left: calc(50% - var(--icon-width-half) + var(--left));
+    width: var(--circle-size);
+    aspect-ratio: 1;
+    border-radius: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * var(--circle-size-half));
+    box-shadow: calc(var(--pos-2) - var(--pos-1)) var(--shadow-y-offset) 0, calc(var(--pos-3) - var(--pos-1)) calc(var(--shadow-y-offset) * 2) 0;
+  }
+  .icon-options-host-top::before {
+    top: var(--circle-overflow);
+  }
+  .icon-options-host-top::after {
+    top: 0;
+  }
+  .icon-options-host-right::before {
+    left: calc(100% - var(--icon-width));
+  }
+  .icon-options-host-right::after {
+    left: calc(100% - var(--icon-width) + var(--left));
+  }
+  .icon-options-host-bottom::before {
+    top: calc(100% - var(--icon-height) + var(--circle-overflow));
+  }
+  .icon-options-host-bottom::after {
+    top: calc(100% - var(--icon-height));
+  }
+  .icon-options-host-left::before {
+    left: 0;
+  }
+  .icon-options-host-left::after {
+    left: var(--left);
+  }
+  .icon-moon-self, .icon-moon-host, .icon-moon-host-top, .icon-moon-host-right, .icon-moon-host-bottom, .icon-moon-host-left {
+    --icon-size: 30px;
+    --offset: 12px;
+    --icon-size-half: calc(var(--icon-size) / 2);
+    --icon-width: calc((var(--icon-size) - var(--offset)) / 2 + var(--offset));
+    --icon-height: var(--icon-size);
+    /* Imaginary intersecting double circles. */
+    --double-circle-width: calc(var(--icon-size) + var(--offset));
+  }
+  .icon-moon-self::before, .icon-moon-host::before, .icon-moon-host-top::before, .icon-moon-host-right::before, .icon-moon-host-bottom::before, .icon-moon-host-left::before {
+    left: calc(50% - ((var(--icon-size) - var(--offset)) / 2 - var(--offset)) / 2);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: calc(0px - var(--offset)) 0 0 0 var(--icon-color);
+    clip-path: circle(var(--icon-size-half) at calc(var(--icon-size-half) - var(--offset)) var(--icon-size-half));
+  }
+  .icon-moon-host-right::before {
+    left: calc(100% - (var(--icon-width) - var(--offset)));
+  }
+  .icon-moon-host-left::before {
+    left: var(--offset);
+  }
+  .icon-empty-self, .icon-empty-host, .icon-empty-host-top, .icon-empty-host-right, .icon-empty-host-bottom, .icon-empty-host-left {
+    --icon-size: 30px;
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+  }
+  .icon-empty-self::before, .icon-empty-host::before, .icon-empty-host-top::before, .icon-empty-host-right::before, .icon-empty-host-bottom::before, .icon-empty-host-left::before {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-radius: 50%;
+    background: transparent;
+  }
+  .icon-empty-self::after, .icon-empty-host::after, .icon-empty-host-top::after, .icon-empty-host-right::after, .icon-empty-host-bottom::after, .icon-empty-host-left::after {
+    top: calc(50% - var(--icon-weight-half));
+    width: var(--icon-width);
+    height: var(--icon-weight);
+    rotate: -45deg;
+  }
+  .icon-empty-host-top::after {
+    top: calc(var(--icon-height-half) - var(--icon-weight-half));
+  }
+  .icon-empty-host-bottom::after {
+    top: calc(100% - (var(--icon-height-half) + var(--icon-weight-half)));
+  }
+  .icon-color-scheme-self, .icon-color-scheme-host, .icon-color-scheme-host-top, .icon-color-scheme-host-right, .icon-color-scheme-host-bottom, .icon-color-scheme-host-left {
+    --icon-size: 30px;
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+  }
+  .icon-color-scheme-self::before, .icon-color-scheme-host::before, .icon-color-scheme-host-top::before, .icon-color-scheme-host-right::before, .icon-color-scheme-host-bottom::before, .icon-color-scheme-host-left::before {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-radius: 50%;
+    background: transparent;
+  }
+  .icon-color-scheme-self::after, .icon-color-scheme-host::after, .icon-color-scheme-host-top::after, .icon-color-scheme-host-right::after, .icon-color-scheme-host-bottom::after, .icon-color-scheme-host-left::after {
+    width: var(--icon-width-half);
+    height: var(--icon-height);
+    border-radius: var(--icon-height-half) 0 0 var(--icon-height-half);
+  }
+  .icon-copy-self, .icon-copy-host, .icon-copy-host-top, .icon-copy-host-right, .icon-copy-host-bottom, .icon-copy-host-left {
+    --doc-width: 20px;
+    --doc-height: 25px;
+    --icon-gap: var(--icon-weight);
+    --icon-width: calc(var(--doc-width) + var(--icon-gap) + var(--icon-weight));
+    --icon-height: calc(var(--doc-height) + var(--icon-gap) + var(--icon-weight));
+    --translate: calc(var(--icon-weight) + var(--icon-gap));
+    --rounded-edges: calc((1 - var(--is-rounded-edges-norm)) * 0px + var(--is-rounded-edges-norm) * calc(var(--icon-weight) + var(--icon-gap)));
+  }
+  .icon-copy-self::before, .icon-copy-host::before, .icon-copy-host-top::before, .icon-copy-host-right::before, .icon-copy-host-bottom::before, .icon-copy-host-left::before, .icon-copy-self::after, .icon-copy-host::after, .icon-copy-host-top::after, .icon-copy-host-right::after, .icon-copy-host-bottom::after, .icon-copy-host-left::after {
+    width: var(--doc-width);
+    height: var(--doc-height);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-width: var(--icon-weight) 0 0 var(--icon-weight);
+    border-radius: var(--rounded-edges);
+    background: transparent;
+  }
+  .icon-copy-self::after, .icon-copy-host::after, .icon-copy-host-top::after, .icon-copy-host-right::after, .icon-copy-host-bottom::after, .icon-copy-host-left::after {
+    margin: var(--translate) 0 0 var(--translate);
+    border-width: var(--icon-weight);
+  }
+  .icon-sun-self, .icon-sun-host, .icon-sun-host-top, .icon-sun-host-right, .icon-sun-host-bottom, .icon-sun-host-left {
+    --core-size: 30px;
+    --beam-size: 5px;
+    --icon-gap: 3px;
+    --icon-size: calc(var(--core-size) + var(--beam-size) * 2 + var(--icon-gap) * 2);
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+    --core-size-half: calc(var(--core-size) / 2);
+    --beam-size-half: calc(var(--beam-size) / 2);
+    /* Imaginary circle that pierces through the middle of beams. */
+    --beam-circle-radius: calc(var(--core-size-half) + var(--icon-gap) + var(--beam-size-half));
+    --outer-circle-radius: calc(var(--core-size-half) + var(--icon-gap) + var(--beam-size));
+    --full-core-to-outer: calc(var(--core-size) + var(--icon-gap) + var(--beam-size));
+  }
+  .icon-sun-self::before, .icon-sun-host::before, .icon-sun-host-top::before, .icon-sun-host-right::before, .icon-sun-host-bottom::before, .icon-sun-host-left::before, .icon-sun-self::after, .icon-sun-host::after, .icon-sun-host-top::after, .icon-sun-host-right::after, .icon-sun-host-bottom::after, .icon-sun-host-left::after {
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  .icon-sun-self::before, .icon-sun-host::before, .icon-sun-host-top::before, .icon-sun-host-right::before, .icon-sun-host-bottom::before, .icon-sun-host-left::before {
+    top: calc(50% - var(--core-size-half));
+    left: calc(50% - var(--core-size-half));
+    width: var(--core-size);
+  }
+  .icon-sun-self:after, .icon-sun-host:after, .icon-sun-host-top:after, .icon-sun-host-right:after, .icon-sun-host-bottom:after, .icon-sun-host-left:after {
+    left: calc(50% - var(--beam-size-half));
+    width: var(--beam-size);
+    /* Distance from the starting position (90deg) to the center. */
+    --off: calc(var(--beam-size-half) + var(--core-size-half) + var(--icon-gap));
+    --x45: calc(var(--beam-circle-radius) * cos(45deg));
+    --y45: calc(var(--beam-circle-radius) * sin(45deg));
+    --x315: calc(var(--beam-circle-radius) * cos(315deg));
+    --y315: calc(var(--beam-circle-radius) * sin(315deg));
+    --x225: calc(var(--beam-circle-radius) * cos(225deg));
+    --y225: calc(var(--beam-circle-radius) * sin(225deg));
+    --x135: calc(var(--beam-circle-radius) * cos(135deg));
+    --y135: calc(var(--beam-circle-radius) * sin(135deg));
+    box-shadow: var(--x45) calc(var(--off) - var(--y45)), var(--off) var(--off) 0, var(--x315) calc(var(--off) - var(--y315)), 0 calc(var(--core-size) + var(--beam-size) + var(--icon-gap) * 2) 0, var(--x225) calc(var(--off) - var(--y225)), calc(0px - var(--off)) var(--off) 0, var(--x135) calc(var(--off) - var(--y135));
+  }
+  .icon-sun-host-top::before {
+    top: calc(var(--beam-size) + var(--icon-gap));
+  }
+  .icon-sun-host-top::after {
+    top: 0;
+  }
+  .icon-sun-host-right::before {
+    left: calc(100% - var(--full-core-to-outer));
+  }
+  .icon-sun-host-right::after {
+    left: calc(100% - var(--outer-circle-radius) - var(--beam-size-half));
+  }
+  .icon-sun-host-bottom::before {
+    top: calc(100% - var(--full-core-to-outer));
+  }
+  .icon-sun-host-left::before {
+    left: calc(var(--beam-size) + var(--icon-gap));
+  }
+  .icon-sun-host-left::after {
+    left: var(--beam-circle-radius);
+  }
+  .icon-spinner2-self, .icon-spinner2-host, .icon-spinner2-host-top, .icon-spinner2-host-right, .icon-spinner2-host-bottom, .icon-spinner2-host-left, .icon-spinner-train-track-self, .icon-spinner-train-track-host, .icon-spinner-train-track-host-top, .icon-spinner-train-track-host-right, .icon-spinner-train-track-host-bottom, .icon-spinner-train-track-host-left, .icon-spinner-self, .icon-spinner-host, .icon-spinner-host-top, .icon-spinner-host-right, .icon-spinner-host-bottom, .icon-spinner-host-left {
+    --icon-size: 30px;
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+  }
+  .icon-spinner2-self::before, .icon-spinner2-host::before, .icon-spinner2-host-top::before, .icon-spinner2-host-right::before, .icon-spinner2-host-bottom::before, .icon-spinner2-host-left::before, .icon-spinner-train-track-self::before, .icon-spinner-train-track-host::before, .icon-spinner-train-track-host-top::before, .icon-spinner-train-track-host-right::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner-train-track-host-left::before, .icon-spinner-self::before, .icon-spinner-host::before, .icon-spinner-host-top::before, .icon-spinner-host-right::before, .icon-spinner-host-bottom::before, .icon-spinner-host-left::before {
+    width: var(--icon-width);
+    aspect-ratio: 1;
+    border: solid var(--icon-weight) var(--icon-color);
+    border-radius: 50%;
+    background: none;
+  }
+  .icon-spinner-self::before, .icon-spinner-host::before, .icon-spinner-host-top::before, .icon-spinner-host-right::before, .icon-spinner-host-bottom::before, .icon-spinner-host-left::before {
+    border-right-color: transparent;
+  }
+  .icon-spinner-train-track-self, .icon-spinner-train-track-host, .icon-spinner-train-track-host-top, .icon-spinner-train-track-host-right, .icon-spinner-train-track-host-bottom, .icon-spinner-train-track-host-left {
+    --track-color: var(--icon-color);
+    --train-color: var(--icon-color-alt);
+  }
+  .icon-spinner-train-track-self::before, .icon-spinner-train-track-host::before, .icon-spinner-train-track-host-top::before, .icon-spinner-train-track-host-right::before, .icon-spinner-train-track-host-bottom::before, .icon-spinner-train-track-host-left::before {
+    border-color: var(--track-color);
+  }
+  .icon-spinner-train-track-self::after, .icon-spinner-train-track-host::after, .icon-spinner-train-track-host-top::after, .icon-spinner-train-track-host-right::after, .icon-spinner-train-track-host-bottom::after, .icon-spinner-train-track-host-left::after {
+    width: var(--icon-width);
+    aspect-ratio: 1;
+    border-style: solid;
+    border-width: var(--icon-weight);
+    border-color: var(--train-color) transparent transparent;
+    border-radius: 50%;
+    background: none;
+  }
+  .icon-spinner2-self, .icon-spinner2-host, .icon-spinner2-host-top, .icon-spinner2-host-right, .icon-spinner2-host-bottom, .icon-spinner2-host-left {
+    --icon-size-half: calc(var(--icon-size) / 2);
+    --part1-color: var(--icon-color);
+    --part2-color: var(--icon-color-alt);
+  }
+  .icon-spinner2-self::before, .icon-spinner2-host::before, .icon-spinner2-host-top::before, .icon-spinner2-host-right::before, .icon-spinner2-host-bottom::before, .icon-spinner2-host-left::before {
+    border-color: var(--part1-color) transparent transparent var(--part1-color);
+    clip-path: ellipse(var(--icon-size) var(--icon-size-half) at 0% 0%);
+  }
+  .icon-spinner2-self::after, .icon-spinner2-host::after, .icon-spinner2-host-top::after, .icon-spinner2-host-right::after, .icon-spinner2-host-bottom::after, .icon-spinner2-host-left::after {
+    width: var(--icon-width);
+    aspect-ratio: 1;
+    border-style: solid;
+    border-width: var(--icon-weight);
+    border-color: transparent var(--part2-color) var(--part2-color) transparent;
+    border-radius: 50%;
+    background: none;
+    clip-path: ellipse(var(--icon-size) var(--icon-size-half) at 100% 100%);
+  }
+  .icon-bell-self, .icon-bell-host, .icon-bell-host-top, .icon-bell-host-right, .icon-bell-host-bottom, .icon-bell-host-left {
+    --bell-housing-width: 30px;
+    --bell-housing-height: 30px;
+    --bubble-width: 8px;
+    --offset: 5px;
+    --off2: calc(var(--offset) - var(--icon-weight));
+    --icon-width: calc(var(--bell-housing-width) + var(--offset) * 2);
+    --icon-height: calc(var(--bell-housing-height) + var(--icon-weight) * 2 + var(--bubble-width-half) + var(--off2));
+    --bell-housing-width-half: calc(var(--bell-housing-width) / 2);
+    --bubble-width-half: calc(var(--bubble-width) / 2);
+    --icon-weight-double: calc(var(--icon-weight) * 2);
+  }
+  .icon-bell-self::before, .icon-bell-host::before, .icon-bell-host-top::before, .icon-bell-host-right::before, .icon-bell-host-bottom::before, .icon-bell-host-left::before {
+    top: calc(50% - var(--icon-height-half) - var(--off2));
+    width: var(--icon-width);
+    height: calc(var(--bell-housing-height) + var(--offset) * 2);
+    border-radius: var(--icon-width-half) var(--icon-width-half) 0 0;
+    outline: solid var(--icon-weight) var(--icon-color);
+    outline-offset: calc(0px - (var(--offset) + var(--icon-weight)));
+    border-bottom: solid var(--offset) transparent;
+    background: none;
+    box-shadow: inset 0 calc(0px - var(--icon-weight)) 0 0 var(--icon-color);
+  }
+  .icon-bell-self::after, .icon-bell-host::after, .icon-bell-host-top::after, .icon-bell-host-right::after, .icon-bell-host-bottom::after, .icon-bell-host-left::after {
+    --top-border: var(--icon-weight-double);
+    --bottom-border: calc(var(--bubble-width-half) + var(--off2));
+    --full-height: calc(var(--bell-housing-height) + var(--top-border) + var(--bottom-border));
+    position: absolute;
+    left: calc(50% - var(--bubble-width-half));
+    width: var(--bubble-width);
+    height: calc(var(--bell-housing-height) + var(--top-border) + var(--bottom-border));
+    background-color: transparent;
+    border: solid var(--icon-weight) var(--icon-color);
+    border-width: var(--top-border) 0 var(--bottom-border);
+    border-radius: var(--bubble-width);
+  }
+  .icon-bell-host-top::before {
+    top: calc(0px - var(--off2));
+  }
+  .icon-bell-host-right::after {
+    left: calc(100% - var(--icon-width-half) - var(--bubble-width-half));
+  }
+  .icon-bell-host-bottom::before {
+    top: calc(100% - var(--icon-height) - var(--off2));
+  }
+  .icon-bell-host-left::after {
+    left: calc(var(--icon-width-half) - var(--bubble-width-half));
+  }
+  .icon-person-profile-self, .icon-person-profile-host, .icon-person-profile-host-top, .icon-person-profile-host-right, .icon-person-profile-host-bottom, .icon-person-profile-host-left {
+    --head-size: 15px;
+    --body-width: 30px;
+    --body-height: 20px;
+    --neck-length: 5px;
+    --icon-width: max(var(--head-size), var(--body-width));
+    --icon-height: calc(var(--head-size) + var(--neck-length) + var(--body-height));
+    --body-width-half: calc(var(--body-width) / 2);
+    --head-size-half: calc(var(--head-size) / 2);
+  }
+  .icon-person-profile-self::before, .icon-person-profile-host::before, .icon-person-profile-host-top::before, .icon-person-profile-host-right::before, .icon-person-profile-host-bottom::before, .icon-person-profile-host-left::before {
+    left: calc(50% - var(--head-size) / 2);
+    width: var(--head-size);
+    height: var(--head-size);
+    border-radius: 50%;
+    border: solid var(--icon-weight) var(--icon-color);
+    background-color: transparent;
+  }
+  .icon-person-profile-self::after, .icon-person-profile-host::after, .icon-person-profile-host-top::after, .icon-person-profile-host-right::after, .icon-person-profile-host-bottom::after, .icon-person-profile-host-left::after {
+    top: calc(50% - var(--icon-height-half) + var(--head-size) + var(--neck-length));
+    width: var(--body-width);
+    height: calc(var(--body-width) + var(--body-width) / 3);
+    border-radius: 50%;
+    border: solid var(--icon-weight) var(--icon-color);
+    background-color: transparent;
+    clip-path: xywh(0px 0px 100% var(--body-height));
+  }
+  .icon-person-profile-host-top::after {
+    top: calc(var(--head-size) + var(--neck-length));
+  }
+  .icon-person-profile-host-right::before {
+    left: calc(100% - var(--body-width-half) - var(--head-size-half));
+  }
+  .icon-person-profile-host-bottom::after {
+    top: calc(100% - var(--body-height));
+  }
+  .icon-person-profile-host-left::before {
+    left: calc(var(--body-width-half) - var(--head-size-half));
+  }
+  .icon-clock-self, .icon-clock-host, .icon-clock-host-top, .icon-clock-host-right, .icon-clock-host-bottom, .icon-clock-host-left {
+    --icon-size: 30px;
+    --hand-gap: 3px;
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+    --inner-size: calc(var(--icon-size) - var(--icon-weight) * 2);
+    --hand-len: calc(var(--inner-size) / 2 - var(--hand-gap) + var(--icon-weight-half));
+  }
+  .icon-clock-self::before, .icon-clock-host::before, .icon-clock-host-top::before, .icon-clock-host-right::before, .icon-clock-host-bottom::before, .icon-clock-host-left::before {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-radius: 50%;
+    background: transparent;
+  }
+  .icon-clock-self::after, .icon-clock-host::after, .icon-clock-host-top::after, .icon-clock-host-right::after, .icon-clock-host-bottom::after, .icon-clock-host-left::after {
+    top: calc(50% - (var(--hand-len) - var(--icon-weight-half)));
+    left: calc(50% - var(--icon-weight-half));
+    width: var(--hand-len);
+    height: var(--hand-len);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-top-width: 0;
+    border-right-width: 0;
+    background: none;
+  }
+  .icon-clock-host-top::after {
+    top: calc(var(--icon-weight) + var(--hand-gap));
+  }
+  .icon-clock-host-right::after {
+    left: calc(100% - (var(--icon-weight) + var(--hand-gap) + var(--hand-len)));
+  }
+  .icon-clock-host-bottom::after {
+    top: calc(100% - (var(--icon-height-half) - var(--icon-weight-half) + var(--hand-len)));
+  }
+  .icon-clock-host-left::after {
+    left: calc(var(--icon-width-half) - var(--icon-weight-half));
+  }
+  .icon-reload-self, .icon-reload-host, .icon-reload-host-top, .icon-reload-host-right, .icon-reload-host-bottom, .icon-reload-host-left {
+    --icon-size: 30px;
+    --pointer-size: 10px;
+    --pointer-offset: 1px;
+    --inner-size: calc(var(--icon-size) - var(--icon-weight) * 2);
+    --square-that-fits: calc(var(--inner-size) / sqrt(2));
+    --pointer-inner-size: calc(var(--pointer-size) - var(--icon-weight));
+    --corner-segment-size: calc((var(--icon-size) - var(--square-that-fits)) / 2);
+    --cutout-circle-width: calc(var(--corner-segment-size) + var(--square-that-fits) + var(--icon-weight-side-len));
+    --o3: calc(var(--corner-segment-size) + var(--pointer-offset) + var(--icon-weight));
+    --tail: max(0px, var(--pointer-size) - var(--o3));
+    --tail-inset: min(0px, 0px - (var(--o3) - var(--pointer-size)));
+    --icon-width: calc(var(--cutout-circle-width) + var(--pointer-offset) + var(--icon-weight));
+    --icon-height: calc(var(--icon-size) + var(--tail));
+  }
+  .icon-reload-self::before, .icon-reload-host::before, .icon-reload-host-top::before, .icon-reload-host-right::before, .icon-reload-host-bottom::before, .icon-reload-host-left::before {
+    top: calc(50% - var(--icon-height-half) + var(--tail));
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-right-color: transparent;
+    border-radius: 50%;
+    background: transparent;
+  }
+  .icon-reload-self::after, .icon-reload-host::after, .icon-reload-host-top::after, .icon-reload-host-right::after, .icon-reload-host-bottom::after, .icon-reload-host-left::after {
+    top: calc(50% - var(--icon-height-half) - var(--tail-inset));
+    left: calc(50% + var(--icon-width-half) - var(--pointer-size));
+    width: var(--pointer-size);
+    height: var(--pointer-size);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-top-width: 0;
+    border-left-width: 0;
+    background: transparent;
+  }
+  .icon-reload-host-top::before {
+    top: var(--tail);
+  }
+  .icon-reload-host-top::after {
+    top: max(0px, var(--o3) - var(--pointer-size));
+  }
+  .icon-reload-host-right::after {
+    left: calc(100% - var(--pointer-size));
+  }
+  .icon-reload-host-bottom::before {
+    top: calc(100% - var(--icon-height) + var(--tail));
+  }
+  .icon-reload-host-bottom::after {
+    top: calc(100% - var(--icon-height) - var(--tail-inset));
+  }
+  .icon-reload-host-left::after {
+    left: calc(var(--icon-width) - var(--pointer-size));
+  }
+  .icon-shutdown-self, .icon-shutdown-host, .icon-shutdown-host-top, .icon-shutdown-host-right, .icon-shutdown-host-bottom, .icon-shutdown-host-left {
+    --icon-size: 30px;
+    --icon-size-half: calc(var(--icon-size) / 2);
+    --icon-width: var(--icon-size);
+    --icon-height: var(--icon-size);
+  }
+  .icon-shutdown-self::before, .icon-shutdown-host::before, .icon-shutdown-host-top::before, .icon-shutdown-host-right::before, .icon-shutdown-host-bottom::before, .icon-shutdown-host-left::before {
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border: solid var(--icon-weight) var(--icon-color);
+    border-radius: 50%;
+    border-top-color: transparent;
+    background: transparent;
+  }
+  .icon-shutdown-self::after, .icon-shutdown-host::after, .icon-shutdown-host-top::after, .icon-shutdown-host-right::after, .icon-shutdown-host-bottom::after, .icon-shutdown-host-left::after {
+    top: 50%;
+    left: 50%;
+    width: var(--icon-weight);
+    height: var(--icon-size-half);
+    margin-top: calc(0px - var(--icon-size-half));
+    margin-left: calc(0px - var(--icon-weight-half));
+    border-radius: var(--rounded-edges-by-icon-weight);
+  }
+  .icon-shutdown-host-top::after {
+    top: 0;
+    margin-top: 0;
+  }
+  .icon-shutdown-host-right::after {
+    left: calc(100% - var(--icon-size-half));
+  }
+  .icon-shutdown-host-bottom::after {
+    top: calc(100% - var(--icon-size));
+    margin-top: 0;
+  }
+  .icon-shutdown-host-left::after {
+    left: var(--icon-size-half);
+  }
+  .icon-sand-clock-self, .icon-sand-clock-host, .icon-sand-clock-host-top, .icon-sand-clock-host-right, .icon-sand-clock-host-bottom, .icon-sand-clock-host-left {
+    --housing-width: 20px;
+    --housing-height: 20px;
+    --offset: 5px;
+    --offset-norm: max(0px, var(--offset));
+    --icon-width: calc(var(--housing-width) + var(--offset-norm) * 2);
+    --icon-height: calc(var(--housing-height) * 2 - var(--icon-weight));
+  }
+  .icon-sand-clock-self::before, .icon-sand-clock-host::before, .icon-sand-clock-host-top::before, .icon-sand-clock-host-right::before, .icon-sand-clock-host-bottom::before, .icon-sand-clock-host-left::before, .icon-sand-clock-self::after, .icon-sand-clock-host::after, .icon-sand-clock-host-top::after, .icon-sand-clock-host-right::after, .icon-sand-clock-host-bottom::after, .icon-sand-clock-host-left::after {
+    width: var(--icon-width);
+    height: calc(var(--housing-height) + var(--offset-norm) * 2);
+    background: none;
+    outline: solid var(--icon-weight) var(--icon-color);
+    outline-offset: calc(0px - (var(--offset-norm) + var(--icon-weight)));
+  }
+  .icon-sand-clock-self::before, .icon-sand-clock-host::before, .icon-sand-clock-host-top::before, .icon-sand-clock-host-right::before, .icon-sand-clock-host-bottom::before, .icon-sand-clock-host-left::before {
+    top: calc(50% - var(--offset-norm) - var(--icon-height-half));
+    border-radius: 0 0 var(--icon-width-half) var(--icon-width-half);
+    border-top: solid var(--offset-norm) transparent;
+    box-shadow: inset 0 var(--icon-weight) 0 0 var(--icon-color);
+  }
+  .icon-sand-clock-self::after, .icon-sand-clock-host::after, .icon-sand-clock-host-top::after, .icon-sand-clock-host-right::after, .icon-sand-clock-host-bottom::after, .icon-sand-clock-host-left::after {
+    top: calc(50% - var(--offset-norm) - var(--icon-weight-half));
+    border-radius: var(--icon-width-half) var(--icon-width-half) 0 0;
+    border-bottom: solid var(--offset-norm) transparent;
+    box-shadow: inset 0 calc(0px - var(--icon-weight)) 0 0 var(--icon-color);
+  }
+  .icon-sand-clock-host-top::before {
+    top: calc(0px - var(--offset-norm));
+  }
+  .icon-sand-clock-host-top::after {
+    top: calc(var(--housing-height) - var(--offset-norm) - var(--icon-weight));
+  }
+  .icon-sand-clock-host-bottom::before {
+    top: calc(100% - var(--offset-norm) - var(--icon-height));
+  }
+  .icon-sand-clock-host-bottom::after {
+    top: calc(100% - var(--offset-norm) - var(--icon-height-half) - var(--icon-weight-half));
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

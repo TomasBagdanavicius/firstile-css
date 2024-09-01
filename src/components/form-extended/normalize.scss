@@ -1,0 +1,53 @@
+@use "../../base/normalize";
+@use "../form/normalize" as form-normalize;
+/* Form Extended */
+@layer normalize {
+    input[type=file] {
+        font: inherit;
+        &::file-selector-button {
+            @extend %normalize-appearance, %fielded-input;
+        }
+    }
+    input[type=radio] {
+        margin: 0;
+        border: 0;
+    }
+    input[type=color] {
+        /* While Firefox removes whole visible padding, blink and webkit does not and requires modifications through the `::-webkit-color-swatch-wrapper`. */
+        padding: 0;
+        border: 0;
+        /* Normalize button size, which differs across UAs. */
+        inline-size: 60px;
+        block-size: 30px;
+        &::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        &::-webkit-color-swatch {
+            border-radius: 0;
+            border: 0;
+        }
+        &::-moz-color-swatch {
+            border: 0;
+        }
+    }
+    input[type=date],
+    input[type=datetime-local],
+    input[type=month],
+    input[type=week],
+    input[type=time] {
+        @extend %fielded-input;
+        // It's currently not possible to hide/change the calendar picker button in Firefox. In Chrome, one can use `-webkit-calendar-picker-indicator`, but it applies a background image (which is black). For these reasons, for now, the policy is to keep things as it is and allow other CSS levels to cope with this.
+    }
+    input[type=range] {
+        margin: 0;
+        background: none;
+        color: inherit;
+        &::-webkit-slider-thumb {
+            @extend %normalize-appearance;
+        }
+        &::-moz-range-thumb {
+            border: 0;
+            background: none;
+        }
+    }
+}

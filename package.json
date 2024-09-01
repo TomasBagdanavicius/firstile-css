@@ -1,0 +1,41 @@
+{
+    "name": "firstile-css",
+    "version": "0.1.0",
+    "description": "A modular, Sass-based CSS framework and starter kit.",
+    "type": "module",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "build": "node ./scripts/compile-stylesheets.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "HTML",
+        "CSS",
+        "web components",
+        "UI components",
+        "modular design",
+        "responsive design",
+        "forms",
+        "headings",
+        "lists",
+        "popovers",
+        "progress bars",
+        "grids",
+        "tables",
+        "web design",
+        "frontend",
+        "user interface",
+        "design system",
+        "component library"
+    ],
+    "author": "LWIS Technologies",
+    "license": "MIT",
+    "devDependencies": {
+        "cssnano": "latest",
+        "postcss": "latest",
+        "postcss-import": "latest",
+        "sass": "latest"
+    }
+}

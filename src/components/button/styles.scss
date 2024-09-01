@@ -1,0 +1,130 @@
+@use "sass:map";
+@use "base";
+@use "../../partials/mixins";
+@use "../../components/document-context/modules/icons/icons";
+/* Button */
+@layer style {
+    // Toggle Switch With Knob
+    %toggle-switch-with-knob {
+        // Options
+        --button-height: 30px;
+        --box-width: 50px;
+        --box-height: var(--button-height);
+        --box-border-width: 1px;
+        --knob-offset: -2px;
+        --box-bg-color-off: var(--button-bg-color);
+        --box-bg-color-on: var(--accent-color);
+        --box-border-color: var(--ridge-color);
+        --knob-color-off: var(--ridge-color);
+        --knob-color-on: #fff;
+        // Binary options
+        // Defines whether the outer bounding box should include overflowing parts.
+        --is-outer-bounding-box: 0;
+        // Calculated
+        --box-height-half: calc(var(--box-height) / 2);
+        --box-border-max-width: calc(var(--box-height-half) / 2);
+        --box-border-width-calc: min(var(--box-border-width), var(--box-border-max-width));
+        --box-min-width: calc(var(--box-height) + var(--box-height-half));
+        --box-width-calc: max(var(--box-width), var(--box-min-width));
+        --box-inner-height: calc(var(--box-height) - var(--box-border-width-calc) * 2);
+        --box-inner-width: calc(var(--box-width-calc) - var(--box-border-width-calc) * 2);
+        --is-outer-bounding-box-norm: clamp(0, var(--is-outer-bounding-box), 1);
+        // Defines how much space can the knob occupy over the box on the x axis.
+        --occupy-box-max: calc((2 / 3) * var(--box-width-calc));
+        --knob-offset-max: calc(var(--occupy-box-max) - var(--box-height) + var(--box-border-width-calc));
+        --knob-offset-calc: min(var(--knob-offset), var(--knob-offset-max));
+        --overflow: max(0px, var(--knob-offset-calc) - var(--box-border-width-calc));
+        --box-outer-width: calc(var(--box-width-calc) + var(--overflow) * 2);
+        --box-outer-height: calc(var(--box-height) + var(--overflow) * 2);
+        --container-width: calc(var(--box-width-calc) + (var(--is-outer-bounding-box-norm) * (var(--box-outer-width) - var(--box-width-calc))));
+        --container-height: calc(var(--box-height) + (var(--is-outer-bounding-box-norm) * (var(--box-outer-height) - var(--box-height))));
+        --knob-min-size: max(5px, var(--box-inner-height) / 2);
+        --knob-size: max(var(--box-inner-height) + var(--knob-offset-calc) * 2, var(--knob-min-size));
+        --margin: calc((var(--container-height) - var(--knob-size)) / 2);
+        position: relative;
+        width: var(--container-width);
+        height: var(--container-height);
+        border: 0;
+        background-color: transparent;
+        font-size: 0;
+        line-height: 0;
+        &::before,
+        &::after {
+            content: "";
+        }
+        &,
+        &::before {
+            border-radius: calc(var(--container-height) / 2);
+        }
+        &::before {
+            position: absolute;
+            inset: 50% auto auto 50%;
+            width: var(--box-width-calc);
+            height: var(--box-height);
+            translate: -50% -50%;
+            border: solid var(--box-border-width-calc) var(--box-border-color);
+            background-color: var(--box-bg-color-off);
+            transition: background-color var(--button-transition-speed);
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: var(--knob-size);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            transition: translate var(--button-transition-speed);
+        }
+    }
+    %toggle-switch-with-knob-off {
+        &::after {
+            background-color: var(--knob-color-off);
+            translate: var(--margin) -50%;
+        }
+    }
+    %toggle-switch-with-knob-on {
+        &::before {
+            background-color: var(--box-bg-color-on);
+        }
+        &::after {
+            background-color: var(--knob-color-on);
+            translate: calc(var(--container-width) - var(--knob-size) - var(--margin)) -50%;
+            outline: solid 1px var(--accent-color);
+        }
+    }
+    // Check Box
+    $icon-checkmark-params: (
+        residence: host,
+        position: center,
+        type: css,
+        name: checkmark,
+        animated: init,
+    );
+    %check-box {
+        --wing-color-undetermined: #ccc;
+        @include icons.icon($icon-checkmark-params...);
+        --wing-weight: 3px;
+        --left-wing-size: 15px;
+        --right-wing-size: 30px;
+        --button-x-padding: 0;
+        --button-y-padding: 0;
+        --button-border-radius: 5px;
+        width: var(--button-height);
+        border-radius: 5px;
+        transition: background-color var(--button-transition-speed);
+        font-size: 0;
+        line-height: 0;
+    }
+    %check-box-off {
+        $set: icons.icon-get-map($icon-checkmark-params...);
+        $placeholder: map.get($set, css-animated-start);
+        @extend %#{$placeholder} !optional;
+    }
+    %check-box-on {
+        $set: icons.icon-get-map($icon-checkmark-params...);
+        $placeholder: map.get($set, css-animated-finish);
+        @extend %#{$placeholder} !optional;
+        background-color: var(--accent-color);
+        --icon-color: #fff;
+    }
+}

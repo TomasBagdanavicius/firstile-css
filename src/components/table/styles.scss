@@ -1,0 +1,64 @@
+@use "base";
+@use "style-placeholders";
+@mixin build-table($main-prefix, $table-extend-prefix: "", $extend-prefix: "-") {
+    %table#{$main-prefix} {
+        @extend %table#{$table-extend-prefix} !optional;
+        > :where(thead, tbody, tfoot) > tr {
+            @extend %table#{$extend-prefix}row !optional;
+        }
+        > :where(thead, tbody, tfoot) > tr > :where(th, td) {
+            @extend %table#{$extend-prefix}cell !optional;
+        }
+        > :where(thead, tbody, tfoot) > tr > :where(th) {
+            @extend %table#{$extend-prefix}cell-header !optional;
+        }
+        > thead {
+            @extend %table#{$extend-prefix}head !optional;
+            > tr {
+                @extend %table#{$extend-prefix}head-row !optional;
+                > th {
+                    @extend %table#{$extend-prefix}head-header-cell !optional;
+                }
+                > td {
+                    @extend %table#{$extend-prefix}head-data-cell !optional;
+                }
+            }
+        }
+        > tbody {
+            @extend %table#{$extend-prefix}body !optional;
+            > tr {
+                @extend %table#{$extend-prefix}body-row !optional;
+                > th {
+                    @extend %table#{$extend-prefix}body-header-cell !optional;
+                }
+                > td {
+                    @extend %table#{$extend-prefix}body-data-cell !optional;
+                }
+            }
+        }
+        > tfoot {
+            @extend %table#{$extend-prefix}foot !optional;
+            > tr {
+                @extend %table#{$extend-prefix}foot-row !optional;
+                > th {
+                    @extend %table#{$extend-prefix}foot-header-cell !optional;
+                }
+                > td {
+                    @extend %table#{$extend-prefix}foot-data-cell !optional;
+                }
+            }
+        }
+        > caption {
+            @extend %table#{$extend-prefix}caption !optional;
+        }
+    }
+}
+/* Table */
+@layer style {
+    @include build-table("-base");
+    @include build-table("-default", "-base", "-default-");
+    @include build-table("-pragmatic", "-base", "-pragmatic-");
+    %table-pragmatic {
+        @extend %table-pragmatic-container;
+    }
+}

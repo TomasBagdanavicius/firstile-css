@@ -1,0 +1,90 @@
+@use "sass:string";
+@use "sass:map";
+@use "icon-host";
+@use "css-icons";
+@mixin register-placeholder($name, $debug: false) {
+    @extend %#{$name} !optional;
+    @if $debug {
+        @debug $name;
+    }
+}
+// $residence: self, host
+// $position: top, right, bottom, left, enclosed, hanging
+@mixin icon($residence, $position: center, $type: regular, $alignment: none, $name: none, $animated: false, $debug: false) {
+    $icon-placeholder: icon-#{$residence};
+    @include register-placeholder($icon-placeholder, $debug);
+    @if $residence == host {
+        $position-placeholder: #{$icon-placeholder}-#{$position};
+        @include register-placeholder($position-placeholder, $debug);
+        $type-placeholder: #{$position-placeholder}-#{$type};
+        @include register-placeholder($type-placeholder, $debug);
+    }
+    @if $type == css and $name != none {
+        $prefix: "icon-css";
+        @include register-placeholder($prefix, $debug);
+        $css-residence-placeholder: icon-#{$residence}-css;
+        @include register-placeholder($css-residence-placeholder, $debug);
+        $css-name-placeholder: #{$prefix}-#{$name};
+        @include register-placeholder($css-name-placeholder, $debug);
+        $css-position-placeholder: #{$css-name-placeholder}-#{$position};
+        @include register-placeholder($css-position-placeholder, $debug);
+        @if $alignment != none {
+            $parts: string.split($alignment, " ");
+            @each $token in $parts {
+                $placeholder: #{$css-name-placeholder}-#{$token};
+                @include register-placeholder($placeholder, $debug);
+                $css-host-position-placeholder: #{$icon-placeholder}-to-#{$token}-css;
+                @include register-placeholder($css-host-position-placeholder, $debug);
+            }
+        }
+        @if $animated == init or $animated == start or $animated == finish {
+            @include register-placeholder(#{$css-name-placeholder}-animated, $debug);
+            @if $animated == start {
+                @include register-placeholder(#{$css-name-placeholder}-animated-start, $debug);
+                @include register-placeholder(#{$css-name-placeholder}-#{$position}-animated-start, $debug);
+            }
+            @if $animated == finish {
+                @include register-placeholder(#{$css-name-placeholder}-animated-finish, $debug);
+                @include register-placeholder(#{$css-name-placeholder}-#{$position}-animated-finish, $debug);
+            }
+        }
+    }
+}
+@function icon-get-map($residence, $position, $type: regular, $alignment: none, $name: none, $animated: false) {
+    $result: ();
+    $icon-placeholder: icon-#{$residence};
+    $result: map.set($result, "residence", $icon-placeholder);
+    @if $residence == host {
+        $position-placeholder: #{$icon-placeholder}-#{$position};
+        $result: map.set($result, "position", $position-placeholder);
+        $type-placeholder: #{$position-placeholder}-#{$type};
+        $result: map.set($result, "type", $type-placeholder);
+        @if $type == css and $name != none {
+            $prefix: "icon-css";
+            $css-name-placeholder: #{$prefix}-#{$name};
+            $result: map.set($result, "css-name", $css-name-placeholder);
+            $css-position-placeholder: #{$css-name-placeholder}-#{$position};
+            $result: map.set($result, "css-position", $css-position-placeholder);
+            @if $alignment != none {
+                $parts: string.split($alignment, " ");
+                @each $token in $parts {
+                    $placeholder: #{$css-name-placeholder}-#{$token};
+                    $result: map.set($result, css-alignment-#{$token}, $placeholder);
+                }
+            }
+            @if $animated == init or $animated == start or $animated == finish {
+                $css-animated-placeholder: #{$css-name-placeholder}-animated;
+                $result: map.set($result, "css-animated", $css-animated-placeholder);
+                $css-animated-start-placeholder: #{$css-name-placeholder}-animated-start;
+                $result: map.set($result, "css-animated-start", $css-animated-start-placeholder);
+                $css-animated-start-position-placeholder: #{$css-name-placeholder}-#{$position}-animated-start;
+                $result: map.set($result, "css-animated-start-position", $css-animated-start-position-placeholder);
+                $css-animated-finish-placeholder: #{$css-name-placeholder}-animated-finish;
+                $result: map.set($result, "css-animated-finish", $css-animated-finish-placeholder);
+                $css-animated-finish-position-placeholder: #{$css-name-placeholder}-#{$position}-animated-finish;
+                $result: map.set($result, "css-animated-finish-position", $css-animated-finish-position-placeholder);
+            }
+        }
+    }
+    @return $result;
+}

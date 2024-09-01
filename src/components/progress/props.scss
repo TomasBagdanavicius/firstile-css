@@ -1,0 +1,23 @@
+@use "../../partials/root-props";
+@use "../../partials/functions";
+$properties: (
+    // Progress
+    --progress-block-size: 10px,
+    --progress-inline-size: 100%,
+    --progress-bg-color: var(--ridge-color),
+    --progress-bar-bg-color: var(--accent-color),
+    --progress-border-radius: var(--progress-block-size-half),
+    --progress-bar-border-radius: var(--progress-border-radius),
+    // Calculated
+    --progress-block-size-half: calc(var(--progress-block-size) / 2),
+    // Meter
+    --meter-block-size: var(--progress-block-size),
+    --meter-inline-size: var(--progress-inline-size),
+    --meter-bg-color: var(--progress-bg-color),
+    --meter-bar-bg-color: var(--progress-bar-bg-color),
+    --meter-border-radius: var(--meter-block-size-half),
+    --meter-bar-border-radius: var(--meter-border-radius),
+    // Calculated
+    --meter-block-size-half: calc(var(--meter-block-size) / 2),
+);
+@include root-props.addProps(functions.apply-user-properties($properties, progress));

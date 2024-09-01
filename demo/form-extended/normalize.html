@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Normalize - Form Extended</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="../demo-basic.css">
+<style>
+body {
+    line-height: 20px;
+}
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: currentColor;
+}
+input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: currentColor;
+}
+input[type=range]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: currentColor;
+}
+input[type=range] {
+    background: currentColor;
+    height: 5px;
+}
+</style>
+</head>
+<body>
+<div class="demo-description">Showcases additional form element styles and behaviors, including radio buttons, range sliders, and various input types, ensuring a consistent and accessible appearance across different browsers and devices.</div>
+<form method="get" action="">
+    <p><input type="radio" name="radio" id="radio"></p>
+    <p><input type="file" id="file" name="file" accept="image/png, image/jpeg"></p>
+    <p><input type="color" id="color" name="color" value="#4169E1"></p>
+    <p><input type="date" id="date" name="date" min="2000-01-01" max="2200-01-01"></p>
+    <p><input type="date" id="date" name="date" value="2000-01-01" min="2000-01-01" max="2200-01-01"></p>
+    <p><input type="datetime-local" id="datetime-local" name="datetime-local" min="2000-01-01T00:00" max="2200-01-01T00:00"></p>
+    <p><input type="datetime-local" id="datetime-local" name="datetime-local" value="2000-01-01T00:00" min="2000-01-01T00:00" max="2200-01-01T00:00"></p>
+    <p><input type="month" id="month" name="month" min="2000-01"></p>
+    <p><input type="month" id="month" name="month" min="2000-01" value="2024-01"></p>
+    <p><input type="week" id="week" name="week" min="2000-W01"></p>
+    <p><input type="week" id="week" name="week" min="2000-W01" value="2024-W01"></p>
+    <p><input type="time" id="time" name="time"></p>
+    <p><input type="time" id="time" name="time" value="08:00"></p>
+    <p><input type="range" name="range" id="range" min="0" max="100"></p>
+    <p><input type="image" name="image" id="image" alt="Image" src="../image/material/50x50_Earth.jpg"></p>
+</form>
+</body>
+</html>

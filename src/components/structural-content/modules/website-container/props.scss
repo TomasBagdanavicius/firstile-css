@@ -1,0 +1,9 @@
+@use "../../../../partials/root-props";
+@use "../../../../partials/functions";
+$properties: (
+    --container-width: 1000,
+    --website-container-inner-width: calc(var(--container-width) * 1px),
+    --website-container-gutter: 15px,
+    --website-container-outer-width: calc(var(--website-container-inner-width) + var(--website-container-gutter) * 2),
+);
+@include root-props.addProps(functions.apply-user-properties($properties, structural-content));

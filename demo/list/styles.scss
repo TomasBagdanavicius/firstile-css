@@ -1,0 +1,16 @@
+@use "../../src/components/list/styles";
+.regular-unordered-bullet-list {
+    @extend %regular-unordered-bullet-list;
+}
+.regular-unordered-bullet-list-deep {
+    @extend %regular-unordered-bullet-list-deep;
+}
+.regular-ordered-number-list {
+    @extend %regular-ordered-number-list;
+}
+.regular-ordered-number-list-deep {
+    @extend %regular-ordered-number-list-deep;
+}
+.description-list-label-value-pairs {
+    @extend %description-list-label-value-pairs;
+}

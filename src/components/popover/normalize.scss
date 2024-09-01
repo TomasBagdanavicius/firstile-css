@@ -1,0 +1,9 @@
+@use "../../base/normalize";
+/* Popover */
+@layer normalize {
+    [popover],
+    dialog {
+        @extend %normalize-border, %normalize-margin-padding, %normalize-background;
+        color: inherit;
+    }
+}
