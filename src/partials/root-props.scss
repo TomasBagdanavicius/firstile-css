@@ -1,6 +1,7 @@
+@use "sass:map";
 @use "root";
 @mixin addProps($main, $light: (), $dark: ()) {
-    root.$root-props: map-merge(root.$root-props, $main);
-    root.$root-props-dark: map-merge(root.$root-props-dark, $light);
-    root.$root-props-light: map-merge(root.$root-props-light, $dark);
+    root.$root-props: map.merge(root.$root-props, $main);
+    root.$root-props-dark: map.merge(root.$root-props-dark, $light);
+    root.$root-props-light: map.merge(root.$root-props-light, $dark);
 }

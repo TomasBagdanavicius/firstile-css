@@ -4,5 +4,10 @@
     "search.exclude": {
         "node_modules": true,
         "dist": true,
-    }
+    },
+    /* Code Spell Checker */
+    "cSpell.userWords": [
+        "Firstile",
+        "Tagplant",
+    ],
 }

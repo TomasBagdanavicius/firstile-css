@@ -1,6 +1,6 @@
 {
     "name": "firstile-css",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A modular, Sass-based CSS framework and starter kit.",
     "type": "module",
     "directories": {
@@ -33,9 +33,9 @@
     "author": "LWIS Technologies",
     "license": "MIT",
     "devDependencies": {
-        "cssnano": "latest",
-        "postcss": "latest",
-        "postcss-import": "latest",
-        "sass": "latest"
+        "cssnano": "^7.0.6",
+        "postcss": "^8.4.47",
+        "postcss-import": "^16.1.0",
+        "sass": "^1.80.5"
     }
 }

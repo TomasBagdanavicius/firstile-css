@@ -1,5 +1,6 @@
+@use "sass:string";
 @use "../../partials/layer-list" with (
-    $layer-list: unquote("root, normalize, base, type"),
+    $layer-list: "root, normalize, base, type",
 );
 @use "base" as main;
 @use "../document-context/base" as document-context;

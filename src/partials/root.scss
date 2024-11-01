@@ -3,21 +3,21 @@
 $root-props-default: (
     color-scheme: light dark,
 );
-$root-props: map-merge((), $root-props-default);
+$root-props: map.merge((), $root-props-default);
 $root-props-dark-default: (
     color-scheme: dark,
     --theme-binary: 0,
     --contrast: #000,
     --opposite-contrast: #fff,
 );
-$root-props-dark: map-merge((), $root-props-dark-default);
+$root-props-dark: map.merge((), $root-props-dark-default);
 $root-props-light-default: (
     color-scheme: light,
     --theme-binary: 1,
     --contrast: #fff,
     --opposite-contrast: #000,
 );
-$root-props-light: map-merge((), $root-props-light-default);
+$root-props-light: map.merge((), $root-props-light-default);
 @mixin printOut($props, $default, $include-default: true, $exlude-prefixes: ()) {
     @each $name, $value in $props {
         @if $include-default or not map.has-key($default, $name) {

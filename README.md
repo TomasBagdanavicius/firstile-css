@@ -6,7 +6,7 @@ Imagine you're building a web project where you only need specific styles and co
 
 ```scss
 @use "../../src/partials/layer-list" with (
-    $layer-list: unquote("root, normalize, base"),
+    $layer-list: "root, normalize, base",
 );
 @use "../../src/components/hyperlink/base" as hyperlink-component;
 @use "../../src/components/list/base" as list-component;
@@ -65,7 +65,7 @@ For a detailed list of all components and their associated elements, see the ful
 
 ### Utilising Your Own HTTP Server
 
-If you have your own HTTP server, the simpliest way is to just copy all project files into a desired location inside your document root directory and then run it in your browser.
+If you have your own HTTP server, the simplest way is to just copy all project files into a desired location inside your document root directory and then run it in your browser.
 
 ### Using Docker
 
@@ -97,7 +97,7 @@ To compile Sass files and to clean up and minify the resulting CSS, you will nee
 - Normally, your file should start with a list of layers that will be used throughout the file, for example:
 ```scss
 @use "../../src/partials/layer-list" with (
-    $layer-list: unquote("root, normalize, base"),
+    $layer-list: "root, normalize, base",
 );
 ```
 - Afterwards, you will include other component files (eg. base styles, style collections, modules, etc.).
@@ -167,7 +167,7 @@ The `./scripts/compile-stylesheets.js` script has a few option parameters:
 
 ## Creating Custom Components and Modules
 
-There might be scenarios where you want to create your custom components (eg. to categorise your custom elements) or custom modules (eg. to extend granural control of existing components).
+There might be scenarios where you want to create your custom components (eg. to categorize your custom elements) or custom modules (eg. to extend granural control of existing components).
 
 To create a custom component:
 
@@ -181,7 +181,7 @@ To create a custom module:
 - Choose which component you want to extend with a new module.
 - Create a `/var/components/<your_chosen_component>/modules/<module_name> directory.
 - Inside the module directory you will normally want to create a `styles.scss` file with your custom styling solutions, but you can create any other file as well.
-- It is also possible to create custom demo files for the new module, even if you are extending a core component. You can create you demo files inside `/var/components/<your_chosen_component>/demo/modules/<module_name>` directory. By running `./scripts/compile-demo-stylesheets.sh`, the contents of this "demo" directory will be copied over to the main demo directory of this module.
+- It is also possible to create custom demo files for the new module, even if you are extending a core component. You can create you demo files inside `./var/components/<your_chosen_component>/demo/modules/<module_name>` directory. By running `./scripts/compile-demo-stylesheets.sh`, the contents of this "demo" directory will be copied over to the main demo directory of this module.
 
 ## Related Project
 

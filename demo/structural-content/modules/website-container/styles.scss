@@ -1,5 +1,5 @@
 @use "../../../../src/partials/layer-list" with (
-    $layer-list: unquote("root, normalize, base"),
+    $layer-list: "root, normalize, base",
 );
 @use "../../../../src/components/structural-content/modules/website-container/base";
 @use "../../../../src/partials/root";

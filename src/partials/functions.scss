@@ -1,8 +1,9 @@
 @use "sass:map";
+@use "sass:string";
 @use "../../var/custom-properties";
 // String
 @function string-starts-with($string, $substring) {
-    @return str-index($string, $substring) == 1;
+    @return string.index($string, $substring) == 1;
 }
 @function string-ends-with($string, $substring) {
     $string-length: string.length($string);
@@ -46,7 +47,7 @@
 // Misc
 @function apply-user-properties($main-properties, $category) {
     @if map.has-key(custom-properties.$custom-properties, $category) {
-        $custom-properties: map-get(custom-properties.$custom-properties, $category);
+        $custom-properties: map.get(custom-properties.$custom-properties, $category);
         @return map.merge($main-properties, $custom-properties);
     }
     @return $main-properties;

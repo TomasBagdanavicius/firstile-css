@@ -9,7 +9,8 @@
             "command": "node ./scripts/compile-stylesheets.js",
             "group": "test",
             "presentation": {
-                "reveal": "never"
+                "reveal": "always",
+                "panel": "shared"
             }
         }, {
             "label": "Empty distribution stylesheets",
@@ -17,7 +18,8 @@
             "command": "./scripts/empty-dist-stylesheets.sh",
             "group": "test",
             "presentation": {
-                "reveal": "never"
+                "reveal": "always",
+                "panel": "shared"
             }
         }, {
             "label": "Compile demo stylesheets",
@@ -25,7 +27,8 @@
             "command": "./scripts/compile-demo-stylesheets.sh",
             "group": "test",
             "presentation": {
-                "reveal": "never"
+                "reveal": "always",
+                "panel": "shared"
             }
         }, {
             "label": "Cleanup demo files",
@@ -33,7 +36,8 @@
             "command": "./scripts/cleanup-demo-files.sh",
             "group": "test",
             "presentation": {
-                "reveal": "never"
+                "reveal": "always",
+                "panel": "shared"
             }
         }, {
             "label": "Build and run with Docker",
@@ -42,7 +46,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             }
         }, {
             "label": "Stop Docker container",
@@ -51,7 +55,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             }
         }, {
             "label": "Delete npm files",
@@ -60,7 +64,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             }
         }, {
             "label": "npm install",
@@ -69,7 +73,7 @@
             "group": "test",
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
             }
         }
     ]

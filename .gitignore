@@ -3,3 +3,4 @@
 package-lock.json
 scripts/prepare-build.sh
 docs/release-steps.md
+docs/system-dependencies.md

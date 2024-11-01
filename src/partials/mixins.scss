@@ -19,10 +19,22 @@
 }
 @mixin apply-module-options($main-map, $component-name, $module-name) {
     @if map.has-key(custom-module-options.$module-options, $component-name) {
-        $component-map: map-get(custom-module-options.$module-options, $component-name);
+        $component-map: map.get(custom-module-options.$module-options, $component-name);
         @if map.has-key($component-map, $module-name) {
-            $module-map: functions.merge-maps-using-first($main-map, map-get($component-map, $module-name));
+            $module-map: functions.merge-maps-using-first($main-map, map.get($component-map, $module-name));
             @include apply-map($module-map);
+        }
+    }
+}
+@mixin apply-module-option($component-name, $module-name, $property-name) {
+    @if map.has-key(custom-module-options.$module-options, $component-name) {
+        $component-map: map.get(custom-module-options.$module-options, $component-name);
+        @if map.has-key($component-map, $module-name) {
+            $module-map: map.get($component-map, $module-name);
+            @if map.has-key($module-map, $property-name) {
+                $value: map.get($module-map, $property-name);
+                #{$property-name}: #{$value};
+            }
         }
     }
 }

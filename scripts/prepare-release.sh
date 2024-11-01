@@ -26,3 +26,11 @@ $project_dir/scripts/empty-dist-stylesheets.sh
 node $project_dir/scripts/compile-stylesheets.js sourceMap=0
 cp $project_dir/dist/example.css $project_dir/docs/examples/example.css
 cp $project_dir/dist/example.min.css $project_dir/docs/examples/example.min.css
+
+# Update version in package.json
+# Default indent is 2
+jq -M --indent 4 \
+   --arg version "$version" \
+   '.version = $version' \
+   "$project_dir/package.json" > "$project_dir/package.tmp" && \
+mv "$project_dir/package.tmp" "$project_dir/package.json"
